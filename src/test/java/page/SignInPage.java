@@ -5,14 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignInPage extends BasePage {
+public class SignInPage extends BasePage{
+    WebDriver driver;
 
-    public SignInPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-        PageFactory.initElements(driver, this);
-    }
     @FindBy(xpath = "//*[@id='center_column']/h1")
     WebElement authenticationPageHeader;
 
@@ -47,6 +42,16 @@ public class SignInPage extends BasePage {
     @FindBy(css = ".icon-home")
     WebElement homeIcn;
 
-    @FindBy(xpath = "//span[@class='navigation_page']")
+    @FindBy(css = ".navigation-pipe")
     WebElement navigationPipe;
+
+    @FindBy(css = ".navigation_page")
+    WebElement navigationTab;
+
+    public SignInPage(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+        PageFactory.initElements(driver, this);
+    }
 }
