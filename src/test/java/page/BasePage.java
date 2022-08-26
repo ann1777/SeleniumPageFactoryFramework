@@ -22,7 +22,7 @@ public class BasePage {
     @FindBy(id = "contact-link")
     WebElement contactAsBtn;
 
-    @FindBy(css = "a.login")
+    @FindBy(css = ".login")
     WebElement signInBtn;
 
     @FindBy(xpath = "//div[@id='header_logo']")
@@ -36,6 +36,51 @@ public class BasePage {
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul//a[text() = 'Women']")
     WebElement womanDisplayBlock;
+
+    @FindBy(css = ".submenu-container.clearfix.first-in-line-xs']")
+    WebElement womanDisplayBlockContainer;
+
+    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Tops']")
+    WebElement womanDisplayBlockTopsTitle;
+
+    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='T-shirts']")
+    WebElement womanDisplayBlockTshirtsSubtitle;
+
+    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Blouses']")
+    WebElement womanDisplayBlockBlousesSubtitle;
+
+    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Dresses']")
+    WebElement womanDisplayBlockDressesTitle;
+
+    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Casual Dresses']")
+//    @FindBy(xpath = "//*[@title='Casual Dresses'][text()='Casual Dresses']")
+    WebElement womanDisplayBlockCasualDressesSubTitle;
+
+    @FindBy(xpath = "//*[@class=\"sfHoverForce\"]//*[text()='Evening Dresses']")
+//    @FindBy(xpath = "//*[@title='Evening Dresses'][text()='Evening Dresses']")
+    WebElement womanDisplayBlockEveningDressesSubTitle;
+
+    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Summer Dresses']")
+//    @FindBy(xpath = "//*[@title='Summer Dresses'][text()='Summer Dresses']")
+    WebElement womanDisplayBlockSummerDressesSubTitle;
+
+    @FindBy(xpath = "//*[@class=\"sfHoverForce\"]//*[@id='category-thumbnail']/div[img]")
+    WebElement womanDisplayBlockAdvImg;
+
+
+    @FindBy(xpath = "//*[@class='sf-with-ul'][text()='Dresses']")
+//    @FindBy(xpath = "//*[@id='block_top_menu']//a[text()='Dresses']")
+//    @FindBy(css = "a.sf-with-ul:nth-of-type(2)")
+    WebElement dressesDisplayBlockTab;
+
+    @FindBy(xpath = "//*[@title='Casual Dresses']")
+    WebElement dressesDisplayBlockCasualDressesSubTitle;
+
+    @FindBy(xpath = "//*[@title='Casual Dresses']")
+    WebElement dressesDisplayBlockEveningDressesSubTitle;
+
+    @FindBy(xpath = "//*[@title='Summer Dresses']")
+    WebElement dressesDisplayBlockSummerDressesSubTitle;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li/a[text() = 'Dresses']")
     WebElement dressesDisplayBlock;
