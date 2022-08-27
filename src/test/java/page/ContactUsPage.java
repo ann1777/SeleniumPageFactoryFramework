@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ContactUs extends BasePage {
+public class ContactUsPage extends BasePage {
     WebDriver driver;
 
     @FindBy(css = ".icon-home")
@@ -83,7 +83,7 @@ public class ContactUs extends BasePage {
 //    @FindBy(xpath = "//*/span[text()='Send']")
     WebElement contactPageMassageSubmitBtn;
 
-    public ContactUs(WebDriver driver) {
+    public ContactUsPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=contact");
