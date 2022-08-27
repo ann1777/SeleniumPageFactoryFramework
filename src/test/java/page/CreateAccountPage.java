@@ -1,5 +1,6 @@
 package page;
 
+import objectRepository.CreateAccountPage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,263 +9,183 @@ import org.openqa.selenium.support.PageFactory;
 public class CreateAccountPage extends  BasePage{
     WebDriver driver;
 
-    @FindBy(css = ".icon-home")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_HOME_ICN)
     WebElement homeIcn;
 
-    @FindBy(css = ".navigation-pipe")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_NAVIGATION_PIPE)
     WebElement navigationPipe;
 
-    @FindBy(css = ".navigation_page")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_NAVIGATION_TAB)
     WebElement navigationTab;
 
-    @FindBy(xpath = "//h1[@class='page-heading']")
-//    @FindBy(xpath = "//h1[text()='Create an account']")
-//    @FindBy(css = "#noSlide>h1")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PAGE_TITLE)
     WebElement createAccountPageTitle;
 
-    @FindBy(css = "#account-creation_form")
-//    @FindBy(xpath = "//*[@id='account-creation_form']")
-//    @FindBy(xpath = "//*[@method='post'][1]")
-//    @FindBy(xpath = "//*/div[@class="account_creation"][1]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_PERSONALINFORMATION_FORM)
     WebElement personalInformationForm;
 
-    @FindBy(xpath = "//*/h3[@class='page-subheading'][text()='Your personal information']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PERSONALINFORMATION_FORM_TITLE)
     WebElement personalInformationFormTitle;
 
-    @FindBy(xpath = "//*/label[text()='Title']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PERSONALINFORMATION_TITLE_LABEL)
     WebElement getPersonalInformationTitleLabel;
 
-    @FindBy(xpath = "//*[@id='uniform-id_gender1']")
-//    @FindBy(xpath = "//*/label[@for='id_gender1']")
-//    @FindBy(xpath = "//*/input[@type="radio"][@value=1]")
-//    @FindBy(css = "#uniform-id_gender1")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_MAILGENGER_CHECKBOX)
     WebElement mailGenderCheckBox;
 
-    @FindBy(xpath = "//*[@id='account-creation_form']//label[@for='id_gender1']/text()")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_MAILGENGER_TEXT)
     WebElement mailGenderText;
 
-    @FindBy(xpath = "//*[@id='uniform-id_gender2']")
-//    @FindBy(xpath = "//*/label[@for=\"id_gender2\"]/text()")
-//    @FindBy(xpath = "//*/input[@type=\"radio\"][@value=2]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_FEMAILGENDER_CHECKBOX)
     WebElement femailGenderCheckBox;
 
-    @FindBy(xpath = "//*[@id='account-creation_form']//label[@for='id_gender2']/text()")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_FEMAILGENDER_TEXT)
     WebElement femailGenderText;
 
-    @FindBy(xpath = "//*/label[@for='customer_firstname']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_FIRSTNAME_LABEL)
     WebElement firstNameLabel;
 
-    @FindBy(css = "#customer_firstname")
-//    @FindBy(xpath = "//*/input[@id="customer_firstname"]")
-//    @FindBy(xpath = "//*/input[@name="customer_firstname"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_FIRSTNAME_FLD)
     WebElement firstNameFld;
 
-    @FindBy(xpath = "//*/label[@for='customer_lastname']")
-//    @FindBy(xpath = "//*/div/label[text()='Last name ']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_LASTNAME_LABEL)
     WebElement lastNameLabel;
 
-    @FindBy(css = "#customer_lastname")
-//    @FindBy(xpath = "//*/input[@id="customer_lastname"]")
-//    @FindBy(xpath = "//*/input[@name="customer_lastname"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_LASTNAME_FLD)
     WebElement lastNameFld;
 
-    @FindBy(xpath = "//*/label[@for='email']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_EMAIL_LABEL)
     WebElement emailLabel;
 
-    @FindBy(css = "#email")
-//    @FindBy(xpath = "//*/input[@data-validate="isEmail"]")
-//    @FindBy(xpath = "//*/input[@id="email"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_EMAIL_FLD)
     WebElement emailFld;
 
-    @FindBy(xpath = "//*/label[@for='passwd']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PASSWORD_LABEL)
     WebElement passwdLabel;
 
-    @FindBy(css = "#passwd")
-//    @FindBy(xpath = "//*/input[@data-validate="isPasswd"]")
-//    @FindBy(xpath = "//*/input[@id="passwd"]")
-//    @FindBy(xpath = "//*/input[@name="passwd"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_PASSWORD_FLD)
     WebElement passwdFld;
 
-    @FindBy(xpath = "//*/label[text()=\"Date of Birth\"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_LABEL)
     WebElement birthDataLabel;
 
-    @FindBy(css = "#uniform-days")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_DAY_SELECTOR)
     WebElement birthDaySelector;
 
-    @FindBy(css = "#uniform-months")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_MONTH_SELECTOR)
     WebElement birthMonthSelector;
 
-    @FindBy(css = "#uniform-years")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_YEARS_SELECTOR)
     WebElement birthYearsSelector;
 
-    @FindBy(css = "#newsletter")
-//    @FindBy(xpath = "//*/input[@name="newsletter"]")
-//    @FindBy(xpath = "//*/input[@id="uniform-newsletter"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_CHECKBOX)
     WebElement signUpForNewsLetterCheckBox;
 
-    @FindBy(xpath = "//*/label[@for='newsletter']")
-//    @FindBy(xpath = "//*/label[text()=\"Sign up for our newsletter!\"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_LABEL)
     WebElement signUpForNewsLetterLabel;
 
-    @FindBy(css = "#newsletter")
-//    @FindBy(xpath = "//*/input[@name="optin"]")
-//    @FindBy(xpath = "//*/input[@id="optin"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_RECEIVE_SPECIALOFFERS_CHECKBOX)
     WebElement receiveSpecialOffersCheckBox;
 
-    @FindBy(xpath = "//*/label[@for='optin']")
-//    @FindBy(xpath = "//*/label[text()="Receive special offers from our partners!"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_RECEIVE_SPECIALOFFERS_LABEL)
     WebElement receiveSpecialOffersLabel;
 
-    @FindBy(xpath = "//*/div[@class='account_creation'][2]")
-//    @FindBy(xpath = "//*/h3[text()="Your address"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM)
+//    @FindBy(xpath = )
     WebElement yourAddressForm;
 
-    @FindBy(xpath = "//*/label[@for='customer_firstname']")
-//    @FindBy(xpath = "//*/p/label[text()="First name"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FIRSTNAME_LABEL)
     WebElement yourAddressFormFirstNameLabel;
 
-    @FindBy(css = "#firstname.form-control")
-//    @FindBy(xpath = "//*/input[@id="firstname"]")
-//    @FindBy(xpath = "//*/input[@name="firstname"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FIRSTNAME_FLD)
     WebElement yourAddressFormFirstNameFld;
 
-    @FindBy(xpath = "//*/label[@for='lastname']")
-//    @FindBy(xpath = "//*/p/label[text()='Last name ']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_LASTNAME_LABEL)
     WebElement yourAddressFormLastNameLabel;
 
-    @FindBy(css = "input#lastname")
-//    @FindBy(xpath = "//*/input[@id="lastname"]")
-//    @FindBy(xpath = "//*/input[@name="lastname"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_LASTNAME_FLD)
     WebElement yourAddressFormLastNameFld;
 
-    @FindBy(xpath = "//*/label[@for='company']")
-//    @FindBy(xpath = "//*/p/label[text()="Company"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COMPANY_LABEL)
     WebElement yourAddressFormCompanyLabel;
 
-    @FindBy(css = "#company")
-//    @FindBy(xpath = "//*/input[@id="company"]")
-//    @FindBy(xpath = "//*/input[@name="company"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COMPANY_FLD)
     WebElement yourAddressFormCompanyFld;
 
-    @FindBy(xpath = "//*/label[@for='address1']")
-//    @FindBy(xpath = "//*/p/label[text()="Address "]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDERESS_LABEL)
     WebElement yourAddressFormAddressLabel;
 
-    @FindBy(css = "#address1")
-//    @FindBy(xpath = "//*/input[@name='address1']")
-//    @FindBy(xpath = "//*/input[@id='address1']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDERESS_FLD)
     WebElement yourAddressFormAddressFld;
 
-    @FindBy(css = "p.required.form-group>span.inline-infos")
-//    @FindBy(xpath = "//*/span[text()='Street address, P.O. Box, Company name, etc.']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_INLINEINFO_LABEL)
     WebElement yourAddressInlineInfoLabel;
 
-    @FindBy(xpath = "//*/label[@for='address2']")
-//    @FindBy(xpath = "//*/p/label[text()="Address (Line 2)"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDRESS2_LABEL)
     WebElement yourAddressFormAddress2Label;
 
-    @FindBy(css = "#address2")
-//    @FindBy(xpath = "//*/input[@name='address2']")
-//    @FindBy(xpath = "//*/input[@id='address2']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDRESS2_FLD)
     WebElement yourAddressFormAddress2Fld;
 
-    @FindBy(css = "p.form-group.is_customer_param>span.inline-infos")
-//    @FindBy(xpath = "//*/span[text()='Apartment, suite, unit, building, floor, etc...']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS2_INLINEINFO_LABEL)
     WebElement yourAddress2InlineInfoLabel;
 
-    @FindBy(xpath = "//*/label[@for='city']")
-//    @FindBy(xpath = "//*/p/label[text()="City"]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_CITY_LABEL)
     WebElement yourAddressFormCityLabel;
 
-    @FindBy(css = "#city")
-//    @FindBy(xpath = "//*/input[@name='city']")
-//    @FindBy(xpath = "//*/input[@id='city']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_CITY_FLD)
     WebElement yourAddressFormCityFld;
 
-    @FindBy(xpath = "//*/label[@for='id_state']")
-//    @FindBy(xpath = "//*/p/label[text()="State "]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_LABEL)
     WebElement yourAddressFormStateLabel;
 
-    @FindBy(css = "#uniform-id_state")
-//    @FindBy(xpath = "//*/div[@id='uniform-id_state']")
-//    @FindBy(xpath = "//*/select[@id='id_state']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR)
     WebElement yourAddressFormStateSelector;
 
-    @FindBy(css = "#id_state>option")
-//    @FindBy(xpath = "//*[@id="id_state"]/option[12]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA)
     WebElement yourAddressFormStateSelectGeorgia;
 
-    @FindBy(xpath = "//*/label[@for='postcode']")
-//    @FindBy(xpath = "//*/p/label[text()="Zip/Postal Code "]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL)
     WebElement yourAddressZipCodeLabel;
 
-    @FindBy(css = "#postcode")
-//    @FindBy(xpath = "//*/input[@id='postcode']")
-//    @FindBy(xpath = "//*/input[@name='postcode']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR)
     WebElement yourAddressZipCodeSelector;
 
-
-    @FindBy(xpath = "//*/label[@for='id_country']")
-//    @FindBy(xpath = "//*/p/label[text()="Country "]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_LABEL)
     WebElement yourAddressFormCountryLabel;
 
-    @FindBy(css = "#uniform-id_country")
-//    @FindBy(xpath = "//*/div[@id='uniform-id_country']")
-//    @FindBy(xpath = "//*/span[text()='United States']")
-//    @FindBy(xpath = "//*/select[@id='id_country']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_SELECTOR)
     WebElement yourAddressFormCountrySelector;
 
-    @FindBy(css = "#other")
-//    @FindBy(xpath = "//label[@for='other']")
-//    @FindBy(xpath = "//label[text()='Additional information']")
-//    @FindBy(xpath = "//textarea[@name='other']")
-//    @FindBy(xpath = "//textarea[@class='form-control']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL)
     WebElement yourAddressFormAdditionalInformationLabel;
 
-    @FindBy(xpath = "//p[@class='inline-infos']")
-//    @FindBy(xpath = "//p[text()='You must register at least one phone number.']")
-//    @FindBy(xpath = "//*/p/label[text()="Zip/Postal Code "]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_INLINE_INFOS)
     WebElement yourAddressFormAdditionalInformationInlineInfos;
 
-    @FindBy(xpath = "//*/label[@for='phone']")
-//    @FindBy(xpath = "//*/label[text()='Home phone']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_HOMEPHONE_LABEL)
     WebElement yourAddressFormHomePhoneLabel;
 
-    @FindBy(css = "#phone")
-//    @FindBy(xpath = "//*/input[@id='phone']")
-//    @FindBy(xpath = "//*/input[@name='phone']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_HOMEPHONE_FLD)
     WebElement yourAddressFormHomePhoneFld;
 
-    @FindBy(xpath = "//*/label[@for='phone_mobile']")
-//    @FindBy(xpath = "//*/p/label[text()="Mobile phone "]")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_MOBILEPHONE_LABEL)
     WebElement yourAddressFormMobilePhoneLabel;
 
-    @FindBy(css = "#phone_mobile")
-//    @FindBy(xpath = "//*/input[@id='phone_mobile']")
-//    @FindBy(xpath = "//*/input[@name='phone_mobile']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_MOBILEPHONE_FLD)
     WebElement yourAddressFormMobilePhoneFld;
 
-
-    @FindBy(xpath = "//*/label[@for='alias']")
-//    @FindBy(xpath = "//label[text()='Assign an address alias for future reference. ']")
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FUTURE_REFERENCE_LABEL)
     WebElement yourAddressFormFutureReferenceLabel;
 
-    @FindBy(css = "#alias")
-//    @FindBy(xpath = "//input[@value='My address']")
-//    @FindBy(xpath = "//input[@name='alias']")
-//    @FindBy(xpath = "//input[@id='alias']")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FUTURE_REFERENCE_FLD)
     WebElement yourAddressFormFutureReferenceFld;
 
-    @FindBy(css = ".submit")
-//    @FindBy(css = ".submit.clearfix")
-//    @FindBy(xpath = "//div[@class='submit clearfix']")
-//    @FindBy(xpath = "//*/span[text()="Register"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_REGISTER_BTN)
     WebElement yourAddressFormRegisterBtn;
 
-    @FindBy(css = ".pull-right")
-//    @FindBy(css = ".pull-right.required")
-//    @FindBy(xpath = "//*/span[text()="Required field"]")
-//    @FindBy(xpath = "//*/p[@class="pull-right required"]")
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_PHONE_FLD)
+
     WebElement yourAddressHomePhoneFld;
     public CreateAccountPage(WebDriver driver) {
         super(driver);
