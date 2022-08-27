@@ -1,5 +1,6 @@
 package page;
 
+import objectRepository.CatalogPage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,310 +9,313 @@ import org.openqa.selenium.support.PageFactory;
 public class CatalogPage extends BasePage{
     WebDriver driver;
 
-    @FindBy(css = ".icon-home")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_HOMEICN)
     WebElement homeIcn;
 
-    @FindBy(css = ".navigation-pipe")
-//    @FindBy(css = ".navigation-pipe:nth-of-type(1)") //to find firs pipe
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_NAVIGATION_PIPE)
     WebElement navigationPips;
 
-    @FindBy(css = "#columns>div.breadcrumb.clearfix>a:nth-child(3)")
-//    @FindBy(xpath = "//*[@id="columns"]/div[1]/a[2]")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_WOMAN_TAB)
+//    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_WOMAN_TAB)
     WebElement womenTab;
 
-    @FindBy(css = "#columns>div.breadcrumb.clearfix>a:nth-child(5)")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_DRESSES_TAB)
 //    @FindBy(xpath = "//*[@id="columns"]/div[1]/a[3]")
     WebElement dressesTab;
 
-    @FindBy(xpath = "//*[@id=\"columns\"]/div[1]/text()[last()]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_EVENING_DRESSES_TAB)
     WebElement eveningDressesTab;
 
     // left sidebar elements
-    @FindBy(css = "#left_column")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_NAVIGATIONMENU_COLUMN)
     WebElement navigationMenuColumn;
 
-    @FindBy(xpath = "//*[text()='Catalog']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_LAYERSFORM_TITLE)
     WebElement layersFormTitle;
 
-    @FindBy(css = "#layered_form")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_LAYERSFORM_MENU_BOX)
     WebElement layersFormMenuBox;
 
-    @FindBy(xpath = "//*[text()='Size']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CATALOGMENU_SUBTITLE)
     WebElement sizeCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[@id=\"uniform-layered_id_attribute_group_1\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SIZE_CHECKBOX)
     WebElement sizeSCheckbox;
 
-    @FindBy(xpath = "//*[text()='S']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SIZE_LABEL)
     WebElement sizeSLabel;
 
-    @FindBy(xpath = "//*[@id=\"uniform-layered_id_attribute_group_2\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SIZE_M_CHECKBOX)
     WebElement sizeMCheckbox;
 
-    @FindBy(xpath = "//*[text()='M']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SIZE_M_LABEL)
     WebElement sizeMLabel;
 
-    @FindBy(xpath = "//*[@id=\"uniform-layered_id_attribute_group_3\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SIZE_L_CHECKBOX)
     WebElement sizeLCheckbox;
 
-    @FindBy(xpath = "//*[text()='L']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SIZE_L_LABEL)
     WebElement sizeLLabel;
 
-    @FindBy(xpath = "//*[text()='Color']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_COLORS_CATALOGMENU_SUBTITLE)
     WebElement colorCatalogMenuSubtitle;
 
-    @FindBy(css = "#ul_layered_id_attribute_group_3")
-
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_COLORS_FORMMENU_BOX)
     WebElement colorsFormMenuBox;
-    @FindBy(css = ".color-option")
-//    @FindBy(xpath = "//*[text()='Color']/../../ul/li/input[@class=\"color-option  \"]")
+
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_COLORS_OPTIONS_CHECKBOXES)
+//    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_COLORS_OPTIONS_CHECKBOXES)
     WebElement colorsOptionsCheckBoxes;
 
-    @FindBy(xpath = "//*[text()='Color']/../../ul/li/label/a/text()")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_COLORS_OPTIONS_LABELS)
     WebElement colorsOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Compositions']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_COMPOSITIONS_CATALOGMENU_SUBTITLE)
     WebElement compositionsCatalogMenuSubtitle;
 
-    @FindBy(css = "#uniform-layered_id_feature_3")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_COMPOSITIONS_OPTIONS_CHECKBOX)
     WebElement compositionsOptionsCheckBox;
 
-    @FindBy(xpath = "//*[@id=\"ul_layered_id_feature_5\"]/li/label/a/text()")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_COMPOSITIONS_OPTIONS_LABELS)
     WebElement compositionsOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Styles']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_STYLES_CATALOGMENU_SUBTITLE)
     WebElement stylesCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[text()='Styles']/../../ul/li/div[@class=\"checker\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_STYLES_OPTIONS_CHECKBOX)
     WebElement stylesOptionsCheckBox;
 
-    @FindBy(xpath = "//*[text()='Styles']/../../ul/li/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_STYLES_OPTIONS_LABELS)
     WebElement stylesOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Properties']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_PROPERTIES_CATALOGMENU_SUBTITLE)
     WebElement propertiesCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[text()='Properties']/../../ul/li/div[@class=\"checker\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_PROPERTIES_OPTIONS_CHECKBOX)
     WebElement propertiesOptionsCheckBox;
 
-    @FindBy(xpath = "//*[text()='Properties']/../../ul/li/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_PROPERTIES_OPTIONS_LABEL)
     WebElement propertiesOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Availability']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_AVAILBCATALOG_MENU_SUBTITLE)
     WebElement availabilityCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[text()='Availability']/../../ul/li/div[@class=\"checker\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_AVAILBOPTIOS_CHECKBOX)
     WebElement availabilityOptionsCheckBox;
 
-    @FindBy(xpath = "//*[text()='Availability']/../../ul/li/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_AVAILBOPTIONS_LABELS)
     WebElement availabilityOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Manufacturer']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MANUFCATALOG_MENU_SUBTITLE)
     WebElement manufacturerCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[text()='Manufacturer']/../../ul/li/div[@class=\"checker\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MANUF_OPTIONS_CHECKBOX)
     WebElement manufacturerOptionsCheckBox;
 
-    @FindBy(xpath = "//*[text()='Manufacturer']/../../ul/li/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MANUFOPTIONS_LABELS)
     WebElement manufacturerOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Condition']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CONDITIONS_CATALOG_MENU_SUBTITLE)
     WebElement conditionCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[text()='Condition']/../../ul/li/div[@class=\"checker\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CONDITIONS_OPTIONS_CHECKBOX)
     WebElement conditionOptionsCheckBox;
 
-    @FindBy(xpath = "//*[text()='Condition']/../../ul/li/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CONDITIONS_OPTIONS_LABELS)
     WebElement conditionOptionsLabels;
 
-    @FindBy(xpath = "//*[text()='Price']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_PRICE_CATALOG_MENU_SUBTITLE)
     WebElement priceCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[text()='Price']/../../ul/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_PRICE_RANGE_LABELS)
     WebElement priceRangeLabels;
 
-    @FindBy(css = "#layered_price_range")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_PRICE_RANGE)
     WebElement priceRange;
 
-    @FindBy(css = ".layered_slider_container")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_PRICE_RANGE_SLIDER)
     WebElement priceRangeSlider;
 
-    @FindBy(xpath = "//*[@class='block informations_block_left']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_INFORMATION_CATALOG_MENU_SUBTITLE)
     WebElement informationCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[@title='Delivery']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_DELIVERY_INFORMATION_MENU_TITLE)
     WebElement deliveryInformationMenuTitle;
 
-    @FindBy(xpath = "//*[@title='Legal Notice']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_LEGALNOTICE_INFORMATION_MENU_TITLE)
     WebElement legalNoticeInformationMenuTitle;
 
-    @FindBy(xpath = "//*[@title='Terms and conditions of use']") //need first of type
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_TERM_CONDITIONS_INFORMATION_MENU_TITLE) //need first of type
     WebElement termsAndConditionsInformationMenuTitle;
 
-    @FindBy(xpath = "//*[@title='About us']") //need first of type
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_ABOUTUS_INFORMATION_MENU_TITLE) //need first of type
     WebElement aboutUsInformationMenuTitle;
 
-    @FindBy(xpath = "//*[@title='Secure payment']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SECURE_PAYMENT_INFORMATION_MENU_TITLE)
     WebElement securePaymentInformationMenuTitle;
 
-    @FindBy(xpath = "//*[@id=\"informations_block_left_1\"]/div/ul/li[6]/a")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_OUR_STORES_INFORMATION_MENU_TITLE)
     WebElement ourStoresInformationMenuTitle;
 
-    @FindBy(xpath = "//*[@title='Specials']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_SPECIALS_CATALOG_MENU_TITLE)
     WebElement specialsCatalogMenuSubtitle;
 
-    @FindBy(xpath = "//*[@id=\"special_block_right\"]//img")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_ITEM_IMG_SPECIALS_CATALOG_MENU)
     WebElement itemImgSpecialsCatalogMenu;
 
-    @FindBy(css = "div.product-content>h5>a.product-name") //need first of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_ITEM_NAME_SPECIALS_CATALOG_MENU) //need first of type
     WebElement itemNameSpecialsCatalogMenu;
 
-    @FindBy(css = "div.product-content>p.product-description") //need first of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_ITEM_DESCR_SPECIALS_CATALOG_MENU) //need first of type
     WebElement itemDescriptionSpecialsCatalogMenu;
 
-    @FindBy(css = "div.product-content>div.price-box")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_ITEM_PRICEBOX_SPECIALS_CATALOG_MENU)
     WebElement itemPriceBoxSpecialsCatalogMenu;
 
-    @FindBy(css = "div.product-content>div.price-box>span.price")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_ITEM_PRICE_SPECIALS_CATALOG_MENU)
     WebElement itemPriceSpecialsCatalogMenu;
 
-    @FindBy(css = "div.product-content>div.price-box>span.old-price")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_ITEM_OLD_PRICE_SPECIALS_CATALOG_MENU)
     WebElement itemOldPriceSpecialsCatalogMenu;
 
-    @FindBy(xpath = "//*[@title='All specials']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_ALL_SPECIALS_CATALOG_MENU)
     WebElement allSpecialsSpecialsCatalogMenuBtn;
 
-    @FindBy(xpath = "//*[@class='title_block']/a[@title='Our stores']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_OUR_STORES_SUBTITLE)
     WebElement catalogMenuOurStoresSubtitle;
 
-    @FindBy(css = "#stores_block_left>div>p>a>img.img-responsive")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_OUR_STORES_IMG)
     WebElement catalogMenuOurStoresImg;
 
-    @FindBy(xpath = "//*[text()='Discover our stores']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_OUR_STORES_LINK)
     WebElement catalogMenuOurStoresLink;
 
-    @FindBy(xpath = "//*[text()='Viewed products']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_VIEWED_PRODS_SUBTITLE)
     WebElement catalogMenuViewedProductsSubtitle;
 
-    @FindBy(css = "a.products-block-image") //need second of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_VIEWED_PRODS_IMG) //need second of type
     WebElement catalogMenuViewedProductsImg;
 
-    @FindBy(xpath = "//*[@class=\"clearfix last_item\"]/div[@class=\"product-content\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_VIEWED_PRODS_CONTENT)
     WebElement catalogMenuViewedProductsContent;
 
-    @FindBy(xpath = "//*[@class=\"clearfix last_item\"]//p[@class=\"product-description\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_CATALOG_MENU_VIEWED_PRODS_NAME)
     WebElement catalogMenuViewedProductsName;
 
-
     //  main page column
-    @FindBy(css = "#center_column.center_column")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN)
     WebElement pageContentColumn;
 
-    @FindBy(css = ".content_scene_cat")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_CATEGORY_IMG)
     WebElement categoryImg;
 
-    @FindBy(css = ".cat-name")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_CATEGORY_NAME)
     WebElement categoryName;
 
-    @FindBy(css = ".heading-counter")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSCOUNTER)
     WebElement productsCounter;
 
-    @FindBy(xpath = "//*[@class=\"select selector1\"]/label")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_FILTER_LABEL)
     WebElement filterLabel;
 
-    @FindBy(css = "#uniform-selectProductSort")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSELECTOR_FLD)
     WebElement productsSelectorFld;
 
-    @FindBy(xpath = "//*[text()='View']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_DISPLAYVIEWED_TITLE)
     WebElement displayViewTitle;
 
-    @FindBy(css = "#grid")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_GRID_ICON)
     WebElement gridIcon;
 
-    @FindBy(xpath = "//*[text() = 'Grid']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_GRID_TITLE)
     WebElement gridTitle;
 
-    @FindBy(css = ".icon-th-list")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_LIST_ICON)
     WebElement listIcon;
 
-    @FindBy(xpath = "//*[text() = 'List']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_LIST_TITLE)
     WebElement listTitle;
 
-    @FindBy(xpath = "//*[@class=\"product-count\"]") //need first of type
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCT_COUNTER) //need first of type
     WebElement productCounterUp;
 
-    @FindBy(css = ".bt_compare") //need first of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_COMPARE_BTN) //need first of type
     WebElement compareBtnUp;
 
-    @FindBy(css = ".total-compare-val") //need first of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_COMPARE_BTNVALUE) //need first of type
     WebElement compareBtnVal;
 
-    @FindBy(css = ".icon-chevron-right") //need 5-th of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_RIGHT_ARROW_VAL) //need 5-th of type
     WebElement rightArrowVal;
 
-    @FindBy(css = "img.replace-2x.img-responsive") //need second of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_PHOTO) //need second of type
     WebElement itemPhoto;
 
-    @FindBy(css = ".icon-eye-open")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PREVIEW_PHOTO)
     WebElement itemPreviewIcon;
 
-    @FindBy(xpath = "//*[@id=\"bigpic\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEMPIC)
     WebElement itemBigPic;
 
-    @FindBy(xpath = "//*[@id=\"views_block\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_VIEWBLOCK)
     WebElement itemViewBlock;
 
-    @FindBy(xpath = "//*[@id=\"thumbs_list\"]")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_VIEWBLOCK_PICLIST)
     WebElement itemViewBlockPicList;
 
-    @FindBy(css = "a.fancybox.shown")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_VIEWBLOCK_PIC1)
     WebElement itemViewBlockPic1;
 
-    @FindBy(css = "a.fancybox.shown")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_VIEWBLOCK_PIC2)
     WebElement itemViewBlockPic2;
 
-    @FindBy(css = "a.fancybox-item.fancybox-close")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_VIEWBLOCK_CLOSE_BTN)
     WebElement itemViewBlockCloseBtn;
 
-    @FindBy(css = ".right-block>h5>a.product-name")
-//    @FindBy(xpath = "//*[@class = \"right-block\"]//a[@class=\"product-name\"]")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCTNAME_TITLE)
+//    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCTNAME_TITLE)
     WebElement productNameTitle;
 
-    @FindBy(css = ".price.product-price") // need last of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ITEM_PRICE) // need last of type
     WebElement itemPrice;
 
-    @FindBy(xpath = "//*[text() = 'Add to cart']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ADDTOCART)
     WebElement addToCartBtn;
 
-    @FindBy(xpath = "//*[text() = 'More']")
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_MORE_BTN)
     WebElement moreBtn;
 
-    @FindBy(css = ".color-list-container")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_COLORLIST_CONTAINER)
     WebElement colorListContainer;
 
-    @FindBy(css = ".color_pick") //need choose one from list
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_COLORITEM_VARIABLE)
     WebElement colorItemVariable;
 
-    @FindBy(css = ".available-now")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_COLORITEM1_VARIABLE)
+    WebElement colorItem1Variable;
+
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_INSTOCK_BTN)
     WebElement inStockBtn;
 
-    @FindBy(css = ".addToWishlist")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ADDTOWISGLIST_LINK)
     WebElement addToWishListLink;
 
-    @FindBy(css = ".compare")
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_ADDTOCOMPARE_LINK)
     WebElement addToCompareLink;
 
-    @FindBy(xpath = "//*[@class=\"product-count\"]") //need last of type
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCT_COUNTER_BOTTOM) //need last of type
     WebElement productCounterBottom;
 
-    @FindBy(css = ".bt_compare") //need last of type
+    @FindBy(css = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_COMPARE_BTN_BOTTOM) //need last of type
     WebElement compareBtnBottom;
 
-    //*[@class = "cart-info"]/div[@class="product-name"]
     public CatalogPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        driver.get("http://automationpractice.com/index.php?id_category=10&controller=category");
+        driver.get("http://automationpractice.com/index.php?id_category=5&controller=category");
         PageFactory.initElements(driver, this);
     }
+    public CatalogPage() {
+    }
+
 }

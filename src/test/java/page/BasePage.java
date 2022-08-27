@@ -1,151 +1,156 @@
 package page;
+import helpers.wait.WaitHelper;
+import objectRepository.BasePage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-    WebDriver driver;
+    private WebDriver driver;
+    public WaitHelper wait;
+
     //page header elements
-    @FindBy(css = "#header")
+    @FindBy(css = BasePage_OR.BASEPAGE_HEADER)
     WebElement pageHeader;
 
-    @FindBy(css = ".row>a>img")
+    @FindBy(css = BasePage_OR.BASEPAGE_HEADER_ADV)
     WebElement headerAdv;
 
-    @FindBy(xpath = "//*[@class=\"shop-phone\"]")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_SHOP_PHONE)
     WebElement shopPhone;
 
-    @FindBy(css = "span>.icon-phone")
+    @FindBy(css = BasePage_OR.BASEPAGE_HEADER_PHONE_ICN)
     WebElement headerPhoneIcn;
 
-    @FindBy(id = "contact-link")
+    @FindBy(id = BasePage_OR.BASEPAGE_CONTACT_AS_BTN)
     WebElement contactAsBtn;
 
-    @FindBy(css = ".login")
+    @FindBy(css = BasePage_OR.BASEPAGE_SIGN_IN_BTN)
     WebElement signInBtn;
 
-    @FindBy(xpath = "//div[@id='header_logo']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_LOGO)
     WebElement headerLogo;
 
-    @FindBy(xpath = "//*[@placeholder=\"Search\"]")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_SEARCH_FLD)
     WebElement searchFld;
 
-    @FindBy(xpath = "a[title='View my shopping cart']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_SHOPPING_CART_ICN)
     WebElement shoppingCartIcn;
 
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul//a[text() = 'Women']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_WOMAN_DISPLAY_BLOCK)
     WebElement womanDisplayBlock;
 
-    @FindBy(css = ".submenu-container.clearfix.first-in-line-xs']")
+    @FindBy(css = BasePage_OR.BASEPAGE_HEADER_DISPLAY_BLOCK_CONTAINER)
     WebElement womanDisplayBlockContainer;
 
-    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Tops']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_BLOCK_TOPS_TITLE)
     WebElement womanDisplayBlockTopsTitle;
 
-    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='T-shirts']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_TSHIRTS_SUBTITLE)
     WebElement womanDisplayBlockTshirtsSubtitle;
 
-    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Blouses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_BLOUSES_SUBTITLE)
     WebElement womanDisplayBlockBlousesSubtitle;
 
-    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_DRESSES_TITLE)
     WebElement womanDisplayBlockDressesTitle;
 
-    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Casual Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_CASUAL_DRESSES_SUBTITLE)
 //    @FindBy(xpath = "//*[@title='Casual Dresses'][text()='Casual Dresses']")
     WebElement womanDisplayBlockCasualDressesSubTitle;
 
-    @FindBy(xpath = "//*[@class=\"sfHoverForce\"]//*[text()='Evening Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_EVENING_DRESSES_SUBTITLE)
 //    @FindBy(xpath = "//*[@title='Evening Dresses'][text()='Evening Dresses']")
     WebElement womanDisplayBlockEveningDressesSubTitle;
 
-    @FindBy(xpath = "//*[@class='sfHoverForce']//*[text()='Summer Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_SUMMER_DRESSES_SUBTITLE)
 //    @FindBy(xpath = "//*[@title='Summer Dresses'][text()='Summer Dresses']")
     WebElement womanDisplayBlockSummerDressesSubTitle;
 
-    @FindBy(xpath = "//*[@class=\"sfHoverForce\"]//*[@id='category-thumbnail']/div[img]")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_ADV_IMG)
     WebElement womanDisplayBlockAdvImg;
 
-
-    @FindBy(xpath = "//*[@class='sf-with-ul'][text()='Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_DRESSES_DISPLAY_BLOCK_TAB)
 //    @FindBy(xpath = "//*[@id='block_top_menu']//a[text()='Dresses']")
 //    @FindBy(css = "a.sf-with-ul:nth-of-type(2)")
     WebElement dressesDisplayBlockTab;
 
-    @FindBy(xpath = "//*[@title='Casual Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_DISPLAY_BLOCK_CASUAL_DRESSES_SUBTITLE)
     WebElement dressesDisplayBlockCasualDressesSubTitle;
 
-    @FindBy(xpath = "//*[@title='Casual Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_DISPLAY_BLOCK_EVENING_DRESSES_SUBTITLE)
     WebElement dressesDisplayBlockEveningDressesSubTitle;
 
-    @FindBy(xpath = "//*[@title='Summer Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_DISPLAY_BLOCK_SUMMER_DRESSES_SUBTITLE)
     WebElement dressesDisplayBlockSummerDressesSubTitle;
 
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li/a[text() = 'Dresses']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_DRESSES_DISPLAY_BLOCK)
     WebElement dressesDisplayBlock;
 
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li/a[text() = 'T-shirts']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_HEADER_TSHIRTS_DISPLAY_BLOCK)
     WebElement tShirtsDisplayBlock;
 
     //page footer elements
-    @FindBy(css = ".footer-container")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER)
     WebElement pageFooter;
 
-    @FindBy(xpath = "//*[text() = 'Newsletter']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_NEWS_LETTER_BLOCK)
     WebElement NewsletterBlock;
 
-    @FindBy(css = "#newsletter-input")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_NEWS_LETTER_INPUT_FLD)
     WebElement NewsletterInputFld;
 
-    @FindBy(xpath = "//*[@value='Enter your e-mail']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_EMAIL_FLD)
     WebElement enterYourEmailFldValue;
 
-    @FindBy(css = "#newsletter_block_left>div>form>div>button")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_NEWS_LETTER_BTN)
     WebElement submitNewsletterBtn;
 
-    @FindBy(css = "#social_block")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_SOCIAL_BLOCK)
     WebElement footerSocialBlock;
 
-    @FindBy(xpath = "//*[text() = 'Follow us']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_FOLLOW_US_BLOCK)
     WebElement footerFollowUsBlock;
 
-    @FindBy(css = "li.facebook")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_FACEBOOK_ICN)
     WebElement facebookIcn;
 
-    @FindBy(css = "li.twitter")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_TWITTER_ICN)
     WebElement twitterIcn;
 
-    @FindBy(css = "li.youtube")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_YOUTUBE_ICN)
     WebElement youtubeIcn;
 
-    @FindBy(css = "li.google-plus")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_GOOGLE_PLUS_ICN)
     WebElement googlePlusIcn;
 
-    @FindBy(xpath = "//h4[text()='Categories']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_FOOTER_CATEGORIES_SECT)
     WebElement CategoriesSection;
 
-    @FindBy(xpath = "//h4[text()='Information']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_FOOTER_INFORMATIONS_SECT)
     WebElement informationSection;
 
-    @FindBy(xpath = "//h4/a[text()='My account']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_FOOTER_ACCOUNT_SECT)
     WebElement myAccountSection;
 
-    @FindBy(xpath = "//h4[text()='Store information']")
+    @FindBy(xpath = BasePage_OR.BASEPAGE_FOOTER_FOOTER_INFORMATION_SECT)
     WebElement storeInformationSection;
 
-    @FindBy(css = ".icon-map-marker")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_FOOTER_MAP_MARCER_ICN)
     WebElement mapMarkerIcn;
 
-    @FindBy(css = "li>.icon-phone")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_FOOTER_PHONE_ICN)
     WebElement footerPhoneIcn;
 
-    @FindBy(css = ".icon-envelope-alt")
+    @FindBy(css = BasePage_OR.BASEPAGE_FOOTER_ENVELOPE_ICN)
     WebElement envelopeIcn;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         driver.get("https://automationpractice.com/index.php");
         PageFactory.initElements(driver, this);
+    }
+    public BasePage() {
     }
 }

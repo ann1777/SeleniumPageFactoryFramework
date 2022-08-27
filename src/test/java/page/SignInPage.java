@@ -54,4 +54,10 @@ public class SignInPage extends BasePage{
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
         PageFactory.initElements(driver, this);
     }
+    public void createUserAccount(){
+        createAccountEmailField.sendKeys("testuser987@gmail.com");
+        createAccountSubmitBtn.click();
+
+
+    }
 }
