@@ -23,7 +23,7 @@ public class WebTableHelper extends HelperBase {
     }
 
     public String findRecord(RegistrationFormData registerFormData) {
-        type(By.xpath("//input[@id='searchBox']"), registerFormData.getFirstName());
+        type(By.xpath("//input[@id='searchBox']"), registerFormData.getUserFirstName());
         return driver.findElement(By.xpath("//div[@class='rt-tbody']//div[@class='rt-tr-group'][1]//div[@role='gridcell'][1]")).getText().trim();
     }
 
@@ -47,12 +47,12 @@ public class WebTableHelper extends HelperBase {
     }
 
     public void fillRegistrationForm(RegistrationFormData registerFormData) {
-        type(By.xpath("//input[@id='firstName']"), registerFormData.getFirstName());
-        type(By.xpath("//input[@id='lastName']"), registerFormData.getLastName());
-        type(By.xpath("//input[@id='userEmail']"), registerFormData.getEmail());
-        type(By.xpath("//input[@id='age']"), registerFormData.getAge());
-        type(By.xpath("//input[@id='salary']"), registerFormData.getSalary());
-        type(By.xpath("//input[@id='department']"), registerFormData.getDepartment());
+        type(By.xpath("//input[@id='firstName']"), registerFormData.getUserFirstName());
+        type(By.xpath("//input[@id='lastName']"), registerFormData.getUserLastName());
+        type(By.xpath("//input[@id='userEmail']"), registerFormData.getUserEmailAddress());
+        type(By.xpath("//input[@id='age']"), registerFormData.getUserAge());
+        type(By.xpath("//input[@id='salary']"), registerFormData.getUserSalary());
+        type(By.xpath("//input[@id='department']"), registerFormData.getUserDepartment());
     }
 
     public void addNewRecord() {

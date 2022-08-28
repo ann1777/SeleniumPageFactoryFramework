@@ -17,7 +17,6 @@ public class SignInPage extends BasePage{
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNT_EMAILFLD)
     WebElement createAccountEmailField;
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNT_SUBMITBTN)
-//    @FindBy(xpath = "//button[@id='SubmitCreate']/span")
     WebElement createAccountSubmitBtn;
 
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_ALREADYREGISTEREDFORM_HEADER)
@@ -30,12 +29,9 @@ public class SignInPage extends BasePage{
     WebElement passwordField;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_FORGOTPASSWORD_LINK)
-//    @FindBy(xpath = "//a[title='Recover your forgotten password']")
     WebElement forgotPasswordLink;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_SIGNIN_BTN)
-//    @FindBy(xpath = "//*[text() = 'Sign in']")
-//    @FindBy(xpath = "//button[@id='SubmitLogin']")
     WebElement SignInBtn;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_HOMEICN)
@@ -53,10 +49,8 @@ public class SignInPage extends BasePage{
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
         PageFactory.initElements(driver, this);
     }
-    public void createUserAccount(){
-        createAccountEmailField.sendKeys("testuser987@gmail.com");
-        createAccountSubmitBtn.click();
-
-
-    }
+//        public void createUserAccount(){
+//            createAccountEmailField.sendKeys(new RegistrationFormData(RegistrationFormData.getUserFirstName(), RegistrationFormData.getUserLastName(), RegistrationFormData.getUserEmailAddress(), RegistrationFormData.getUserPassword(), ));
+//            createAccountSubmitBtn.click();
+//        }
 }
