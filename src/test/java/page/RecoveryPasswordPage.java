@@ -1,5 +1,6 @@
 package page;
 
+import objectRepository.RecoveryPasswordPage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,34 +9,34 @@ import org.openqa.selenium.support.PageFactory;
 public class RecoveryPasswordPage extends BasePage{
     WebDriver driver;
 
-    @FindBy(css = ".icon-home")
+    @FindBy(css = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_HOME_ICN)
     WebElement homeIcn;
 
-    @FindBy(css = ".navigation-pipe")
+    @FindBy(css = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_NAVIGATION_PIPS)
     WebElement navigationPips;
 
-    @FindBy(xpath = "//*[text() = 'Authentication']")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_AUTHENTICATION_TAB)
     WebElement authenticationTab;
 
-    @FindBy(xpath = "//*[@id=\"columns\"]/div[1]/text()[last()]")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_FORGOTYOURPASSWORD_TAB)
     WebElement forgotYourPasswordTab;
 
-    @FindBy(xpath = "//*[text() = 'Forgot your password?']")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_HEADER)
     WebElement recoveryPageHeader;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div/p")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWORD_TEXT)
     WebElement recoveryPasswordText;
 
-    @FindBy(xpath = "//*[text() = 'Email address']")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_EMAILADDRESS_LABEL)
     WebElement emailAddressLabel;
 
-    @FindBy(xpath = "//*[@id=\"email\"]")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_EMAILADDRESS_FLD)
     WebElement emailAddressFld;
 
-    @FindBy(xpath = "//*[@class = \"submit\"]")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_EMAILADDRESS_SUBMIT_BTN)
     WebElement submitBtn;
 
-    @FindBy(xpath = "//*[text() = 'Back to Login']")
+    @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_BACKTOLOGIN_BTN)
     WebElement backToLoginBtn;
 
     public RecoveryPasswordPage(WebDriver driver) {

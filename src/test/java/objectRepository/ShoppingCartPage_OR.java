@@ -1,0 +1,55 @@
+package objectRepository;
+
+public class ShoppingCartPage_OR {
+    public static final String SHOPPINGCARTPAGE_HOME_ICN = ".icon-home";
+    public static final String SHOPPINGCARTPAGE_NAVIGATION_PIPE = ".navigation-pipe";
+    public static final String SHOPPINGCARTPAGE_YOURSHOPPINGCART_TAB = ".navigation_page";
+//    public static final String SHOPPINGCARTPAGE_YOURSHOPPINGCART_TAB = "//*[text() = 'Your shopping cart']";
+//    public static final String SHOPPINGCARTPAGE_SHOPPINGCART_TITLE = ".page-heading";
+    public static final String SHOPPINGCARTPAGE_SHOPPINGCART_TITLE = ".page-heading";
+//    public static final String SHOPPINGCARTPAGE_SHOPPINGCART_TITLE = "//*[@id='cart_title'][contains(text(), 'Shopping-cart summary')]";
+    public static final String SHOPPINGCARTPAGE_CARTHEADING_COUNTER = "//*[@class='heading-counter']";
+    public static final String SHOPPINGCARTPAGE_ADDPRODUCTS_COUNTER = "//*[@id='summary_products_quantity']";
+    public static final String SHOPPINGCARTPAGE_ORDERSTEPS_LINE = "#order_step";
+    public static final String SHOPPINGCARTPAGE_SUMMARY_STEP = ".step_current.first";
+//    public static final String SHOPPINGCARTPAGE_SUMMARY_STEP = "//*[@id='order_step']/li[1]/span[contains(text(), 'Summary')]";
+    public static final String SHOPPINGCARTPAGE_SIGNIN_STEP = ".step_todo.second";
+//    public static final String SHOPPINGCARTPAGE_SIGNIN_STEP = "//*[@id='order_step']/li[2]/span[contains(text(), 'Sign in')]";
+    public static final String SHOPPINGCARTPAGE_ADDRESS_STEP = ".step_todo.third";
+//    public static final String SHOPPINGCARTPAGE_ADDRESS_STEP = "//*[@id='order_step']/li[3]/span[contains(text(), 'Address')]";
+    public static final String SHOPPINGCARTPAGE_SHIPPING_STEP = ".step_todo.four";
+//    public static final String SHOPPINGCARTPAGE_SHIPPING_STEP = "//*[@id='order_step']/li[4]/span[contains(text(), 'Shipping')]";
+    public static final String SHOPPINGCARTPAGE_PAYMENT_STEP = "#step_end";
+//    public static final String SHOPPINGCARTPAGE_PAYMENT_STEP = "//*[@id='order_step']/li[5]/span[contains(text(), 'Payment')]";
+    public static final String SHOPPINGCARTPAGE_EMPTYCART_WARNING = ".alert.alert-warning";
+    public static final String SHOPPINGCARTPAGE_ITEMS_TABLEBORDER = "slider_row";
+//    public static final String SHOPPINGCARTPAGE_ITEMS_TABLEBORDER = "//*[@id='cart_summary']";
+    public static final String SHOPPINGCARTPAGE_PRODUCTTAB_ITEMS_TABLEBORDER = ".cart_product.first_item";
+    public static final String SHOPPINGCARTPAGE_DESCRIPTIONTAB_ITEMS_TABLEBORDER = ".cart_description.item";
+    public static final String SHOPPINGCARTPAGE_AVAILTAB_ITEMS_TABLEBORDER = ".cart_avail.item";
+    public static final String SHOPPINGCARTPAGE_UNITPRICETAB_ITEMS_TABLEBORDER = ".cart_unit.item";
+    public static final String SHOPPINGCARTPAGE_QUANTITYTAB_ITEMS_TABLEBORDER = ".cart_quantity.item";
+    public static final String SHOPPINGCARTPAGE_TOTALTAB_ITEMS_TABLEBORDER = ".cart_total.item";
+    public static final String SHOPPINGCARTPAGE_CARTITEM_IMG = "td.cart_product>a>img";
+    public static final String SHOPPINGCARTPAGE_CARTITEM_DESCRIPTION = "td.cart_description";
+    public static final String SHOPPINGCARTPAGE_CARTITEM_AVAILLABEL = ".label.label-success";
+    public static final String SHOPPINGCARTPAGE_CARTITEM_UNITPRICE = "td.cart_unit";
+    public static final String SHOPPINGCARTPAGE_CARTITEM_QUANTITY_MANAGER = ".cart_quantity.text-center";
+    public static final String SHOPPINGCARTPAGE_CARTITEMS_QUANTITY_INPUT = ".cart_quantity_input.form-control";
+    public static final String SHOPPINGCARTPAGE_CARTITEMS_QUANTITY_BTNS = ".cart_quantity_button.clearfix";
+    public static final String SHOPPINGCARTPAGE_CARTITEMS_QUANTITY_TOTAL = "td.cart_total";
+    public static final String SHOPPINGCARTPAGE_CARTITEMS_DELETE_BTN = ".cart_delete.text-center";
+    public static final String SHOPPINGCARTPAGE_CARTTOTALPRODUCTS_FLD = "//td[contains(text(), 'Total products')]";
+    public static final String SHOPPINGCARTPAGE_CARTTOTALPRODUCTS_PRICE_FLD = "#total_product";
+    public static final String SHOPPINGCARTPAGE_CARTTOTALSHIPPING_FLD = "//td[contains(text(), 'Total shipping')]";
+    public static final String SHOPPINGCARTPAGE_CARTTOTALSHIPPINGPRICE_FLD = "#total_shipping";
+    public static final String SHOPPINGCARTPAGE_CARTTOTAL_FLD = "//*//td[(text()= 'Total')]";
+    public static final String SHOPPINGCARTPAGE_CARTTOTAL_WITHOUTTAX_FLD = "#total_price_without_tax";
+    public static final String SHOPPINGCARTPAGE_CARTTAX_FLD = "//*[@class='cart_total_tax']/td[contains(text(), 'Tax')]";
+    public static final String SHOPPINGCARTPAGE_CARTTAX_PRICE_FLD = "#total_tax";
+    public static final String SHOPPINGCARTPAGE_CARTGENERALTOTAL_FLD = "//*/td/span[(text()= 'Total')]";
+    public static final String SHOPPINGCARTPAGE_CARTGENERAL_TOTALPRICE_FLD = "//*[@id='total_price_container']";
+    public static final String SHOPPINGCARTPAGE_CHECKOUT_BTN = "//a[text()='Proceed to checkout']";
+    public static final String SHOPPINGCARTPAGE_CONTINUESHOPPING_BTN = "//a[@title='Continue shopping']";
+
+}

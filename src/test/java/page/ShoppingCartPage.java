@@ -1,5 +1,6 @@
 package page;
 
+import objectRepository.ShoppingCartPage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,134 +10,134 @@ public class ShoppingCartPage extends  BasePage{
 
     WebDriver driver;
 
-    @FindBy(css = ".icon-home")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_HOME_ICN)
     WebElement homeIcn;
 
-    @FindBy(css = ".navigation-pipe")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_NAVIGATION_PIPE)
     WebElement navigationPipe;
 
-    @FindBy(css = ".navigation_page")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_YOURSHOPPINGCART_TAB)
 //    @FindBy(xpath = "//*[text() = 'Your shopping cart']")
     WebElement YourShoppingCartTab;
 
-    @FindBy(css = ".page-heading")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_SHOPPINGCART_TITLE)
     //*[@id="cart_title"][contains(text(), 'Shopping-cart summary')]
     WebElement shoppingCartTitle;
 
-    @FindBy(xpath = "//*[@class='heading-counter']")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTHEADING_COUNTER)
     WebElement cartHeadingCounter;
 
-    @FindBy(xpath = "//*[@id='summary_products_quantity']")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_ADDPRODUCTS_COUNTER)
     WebElement addedProductsCounter;
 
-    @FindBy(css = "#order_step")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_ORDERSTEPS_LINE)
     WebElement orderStepsLine;
 
-    @FindBy(css = ".step_current.first")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_SUMMARY_STEP)
 //    @FindBy(xpath = "//*[@id=\"order_step\"]/li[1]/span[contains(text(), 'Summary')]")
     WebElement summaryStep;
 
-    @FindBy(css = ".step_todo.second")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_SIGNIN_STEP)
 //    @FindBy(xpath = "//*[@id=\"order_step\"]/li[2]/span[contains(text(), 'Sign in')]")
     WebElement signInStep;
 
-    @FindBy(css = ".step_todo.third")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_ADDRESS_STEP)
 //    @FindBy(xpath = "//*[@id=\"order_step\"]/li[3]/span[contains(text(), 'Address')]")
     WebElement addressStep;
 
-    @FindBy(css = ".step_todo.four")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_SHIPPING_STEP)
 //    @FindBy(xpath = "//*[@id=\"order_step\"]/li[4]/span[contains(text(), 'Shipping')]")
     WebElement shippingStep;
 
-    @FindBy(css = "#step_end")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_PAYMENT_STEP)
 //    @FindBy(xpath = "//*[@id=\"order_step\"]/li[5]/span[contains(text(), 'Payment')]")
     WebElement paymentStep;
 
-    @FindBy(css = ".alert.alert-warning")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_EMPTYCART_WARNING)
     WebElement emptyCartWarning;
 
-    @FindBy(xpath = "//*[@id='cart_summary']")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_ITEMS_TABLEBORDER)
     WebElement itemsTableBorder;
 
-    @FindBy(css = ".cart_product.first_item")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_PRODUCTTAB_ITEMS_TABLEBORDER)
     WebElement productTabItemsTableBorder;
 
-    @FindBy(css = ".cart_description.item")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_DESCRIPTIONTAB_ITEMS_TABLEBORDER)
     WebElement descriptionTabItemsTableBorder;
 
-    @FindBy(css = ".cart_avail.item")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_AVAILTAB_ITEMS_TABLEBORDER)
     WebElement availTabItemsTableBorder;
 
-    @FindBy(css = ".cart_unit.item")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_UNITPRICETAB_ITEMS_TABLEBORDER)
     WebElement unitPriceTabItemsTableBorder;
 
-    @FindBy(css = ".cart_quantity.item")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_QUANTITYTAB_ITEMS_TABLEBORDER)
     WebElement quantityTabItemsTableBorder;
 
-    @FindBy(css = ".cart_total.item")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_TOTALTAB_ITEMS_TABLEBORDER)
     WebElement totalTabItemsTableBorder;
 
-    @FindBy(css = "td.cart_product>a>img")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEM_IMG)
     WebElement cartItemImg;
 
-    @FindBy(css = "td.cart_description")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEM_DESCRIPTION)
     WebElement cartItemDescription;
 
-    @FindBy(css = ".label.label-success")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEM_AVAILLABEL)
     WebElement cartItemAvailLabel;
 
-    @FindBy(css = "td.cart_unit")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEM_UNITPRICE)
     WebElement cartItemUnitPrice;
 
-    @FindBy(css = ".cart_quantity.text-center")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEM_QUANTITY_MANAGER)
     WebElement cartItemsQuantityManager;
 
-    @FindBy(css = ".cart_quantity_input.form-control")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEMS_QUANTITY_INPUT)
     WebElement cartItemsQuantityInput;
 
-    @FindBy(css = ".cart_quantity_button.clearfix")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEMS_QUANTITY_BTNS)
     WebElement cartItemsQuantityBtns;
 
-    @FindBy(css = "td.cart_total")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEMS_QUANTITY_TOTAL)
     WebElement cartItemsQuantityTotal;
 
-    @FindBy(css = ".cart_delete.text-center")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTITEMS_DELETE_BTN)
     WebElement cartItemsDeleteBtn;
 
-    @FindBy(xpath = "//td[contains(text(), 'Total products')]")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTOTALPRODUCTS_FLD)
     WebElement cartTotalProductsFld;
 
-    @FindBy(css = "#total_product")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTOTALPRODUCTS_PRICE_FLD)
     WebElement cartTotalProductsPriceFld;
 
-    @FindBy(xpath = "//td[contains(text(), 'Total shipping')]")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTOTALSHIPPING_FLD)
     WebElement cartTotalShippingFld;
 
-    @FindBy(css = "#total_shipping")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTOTALSHIPPINGPRICE_FLD)
     WebElement cartTotalShippingPriceFld;
 
-    @FindBy(xpath = "//*//td[(text()= 'Total')]")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTOTAL_FLD)
     WebElement cartTotalFld;
 
-    @FindBy(css = "#total_price_without_tax")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTOTAL_WITHOUTTAX_FLD)
     WebElement cartTotalWithoutTaxFld;
 
-    @FindBy(xpath = "//*[@class='cart_total_tax']/td[contains(text(), 'Tax')]")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTAX_FLD)
     WebElement cartTaxFld;
 
-    @FindBy(css = "#total_tax")
+    @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTTAX_PRICE_FLD)
     WebElement cartTaxPriceFld;
 
-    @FindBy(xpath = "//*/td/span[(text()= 'Total')]")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTGENERALTOTAL_FLD)
     WebElement cartGeneralTotalFld;
 
-    @FindBy(xpath = "//*[@id='total_price_container']")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTGENERAL_TOTALPRICE_FLD)
     WebElement cartGeneralTotalPriceFld;
 
-    @FindBy(xpath = "//a[text()='Proceed to checkout']")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CHECKOUT_BTN)
     WebElement checkoutBtn;
 
-    @FindBy(xpath = "//a[@title='Continue shopping']")
+    @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CONTINUESHOPPING_BTN)
     WebElement continueShoppingBtn;
 
     public ShoppingCartPage(WebDriver driver) {

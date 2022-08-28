@@ -1,5 +1,6 @@
 package page;
 
+import objectRepository.HomePage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,65 +9,61 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends BasePage{
     public WebDriver driver;
 
-    @FindBy(id = "slider_row")
+    @FindBy(id = HomePage_OR.HOMEPAGE_SLIDER_ROW )
     WebElement homepageSliderRow;
 
-    @FindBy(css = "#homepage-slider")
+    @FindBy(css = HomePage_OR.HOMEPAGE_SLIDER)
     WebElement homepageSlider;
 
-    @FindBy(css = "a.bx-prev")
+    @FindBy(css = HomePage_OR.HOMEPAGE_SLIDER_LEFT_ARROW)
     WebElement homepageSliderLeftArrow;
 
-    @FindBy(css = ".a.bx-next")
+    @FindBy(css = HomePage_OR.HOMEPAGE_SLIDER_RIGHT_ARROW)
     WebElement homepageSliderRightArrow;
 
-    @FindBy(css = "#htmlcontent_top")
+    @FindBy(css = HomePage_OR.HOMEPAGE_HTML_CONTENT)
     WebElement homepageHTMLContent;
 
-    @FindBy(css = "#home-page-tabs>li>a.homefeatured")
-//    @FindBy(xpath = "//*[text() = 'Popular']")
-//    @FindBy(xpath = "//*[@id=\"home-page-tabs\"]//a[@class='homefeatured']")
+    @FindBy(css = HomePage_OR.HOMEPAGE_POPULAR_BTN)
     WebElement homepagePopularBtn;
 
-    @FindBy(css = "#home-page-tabs>li>a.blockbestsellers")
-//    @FindBy(xpath = "//*[text() = 'Best Sellers']")
-//    @FindBy(xpath = "//*[@id="home-page-tabs"]//a[@class='blockbestsellers']']")
+    @FindBy(css = HomePage_OR.HOMEPAGE_BESTSELLERS_BTN)
     WebElement homepageBestsellersBtn;
 
-    @FindBy(xpath = "//*[@id = 'homefeatured']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_PRODUCTS_CONTAINER)
     WebElement productsContainer;
 
-    @FindBy(xpath = "//*[@class = 'product-container']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_PRODUCT1_CONTAINER)
     WebElement product1Container;
 
-    @FindBy(xpath = "//*[@class = 'product-container']/div[@class='left-block']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_ITEM_PHOTO)
     WebElement itemPhoto;
 
-    @FindBy(css = ".icon-eye-open") //need first of type
+    @FindBy(css = HomePage_OR.HOMEPAGE_ITEM_PREVIEW_ICON)
     WebElement itemPreviewIcon;
 
-    @FindBy(xpath = "//*[@class = 'product-container']//a[@class='product-name']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_ITEM_NAME)
     WebElement itemName;
 
-    @FindBy(xpath = "//*[@class=\"content_price\"]/span[@class='price.product-price']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_ITEM_PRICE)
     WebElement itemPrice;
 
-    @FindBy(xpath = "//*[@title='Add to cart']") //need first of type
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_ADDTOCART_BTN)
     WebElement addToCartBtn;
 
-    @FindBy(xpath = "//*[text()='More']") //need first of type
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_MORE_BTN)
     WebElement moreBtn;
 
-    @FindBy(css = "#facebook_block")
+    @FindBy(css = HomePage_OR.HOMEPAGE_FOLLOWUS_ONFACCEBOOK_BLOCK)
     WebElement followUsOnFacebookBlock;
 
-    @FindBy(css = "#cmsinfo_block")
+    @FindBy(css = HomePage_OR.HOMEPAGE_INFO_BLOCK)
     WebElement infoBlock;
 
-    @FindBy(xpath = "//*[text()='Custom Block']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_CUSTOM_BLOCK)
     WebElement customBlock;
 
-    @FindBy(xpath = "//*[@title='Automation Practice Website']")
+    @FindBy(xpath = HomePage_OR.HOMEPAGE_SITE_TITLE)
     WebElement siteTitle;
 
     public HomePage(WebDriver driver) {

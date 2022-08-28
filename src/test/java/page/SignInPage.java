@@ -1,5 +1,6 @@
 package page;
 
+import objectRepository.SignInPage_OR;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,44 +9,42 @@ import org.openqa.selenium.support.PageFactory;
 public class SignInPage extends BasePage{
     WebDriver driver;
 
-    @FindBy(xpath = "//*[@id='center_column']/h1")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_AUTHENTICATION_PAGEHEADER)
     WebElement authenticationPageHeader;
 
-    @FindBy(xpath = "//*[@id='create-account_form']/h3")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNTFORM_HEADER)
     WebElement createAnAccountFormHeader;
-
-    @FindBy(xpath = "//*[@id='email_create']")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNT_EMAILFLD)
     WebElement createAccountEmailField;
-
-    @FindBy(xpath = "//*[text() = 'Create an account']")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNT_SUBMITBTN)
 //    @FindBy(xpath = "//button[@id='SubmitCreate']/span")
     WebElement createAccountSubmitBtn;
 
-    @FindBy(xpath = "//*[@id='login_form']/h3")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_ALREADYREGISTEREDFORM_HEADER)
     WebElement alreadyRegisteredFormHeader;
 
-    @FindBy(xpath = "//*[@id='email']")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_EMAILADDRESS_FLD)
     WebElement emailAddressField;
 
-    @FindBy(xpath = "//*[@id='passwd']")
+    @FindBy(xpath = SignInPage_OR.SIGNINPAGE_PASSWORD_FLD)
     WebElement passwordField;
 
-    @FindBy(css = "a[title='Recover your forgotten password']")
+    @FindBy(css = SignInPage_OR.SIGNINPAGE_FORGOTPASSWORD_LINK)
 //    @FindBy(xpath = "//a[title='Recover your forgotten password']")
     WebElement forgotPasswordLink;
 
-    @FindBy(css = "button#SubmitLogin")
+    @FindBy(css = SignInPage_OR.SIGNINPAGE_SIGNIN_BTN)
 //    @FindBy(xpath = "//*[text() = 'Sign in']")
 //    @FindBy(xpath = "//button[@id='SubmitLogin']")
     WebElement SignInBtn;
 
-    @FindBy(css = ".icon-home")
+    @FindBy(css = SignInPage_OR.SIGNINPAGE_HOMEICN)
     WebElement homeIcn;
 
-    @FindBy(css = ".navigation-pipe")
+    @FindBy(css = SignInPage_OR.SIGNINPAGE_NAVIGATION_PIPE)
     WebElement navigationPipe;
 
-    @FindBy(css = ".navigation_page")
+    @FindBy(css = SignInPage_OR.SIGNINPAGE_NAVIGATION_TAB)
     WebElement navigationTab;
 
     public SignInPage(WebDriver driver) {
