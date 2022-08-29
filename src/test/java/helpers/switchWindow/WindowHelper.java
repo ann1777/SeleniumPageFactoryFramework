@@ -1,8 +1,8 @@
 package helpers.switchWindow;
 
-import helper.logger.LoggerHelper;
-import org.apache.log4j.Logger;
+import helpers.logger.LoggerHelper;
 import org.openqa.selenium.WebDriver;
+import org.testng.log4testng.Logger;
 
 import java.util.Set;
 

@@ -1,8 +1,7 @@
 package helpers.browserConfig;
 
-import helper.browserConfiguration.BrowserType;
-import helper.resource.ResourceHelper;
 import helpers.browserConfiguration.BrowserType;
+import helpers.resource.ResourceHelper;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,7 +16,7 @@ public class PropertyReader implements ConfigReader {
 	public PropertyReader() throws IOException {
 
 		file = new FileInputStream(
-				new File(ResourceHelper.getResourcePath("\\src\\main\\resources\\configFile\\config.properties")));
+				new File(ResourceHelper.getResourcePath("src/test/resources/configfiles/config.properties")));
 		OR = new Properties();
 		OR.load(file);
 

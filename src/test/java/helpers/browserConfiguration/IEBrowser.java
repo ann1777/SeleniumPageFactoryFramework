@@ -1,6 +1,6 @@
 package helpers.browserConfiguration;
 
-import helper.resource.ResourceHelper;
+import helpers.resource.ResourceHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.ElementScrollBehavior;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -22,7 +22,7 @@ public class IEBrowser {
 
 	public WebDriver getExplorerDriver(InternetExplorerOptions cap) {
 		System.setProperty("webdriver.ie.driver",
-				ResourceHelper.getResourcePath("\\src\\main\\resources\\drivers\\geckodriver"));
+				ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver"));
 		return new InternetExplorerDriver(cap);
 	}
 

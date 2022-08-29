@@ -1,9 +1,7 @@
 package helpers;
+
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by asvidersky on 7/11/2022.
- */
 
 public class SessionHelper {
     private WebDriver driver;
@@ -13,6 +11,6 @@ public class SessionHelper {
     }
 
     public void login() {
-        driver.navigate().to("https://demoqa.com/");
+        driver.navigate().to("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     }
 }

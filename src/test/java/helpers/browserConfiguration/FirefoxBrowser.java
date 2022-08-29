@@ -1,6 +1,6 @@
 package helpers.browserConfiguration;
 
-import helper.resource.ResourceHelper;
+import helpers.resource.ResourceHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -15,7 +15,7 @@ public class FirefoxBrowser {
 		FirefoxProfile profile = new FirefoxProfile();
 		profile.setAcceptUntrustedCertificates(true);
 		profile.setAssumeUntrustedCertificateIssuer(true);
-		firefox.setCapability(FirefoxDriver.PROFILE, profile);
+		firefox.setCapability(String.valueOf(FirefoxDriver.class), profile);
 		firefox.setCapability("marionette", true);
 
 		FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -30,15 +30,15 @@ public class FirefoxBrowser {
 	public WebDriver getFirefoxDriver(FirefoxOptions cap) {
 		if (System.getProperty("os.name").contains("mac")) {
 			System.setProperty("webdriver.chrome.driver",
-					ResourceHelper.getResourcePath("\\src\\main\\resources\\drivers\\geckodriver"));
+					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver"));
 			return new FirefoxDriver(cap);
 		} else if (System.getProperty("os.name").contains("Window")) {
 			System.setProperty("webdriver.chrome.driver",
-					ResourceHelper.getResourcePath("\\src\\main\\resources\\drivers\\geckodriver.exe"));
+					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver.exe"));
 			return new FirefoxDriver(cap);
 		} else if (System.getProperty("os.name").contains("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
-					ResourceHelper.getResourcePath("\\src\\main\\resources\\drivers\\geckodriver.exe"));
+					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver.exe"));
 			return new FirefoxDriver(cap);
 		}
 		return null;

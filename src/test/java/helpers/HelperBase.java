@@ -3,10 +3,6 @@ import org.openqa.selenium.*;
 import java.time.Duration;
 
 
-/**
- * Created by asvidersky on 7/11/2022.
- */
-
 public class HelperBase {
     private boolean acceptNextAlert = true;
     protected final WebDriver driver;

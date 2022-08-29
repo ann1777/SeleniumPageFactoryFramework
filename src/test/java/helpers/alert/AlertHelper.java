@@ -1,7 +1,6 @@
 package helpers.alert;
 
-import helper.logger.LoggerHelper;
-import org.apache.log4j.Logger;
+import helpers.logger.LoggerHelper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class AlertHelper {
 	
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger(AlertHelper.class);
+	private LoggerHelper log = LoggerHelper.getLogger(LoggerHelper.class);
 	
 	public AlertHelper(WebDriver driver) {
 		this.driver=driver;	
@@ -47,7 +46,7 @@ public class AlertHelper {
 			log.info("Alert is present");
 			return true;
 		}catch(NoAlertPresentException e) {
-			log.info(e.getCause());
+			log.info(String.valueOf(e.getCause()));
 			return false;
 		}
 	}

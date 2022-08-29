@@ -2,12 +2,12 @@ package helpers.listener;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import helper.logger.LoggerHelper;
-import org.apache.log4j.Logger;
+import helpers.logger.LoggerHelper;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.log4testng.Logger;
 
 public class ExtentListener implements ITestListener {
 

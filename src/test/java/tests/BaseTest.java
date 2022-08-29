@@ -1,12 +1,15 @@
 package tests;
 
+import helpers.AppManager;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
 
@@ -18,8 +21,20 @@ public class BaseTest {
     private String userEmail = userName.toString() + "@gmail.com";
     private String sessionToken;
 
+    protected final AppManager app = new AppManager();
+
+    @BeforeSuite(alwaysRun = true)
+    public void setUp() {
+        app.init();
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void tearDown() {
+        app.stop();
+    }
+
     @BeforeMethod
-    public void setUp() throws JSONException {
+    public void getUser() throws JSONException {
         RestAssured.reset();
         RestAssured.baseURI = "http://automationpractice.com/index.php?/";
         RestAssured.requestSpecification = new RequestSpecBuilder()

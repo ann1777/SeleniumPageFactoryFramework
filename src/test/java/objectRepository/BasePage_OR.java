@@ -11,6 +11,8 @@ public class BasePage_OR {
     public static final String BASEPAGE_SIGN_IN_BTN = ".login";
     public static final String BASEPAGE_HEADER_LOGO = "//div[@id='header_logo']";
     public static final String BASEPAGE_SEARCH_FLD = "//*[@placeholder='Search']";
+
+    public static final String BASEPAGE_SEARCH_BTN = "//button [@name='submit_search']";
     public static final String BASEPAGE_SHOPPING_CART_ICN = "a[title='View my shopping cart']";
     public static final String BASEPAGE_WOMAN_DISPLAY_BLOCK = "//*[@id='block_top_menu']/ul//a[text() = 'Women']";
     public static final String BASEPAGE_HEADER_DISPLAY_BLOCK_CONTAINER = ".submenu-container.clearfix.first-in-line-xs']";

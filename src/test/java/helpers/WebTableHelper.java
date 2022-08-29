@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WebTableHelper extends HelperBase {
-    public RegistrationFormData registrationFormData = new RegistrationFormData("John", "Snow",
-            "foo@test.com", "25", "1000", "Accountant");
-    public RegistrationFormData changedRegistrationFormData = new RegistrationFormData("NewJohn", "NewSnow",
-            "newfoo@test.com", "50", "500", "Sales");
+//    public RegistrationFormData registrationFormData = new RegistrationFormData("John", "Snow",
+//            "foo@test.com", "25", "1000", "Accountant");
+//    public RegistrationFormData changedRegistrationFormData = new RegistrationFormData("NewJohn", "NewSnow",
+//            "newfoo@test.com", "50", "500", "Sales");
 
     public WebTableHelper(WebDriver driver) {
         super(driver);
@@ -18,7 +18,7 @@ public class WebTableHelper extends HelperBase {
 
     public void editRecord() {
         click(By.xpath("//div [@class='action-buttons']//span[@title='Edit']"));
-        fillRegistrationForm(changedRegistrationFormData);
+        RegistrationFormData changedRegistrationFormData;
         submitRegistrationForm();
     }
 

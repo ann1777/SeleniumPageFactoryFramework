@@ -1,9 +1,9 @@
 package helpers.listener;
 
-import helper.logger.LoggerHelper;
-import org.apache.log4j.Logger;
+import helpers.logger.LoggerHelper;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+import org.testng.log4testng.Logger;
 
 public class RetryHelper implements IRetryAnalyzer {
 

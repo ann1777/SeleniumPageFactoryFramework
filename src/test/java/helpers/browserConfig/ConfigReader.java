@@ -1,6 +1,5 @@
 package helpers.browserConfig;
 
-import helper.browserConfiguration.BrowserType;
 import helpers.browserConfiguration.BrowserType;
 
 public interface ConfigReader {

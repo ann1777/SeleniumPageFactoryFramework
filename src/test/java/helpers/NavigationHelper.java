@@ -2,9 +2,6 @@ package helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by asvidersky on 7/11/2022.
- */
 
 public class NavigationHelper extends HelperBase {
 
@@ -14,10 +11,16 @@ public class NavigationHelper extends HelperBase {
     }
 
     public void gotoMainPage() {
-        click(By.xpath("//img[@src=\"/images/Toolsqa.jpg\"]"));
+        click(By.cssSelector(".icon-home"));
     }
 
-    public void gotoElementsSection() {
-        click(By.xpath("//div [@class='category-cards']//h5 [text()='Elements']"));
+    public void gotoSignInPage() {
+        click(By.cssSelector(".login"));
     }
+
+    public void gotoContactPage() {
+        click(By.cssSelector("#contact-link"));
+    }
+
+
 }

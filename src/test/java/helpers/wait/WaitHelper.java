@@ -1,21 +1,22 @@
 package helpers.wait;
-
-import helper.logger.LoggerHelper;
-import org.apache.log4j.Logger;
+import helpers.logger.LoggerHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.log4testng.Logger;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import static helpers.logger.LoggerHelper.*;
+
 public class WaitHelper {
 
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger(WaitHelper.class);
+	private Logger log = getLogger(driver);
 
 	public WaitHelper(WebDriver driver) {
 		this.driver = driver;
@@ -29,7 +30,7 @@ public class WaitHelper {
 	 */
 	public void setImplicitWait(int i, TimeUnit unit) {
 		log.info("setImplicitWait has been set to : " + i);
-		driver.manage().timeouts().implicitlyWait(i, unit);
+		driver.manage().implicitlyWait(i, TimeUnit.SECONDS);
 	}
 
 	/**
@@ -40,7 +41,7 @@ public class WaitHelper {
 	 * @return
 	 */	
 	private WebDriverWait getWait(int TimeOutInSeconds, int pollingInEveryMilliseconds) {
-		WebDriverWait wait = new WebDriverWait(driver, TimeOutInSeconds);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 		wait.pollingEvery(Duration.ofMillis(pollingInEveryMilliseconds));
 		wait.ignoring(NoSuchElementException.class);
 		wait.ignoring(ElementNotVisibleException.class);
@@ -74,7 +75,7 @@ public class WaitHelper {
 	 */
 	public void waitForElementClickable(WebElement element, int timeOutInSeconds, int pollingEveryMilliSeconds) {
 		log.info("Waiting for Element: " + element.toString() + "for: " + timeOutInSeconds + " seconds");
-		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 		wait.until(ExpectedConditions.elementToBeClickable((element)));
 		log.info("Element is clickable now");
 	}
@@ -140,7 +141,7 @@ public class WaitHelper {
 	
 	public WebElement waitForElement(WebElement element, int TimeOutInSeconds) {
 		log.info("Waiting for Element: " + element.toString() + "for: " + TimeOutInSeconds + " seconds");
-		WebDriverWait wait = new WebDriverWait(driver, TimeOutInSeconds);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		log.info("Element is visible now");
 		return element;
