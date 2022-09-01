@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class OrderHistoryPageLocators extends BasePageLocators {
     public WebDriver driver;
@@ -46,9 +47,13 @@ public class OrderHistoryPageLocators extends BasePageLocators {
     WebElement orderHistoryPageBackHomeBtnLeftArrowIcn;
 
     public OrderHistoryPageLocators(WebDriver driver) {
-        super();
-        PageFactory.initElements(driver, this);
+        super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=history");
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
+    public OrderHistoryPageLocators() {
+
+    }
+
 }

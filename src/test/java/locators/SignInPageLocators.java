@@ -49,6 +49,10 @@ public class SignInPageLocators extends BasePageLocators {
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
         PageFactory.initElements(driver, this);
     }
+
+    public SignInPageLocators() {
+
+    }
 //        public void createUserAccount(){
 //            createAccountEmailField.sendKeys(new RegistrationFormData(RegistrationFormData.getUserFirstName(), RegistrationFormData.getUserLastName(), RegistrationFormData.getUserEmailAddress(), RegistrationFormData.getUserPassword(), ));
 //            createAccountSubmitBtn.click();

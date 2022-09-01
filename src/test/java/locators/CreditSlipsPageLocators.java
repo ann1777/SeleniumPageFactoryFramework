@@ -40,4 +40,7 @@ public class CreditSlipsPageLocators extends BasePageLocators {
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=order-slip");
     }
+    public CreditSlipsPageLocators() {
+
+    }
 }

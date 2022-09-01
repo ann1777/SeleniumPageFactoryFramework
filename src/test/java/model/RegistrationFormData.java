@@ -10,18 +10,18 @@ public class RegistrationFormData {
     private static String userBirthYears;
     private static boolean isSignUpForNewsLetter;
     private static boolean isReceiveSpecialOffers;
-    private String userCompany;
-    private String userDepartment;
-    private String userMainAddress;
-    private String userAddress2;
-    private String userCity;
-    private String userState;
-    private String userZipCode;
-    private String userCountry;
-    private String userAdditionalData;
-    private String userHomePhone;
-    private String userMobilePhone;
-    private String userAdd;
+    private static String userCompany;
+    private static String userDepartment;
+    private static String userMainAddress;
+    private static String userAddress2;
+    private static String userCity;
+    private static String userState;
+    private static String userZipCode;
+    private static String userCountry;
+    private static String userAdditionalData;
+    private static String userHomePhone;
+    private static String userMobilePhone;
+    private static String userAdd;
 
 
 
@@ -46,6 +46,7 @@ public class RegistrationFormData {
         this.userAdditionalData = addInform;
         this.userHomePhone = homePhone;
         this.userMobilePhone = mobilePhone;
+        this.userAdd = userAdd;
     }
 
     public static String getUserFirstName() {
@@ -58,23 +59,23 @@ public class RegistrationFormData {
         return userEmailAddress;
     }
     public static String getUserPassword() { return userPassword; }
-    public String getUserBirthDay() {
+    public static String getUserBirthDay() {
         return userBirthDay;
     }
-    public String getUserBirthMonth() { return userBirthMonth; }
-    public String getUserBirthYears() { return userBirthYears; }
-    public boolean isSignUpForNewsLetter() { return isSignUpForNewsLetter; }
-    public boolean isReceiveSpecialOffers() { return isReceiveSpecialOffers; }
-    public String getUserCompany() { return userCompany; }
-    public String getUserDepartment() { return userDepartment; }
-    public String getUserMainAddress() { return userMainAddress; }
-    public String getUserAddress2() { return userAddress2; }
-    public String getUserCity() { return userCity; }
-    public String getUserState() { return userState; }
-    public String getUserZipCode() { return userZipCode; }
-    public String getUserCountry() { return userCountry; }
-    public String getUserAdditionalData() { return userAdditionalData; }
-    public String getUserHomePhone() { return userHomePhone; }
-    public String getUserMobilePhone() { return userMobilePhone; }
-    public String getUserAdd() { return userAdd; }
+    public static String getUserBirthMonth() { return userBirthMonth; }
+    public static String getUserBirthYears() { return userBirthYears; }
+    public static boolean isSignUpForNewsLetter() { return isSignUpForNewsLetter; }
+    public static boolean isReceiveSpecialOffers() { return isReceiveSpecialOffers; }
+    public static String getUserCompany() { return userCompany; }
+    public static String getUserDepartment() { return userDepartment; }
+    public static String getUserMainAddress() { return userMainAddress; }
+    public static String getUserAddress2() { return userAddress2; }
+    public static String getUserCity() { return userCity; }
+    public static String getUserState() { return userState; }
+    public static String getUserZipCode() { return userZipCode; }
+    public static String getUserCountry() { return userCountry; }
+    public static String getUserAdditionalData() { return userAdditionalData; }
+    public static String getUserHomePhone() { return userHomePhone; }
+    public static String getUserMobilePhone() { return userMobilePhone; }
+    public static String getUserAdd() { return userAdd; }
 }

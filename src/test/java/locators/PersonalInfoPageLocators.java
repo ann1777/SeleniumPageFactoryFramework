@@ -95,4 +95,7 @@ public class PersonalInfoPageLocators {
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=addresses");
     }
+    public PersonalInfoPageLocators() {
+
+    }
 }
