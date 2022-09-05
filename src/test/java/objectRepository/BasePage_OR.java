@@ -83,4 +83,5 @@ public class BasePage_OR {
     public static final String FOOTER_NEWSLETTER_INPUT_FLD_INVALID_EMAIL_ADDRESS_MSG = "//*[@id='newsletter-input'][@value='Invalid email address.']";
     public static final String FOOTER_NEWSLETTER_INPUT_FLD_ALREADY_REGISTERED_ADDRESS_ALERT_MSG = "//*[@id='newsletter-input'][@value='Invalid email address.']";
     public static final String FOOTER_NEWSLETTER_INPUT_FLD_ALREADY_REGISTERED_ADDRESS_NEXT_ICN = "//*/button[@name='submitNewsletter']";
+    public static final String ITEM_NAME = "//h5/a";
 }
