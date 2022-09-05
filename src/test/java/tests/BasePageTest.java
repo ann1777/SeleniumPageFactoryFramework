@@ -60,8 +60,9 @@ public class BasePageTest{
     String signOutPageLink = "http://automationpractice.com/index.php?mylogout";
 
     String actualTitle = "//h2//span[text()='Selenium Framework']";
-    private String itemName;
-    private String foundItemsName = "//h5[@itemprop='name']/a").getClass().equals("product-name");
+    String ExpectedTitle1 = "Selenium Framework";
+    String itemName;
+    String foundItemsName;
 
     public BasePageTest(WebDriver driver){
         this.base = new BasePageLocators();
@@ -173,11 +174,10 @@ public class BasePageTest{
 
     @Test
     public FacebookPage followUsByFacebook() {
-        String ExpectedTitle1 = "Selenium Framework";
         base.facebookIcn.click();
         try {
             driver.get(facebookPageLink);
-            return new FacebookPage();
+            return new FacebookPage(driver);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -198,11 +198,15 @@ public class BasePageTest{
             return new TwitterPage(driver);
         } catch (Exception e1) {
             throw new RuntimeException(e1);
-            driver.switchTo().window(twitterPageLink);
-            String ActualTitle2 = driver.findElement(By.xpath(actualTitle)).getText();
-            Assert.assertEquals(twitterPageTile, ActualTitle2);
         }
-
+        Iterator<String> BasePage = s1.iterator();
+        String twitterPage = BasePage.next();
+        if(!BasePage.equals(twitterPage)) {
+            driver.switchTo().window(twitterPage);
+        }
+        String ActualTitle2 = driver.switchTo().window(twitterPage).getTitle();
+        System.out.println(ActualTitle2);
+        Assert.assertEquals(twitterPageTile, ActualTitle2);
     }
 
     public void followUsByYoutube() {
