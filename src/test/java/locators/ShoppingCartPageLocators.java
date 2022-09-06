@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class ShoppingCartPageLocators extends BasePageLocators {
 
@@ -144,6 +145,6 @@ public class ShoppingCartPageLocators extends BasePageLocators {
         super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=order");
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class ContactUsPageLocators extends BasePageLocators {
     WebDriver driver;
@@ -77,6 +78,6 @@ public class ContactUsPageLocators extends BasePageLocators {
         super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=contact");
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class CatalogPageLocators extends BasePageLocators {
     WebDriver driver;
@@ -313,7 +314,7 @@ public class CatalogPageLocators extends BasePageLocators {
         super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?id_category=5&controller=category");
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
     public CatalogPageLocators() {
     }

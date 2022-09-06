@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class PersonalInfoPageLocators {
     public WebDriver driver;
@@ -91,9 +92,9 @@ public class PersonalInfoPageLocators {
 
     public PersonalInfoPageLocators(WebDriver driver) {
         super();
-        PageFactory.initElements(driver, this);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=addresses");
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
     public PersonalInfoPageLocators() {
 

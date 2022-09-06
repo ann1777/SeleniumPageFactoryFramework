@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class CreditSlipsPageLocators extends BasePageLocators {
     public WebDriver driver;
@@ -36,9 +37,9 @@ public class CreditSlipsPageLocators extends BasePageLocators {
 
     public CreditSlipsPageLocators(WebDriver driver) {
         super();
-        PageFactory.initElements(driver, this);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=order-slip");
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
     public CreditSlipsPageLocators() {
 
