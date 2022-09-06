@@ -1,32 +1,14 @@
 package helpers.logger;
 
-import org.openqa.selenium.WebDriver;
-
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class LoggerHelper {
-	private final static Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	private final static Logger LOGGER =  LoggerHelper.getLogger();
 
-	public static org.testng.log4testng.Logger getLogger(WebDriver assertionHelperClass) {
-		return this.sampleLog();
-	}
-
-	public LoggerHelper sampleLog()
-	{
-		LOGGER.log(Level.WARNING, "WARNING");
-		return null;
-	}
-	public static void main(String[] args)
-	{
-		LoggerHelper obj = new LoggerHelper();
-		obj.sampleLog();
-		LogManager slg = LogManager.getLogManager();
-		Logger log = slg.getLogger(Logger.GLOBAL_LOGGER_NAME);
-		log.log(Level.WARNING, "WARNING");
-	}
-
-	public void info(String alert_object_is_initialized) {
+	public static Logger getLogger() {
+		final Throwable t = new Throwable();
+		t.fillInStackTrace();
+		final String fullClassName = t.getStackTrace()[1].getClassName(); // get info on calling entity
+		return Logger.getLogger(fullClassName);
 	}
 }

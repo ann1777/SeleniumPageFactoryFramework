@@ -1,12 +1,12 @@
 package helpers;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.fail;
 
 public class AppManager {
-    private WebDriver driver;
+    private ChromeDriver driver;
+
 
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;

@@ -7,11 +7,11 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
 
 public class ExtentListener implements ITestListener {
 
-	private Logger log = LoggerHelper.getLogger(ExtentListener.class);
+	private Logger log = LoggerHelper.getLogger();
 	public static ExtentReports extent;
 	public static ExtentTest test;
 

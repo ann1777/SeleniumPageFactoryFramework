@@ -50,8 +50,6 @@ public class WebTableHelper extends HelperBase {
         type(By.xpath("//input[@id='firstName']"), registerFormData.getUserFirstName());
         type(By.xpath("//input[@id='lastName']"), registerFormData.getUserLastName());
         type(By.xpath("//input[@id='userEmail']"), registerFormData.getUserEmailAddress());
-        type(By.xpath("//input[@id='age']"), registerFormData.getUserAge());
-        type(By.xpath("//input[@id='salary']"), registerFormData.getUserSalary());
         type(By.xpath("//input[@id='department']"), registerFormData.getUserDepartment());
     }
 

@@ -1,6 +1,7 @@
 package helpers;
 import org.openqa.selenium.*;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class HelperBase {
@@ -18,7 +19,7 @@ public class HelperBase {
     }
 
     protected void click(By locator) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().wait(Duration.ofSeconds(5, TimeUnit.SECONDS));
         driver.findElement(locator).click();
     }
 

@@ -2,11 +2,11 @@ package helpers.assertion;
 
 import helpers.logger.LoggerHelper;
 import org.testng.Assert;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
 
 public class AssertionHelper {
 
-	private static Logger log = LoggerHelper.getLogger(AssertionHelper.class);
+	private static Logger log = LoggerHelper.getLogger();
 
 	/**
 	 * This method will be used to match actual text vs expected text

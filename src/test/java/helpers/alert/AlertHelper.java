@@ -1,18 +1,22 @@
 package helpers.alert;
 
+//import helpers.logger.LoggerHelper;
+
 import helpers.logger.LoggerHelper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.apache.log4j.Logger;
 
 public class AlertHelper {
 	
 	private WebDriver driver;
-	private LoggerHelper log = LoggerHelper.getLogger(LoggerHelper.class);
+	private Logger log = LoggerHelper.getLogger();
 	
 	public AlertHelper(WebDriver driver) {
 		this.driver=driver;	
 		log.info("Alert object is initialized");
+		log.debug("AlertHelper : " + this.driver.hashCode());
 	}
 
 	/**
@@ -21,6 +25,7 @@ public class AlertHelper {
 	 */
 	public Alert getAlert() {
 		log.info("Switching to Alert " +driver.switchTo().alert().getText());
+		log.debug("");
 		return driver.switchTo().alert();
 	}
 	
@@ -54,6 +59,7 @@ public class AlertHelper {
 	public void acceptAlertIfPresent() {
 		if(isAlertPresent()) {
 			acceptAlert();
+			log.info("Alert is present");
 		}
 		else {
 			log.info("Alert is not present");
@@ -72,7 +78,7 @@ public class AlertHelper {
 	public void acceptPrompt(String text) {
 		if(isAlertPresent()) {
 			Alert alert = getAlert();
-			alert.sendKeys(text);
+			alert.getText();
 			alert.accept();
 			log.info("Alert is present and text has been written: "+text);
 		}

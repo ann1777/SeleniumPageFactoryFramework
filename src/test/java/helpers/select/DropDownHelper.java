@@ -4,7 +4,7 @@ import helpers.logger.LoggerHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class DropDownHelper {
 
 	@SuppressWarnings("unused")
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger(DropDownHelper.class);
+	private Logger log = LoggerHelper.getLogger();
 
 	public DropDownHelper(WebDriver driver) {
 		this.driver = driver;

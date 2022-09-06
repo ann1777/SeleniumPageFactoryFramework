@@ -3,13 +3,13 @@ package helpers.listener;
 import helpers.logger.LoggerHelper;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
 
 public class RetryHelper implements IRetryAnalyzer {
 
 	private int retryCount = 0;
 	private int maxRetryCount = 1;
-	private Logger log = LoggerHelper.getLogger(RetryHelper.class);
+	private Logger log = LoggerHelper.getLogger();
 
 	/**
 	 * This method is used for retrying failed test case

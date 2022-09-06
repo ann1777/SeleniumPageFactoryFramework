@@ -10,17 +10,14 @@ public class NavigationHelper extends HelperBase {
         super(driver);
     }
 
-    public void gotoMainPage() {
-        click(By.cssSelector(".icon-home"));
+    public void gotoMainPage() { click(By.xpath("//*[@class='icon-home']"));
     }
 
     public void gotoSignInPage() {
-        click(By.cssSelector(".login"));
+        click(By.xpath("//*[@class='login']"));
     }
 
     public void gotoContactPage() {
-        click(By.cssSelector("#contact-link"));
+        click(By.xpath("//*[@id='contact-link']"));
     }
-
-
 }

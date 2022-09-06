@@ -2,14 +2,14 @@ package helpers.switchWindow;
 
 import helpers.logger.LoggerHelper;
 import org.openqa.selenium.WebDriver;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
 
 import java.util.Set;
 
 public class WindowHelper {
 
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger(WindowHelper.class);
+	private Logger log = LoggerHelper.getLogger();
 
 	/**
 	 * This is a constructor

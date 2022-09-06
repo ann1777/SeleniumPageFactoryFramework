@@ -3,12 +3,12 @@ package helpers.assertion;
 import helpers.logger.LoggerHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
 
 public class VerificationHelper {
 
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger(VerificationHelper.class);
+	private static final Logger log = LoggerHelper.getLogger();
 
 	public VerificationHelper(WebDriver driver) {
 		this.driver = driver;
@@ -20,16 +20,19 @@ public class VerificationHelper {
 	 * @param element
 	 * @return
 	 */
-	public boolean isDisplayed(WebElement element) {
+	public static synchronized boolean isDisplayed( WebElement element) {
+		boolean isDispalyed = false;
 		try {
-			element.isDisplayed();
-			log.info("Element is present" +element.getText());			
-			return true;
-		} catch (Exception e) {
-			log.error("Element is not displayed", e.getCause());
-			return false;
+			 isDispalyed= element.isDisplayed();
+			 log.info(element.getText()+" is dispalyed");
 		}
+		catch(Exception ex) {
+			log.error("Element not found " + ex.getCause());
+		}
+
+		return isDispalyed;
 	}
+
 
 	/**
 	 * This method is used to verify that element is not displayed *
@@ -38,15 +41,17 @@ public class VerificationHelper {
 	 * @return
 	 */
 	public boolean isNotDisplayed(WebElement element) {
+		boolean isDispalyed = false;
 		try {
 			element.isDisplayed();
-			log.info("Element is not present");
-			;
-			return false;
-		} catch (Exception e) {
-			log.error("Element is not displayed", e.getCause());
-			return true;
+			log.info(element.getText()+" is dispalyed");
 		}
+		catch(Exception ex) {
+			log.error("Element not found " + ex.getCause());
+			isDispalyed = true;
+		}
+
+		return isDispalyed;
 	}
 
 	/**
@@ -55,18 +60,23 @@ public class VerificationHelper {
 	 * @param element
 	 * @return
 	 */
-	public String getTextFromElement(WebElement element) {
-		if (null == element) {
-			log.info("Webelement is NULL");
-			return null;
+	public static synchronized boolean verifyTextEquals( WebElement element,String expectedText) {
+		boolean flag = false;
+		try {
+			String actualText=element.getText();
+			if(actualText.equals(expectedText)) {
+				log.info("actualText is :"+actualText+" expected text is: "+expectedText);
+				return flag=true;
+			}
+			else {
+				log.error("actualText is :"+actualText+" expected text is: "+expectedText);
+				return flag;
+			}
 		}
-		boolean status = isDisplayed(element);
-		if (status) {
-			log.info("Element's text is " + element.getText());
-			return element.getText();
-		} else {
-			log.info("Element text is not found");
-			return null;
+		catch(Exception ex) {
+			log.error("actualText is :"+element.getText()+" expected text is: "+expectedText);
+			log.info("text not matching" + ex);
+			return flag;
 		}
 	}
 

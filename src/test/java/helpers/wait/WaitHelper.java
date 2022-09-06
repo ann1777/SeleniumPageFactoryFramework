@@ -1,11 +1,12 @@
 package helpers.wait;
-import helpers.logger.LoggerHelper;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.log4testng.Logger;
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
@@ -16,11 +17,8 @@ import static helpers.logger.LoggerHelper.*;
 public class WaitHelper {
 
 	private WebDriver driver;
-	private Logger log = getLogger(driver);
-
-	public WaitHelper(WebDriver driver) {
-		this.driver = driver;
-	}
+	private Logger log = getLogger();
+	private String baseUrl = "http://www.google.com";
 
 	/**
 	 * This is implicit Wait Method
@@ -28,9 +26,12 @@ public class WaitHelper {
 	 * @param i
 	 * @param unit
 	 */
-	public void setImplicitWait(int i, TimeUnit unit) {
+	@BeforeMethod
+	public void setImplicitWait(int i, TimeUnit unit) throws Exception {
+		driver = new ChromeDriver();
+		baseUrl = "http://www.google.com";
 		log.info("setImplicitWait has been set to : " + i);
-		driver.manage().implicitlyWait(i, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(i, TimeUnit.SECONDS);
 	}
 
 	/**
