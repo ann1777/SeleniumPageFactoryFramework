@@ -1,6 +1,7 @@
 package model;
 
 public class RegistrationFormData {
+    private  static boolean isMail;
     private static String userFirstName;
     private static String userLastName;
     private static String userEmailAddress;
@@ -25,7 +26,8 @@ public class RegistrationFormData {
 
 
 
-    public RegistrationFormData(String firstName, String lastName, String emailAddress, String password, String birthDay, String birthMonth, String birthYears, boolean isSignUpForNewsLetter, boolean isReceiveSpecialOffers, String company, String department, String address1, String address2, String city, String state, String zipCode, String country, String addInform, String homePhone, String mobilePhone) {
+    public RegistrationFormData(boolean isMail, String firstName, String lastName, String emailAddress, String password, String birthDay, String birthMonth, String birthYears, boolean isSignUpForNewsLetter, boolean isReceiveSpecialOffers, String company, String department, String address1, String address2, String city, String state, String zipCode, String country, String addInform, String homePhone, String mobilePhone) {
+        this.isMail = isMail;
         this.userFirstName = firstName;
         this.userLastName = lastName;
         this.userEmailAddress = emailAddress;
@@ -49,6 +51,7 @@ public class RegistrationFormData {
         this.userAdd = userAdd;
     }
 
+    public static boolean getUserIsMail() { return isMail; }
     public static String getUserFirstName() {
         return userFirstName;
     }
@@ -78,4 +81,8 @@ public class RegistrationFormData {
     public static String getUserHomePhone() { return userHomePhone; }
     public static String getUserMobilePhone() { return userMobilePhone; }
     public static String getUserAdd() { return userAdd; }
+    public static boolean getIsMail() { return isMail; }
+    public static boolean getIsSignUpForNewsLetter() { return isSignUpForNewsLetter; }
+    public static boolean getIsReceiveSpecialOffers() { return isReceiveSpecialOffers; }
+
 }
