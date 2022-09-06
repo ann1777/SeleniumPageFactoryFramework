@@ -83,13 +83,13 @@ public class BasePageTest{
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 
-    public void siteHeaderAdvClick() {
-        base.headerAdv.click();
-    }
+    @Test
+     public void siteHeaderAdvClick() { base.headerAdv.click(); }
+
 
     @Test
     public void SearchingItems() {
-        base.womenDisplayBlock.findElement(By.xpath("//h5/a");
+        base.womenDisplayBlock.findElement(By.xpath("//h5/a"));
         Random rnd1 = new Random();
         while (rnd1.nextInt() > 14) rnd1.nextInt() -= 14;
         int count1 = 0;
@@ -102,28 +102,40 @@ public class BasePageTest{
 
         base.searchFld.sendKeys((CharSequence) itemName);
         base.searchBtn.click();
-        base.womenDisplayBlock.findElement(By.xpath(foundItemsName);
+        base.womenDisplayBlock.findElement(By.xpath(foundItemsName));
         Assert.assertEquals(itemName, foundItemsName);
 
     }
 
+    @Test
     public String getItemName() {
         base.womenDisplayBlock.findElement(By.xpath("//h5/a")).getText();
         return this.foundItemsName;
     }
 
+    @Test
+    public void SearchingItem() {
+        itemName = base.womenDisplayBlock.findElement(By.xpath("//h5/a")).getText();
+        base.searchFld.sendKeys(itemName);
+        base.searchBtn.click();
+    }
+
+    @Test
     public void clickContactUsBtn() {
         base.contactUsBtn.click();
     }
 
+    @Test
     public void clickSignBtn() {
         base.signInBtn.click();
     }
 
+    @Test
     public void clickShoppingCartIcn() {
         base.shoppingCartIcn.click();
     }
 
+    @Test
     public void clickWomenBtn() {
         base.womenDisplayBlockBtn.click();
         base.womenDisplayBlock.findElement(By.id("category-thumbnail"));
@@ -134,6 +146,7 @@ public class BasePageTest{
         base.womenDisplayBlock.findElement(By.linkText("Casual Dresses"));
     }
 
+    @Test
     public void clickDressesBtn() {
         base.dressesDisplayBlockBtn.click();
         base.dressesDisplayBlockBtn.findElement(By.linkText("Casual Dresses"));
@@ -141,12 +154,13 @@ public class BasePageTest{
         base.dressesDisplayBlockBtn.findElement(By.linkText("Summer Dresses"));
     }
 
+    @Test
     public void clickTShirtsBtn() {
         base.tShirtsDisplayBlockTab.click();
     }
 
     @Test
-    public void fillNewsLetterFildWithInvalidEmail() {
+    public void fillNewsLetterFieldWithInvalidEmail() {
         base.NewsletterInputFld.sendKeys(RegistrationFormData.getUserEmailAddress().toString()+"*");
         base.submitNewsletterBtn.click();
         base.newsLetterInvalidAlertMsg.getValue().equals(InvalidEmailPageAlertMsg);
@@ -154,7 +168,7 @@ public class BasePageTest{
     }
 
     @Test
-    public void fillNewsLetterFildWithValidNewEmail() {
+    public void fillNewsLetterFieldWithValidNewEmail() {
         base.NewsletterInputFld.click();
         base.NewsletterInputFld.sendKeys(RegistrationFormData.getUserEmailAddress());
         base.submitNewsletterBtn.click();
@@ -163,7 +177,7 @@ public class BasePageTest{
     }
 
     @Test
-    public void fillNewsLetterFildWithAlreadyUsedEmail() {
+    public void fillNewsLetterFieldWithAlreadyUsedEmail() {
         base.NewsletterInputFld.click();
         base.NewsletterInputFld.sendKeys(Keys.DOWN);
         base.NewsletterInputFld.sendKeys(Keys.RETURN);
@@ -181,12 +195,12 @@ public class BasePageTest{
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        Iterator<String> BasePage = s.iterator();
-        String facebookPage = BasePage.next();
-        if(!BasePage.equals(facebookPage)) {
-            driver.switchTo().window(facebookPage);
-        }
-        System.out.println(driver.switchTo().window(facebookPage).getTitle());
+//        Iterator<String> BasePage = s.iterator();
+//        String facebookPage = BasePage.next();
+//        if(!BasePage.equals(facebookPage)) {
+//            driver.switchTo().window(facebookPage);
+//        }
+//        System.out.println(driver.switchTo().window(facebookPage).getTitle());
     }
 
 
@@ -199,89 +213,107 @@ public class BasePageTest{
         } catch (Exception e1) {
             throw new RuntimeException(e1);
         }
-        Iterator<String> BasePage = s1.iterator();
-        String twitterPage = BasePage.next();
-        if(!BasePage.equals(twitterPage)) {
-            driver.switchTo().window(twitterPage);
-        }
-        String ActualTitle2 = driver.switchTo().window(twitterPage).getTitle();
-        System.out.println(ActualTitle2);
-        Assert.assertEquals(twitterPageTile, ActualTitle2);
+//        Iterator<String> BasePage = s1.iterator();
+//        String twitterPage = BasePage.next();
+//        if(!BasePage.equals(twitterPage)) {
+//            driver.switchTo().window(twitterPage);
+//        }
+//        String ActualTitle2 = driver.switchTo().window(twitterPage).getTitle();
+//        System.out.println(ActualTitle2);
+//        Assert.assertEquals(twitterPageTile, ActualTitle2);
     }
 
+    @Test
     public void followUsByYoutube() {
         base.youtubeIcn.click();
         driver.get(youtubePageLink);
     }
 
+    @Test
     public void followUsByGooglePlus() {
         base.googlePlusIcn.click();
         driver.get(googlePlusPageLink);
     }
 
+    @Test
     public void goWomenPage() {
         base.womenSubsection.click();
         driver.get(womenPageLink);
     }
 
+    @Test
     public void goSpecialsPage() {
         base.specialsSubsection.click();
         driver.get(specialsPageLink);
     }
 
+    @Test
     public void goNewProductsPage() {
         base.newProductsSubsection.click();
         driver.get(newProductsPageLink);
     }
 
+    @Test
     public void goBestSellersPage() {
         base.bestSellersSubsection.click();
         driver.get(bestSellersPageLink);
     }
 
+    @Test
     public void goOurStoresPage() {
         base.ourStoresSubsection.click();
         driver.get(ourStoresPageLink);
     }
 
+    @Test
     public void goContactUsPage() {
         base.contactUsSubsection.click();
         driver.get(contactUsPageLink);
     }
 
+    @Test
     public void goTermsOfUsePage() {
         base.termsOfUseSubsection.click();
         driver.get(termsOfUsePageLink);
     }
 
+    @Test
     public void goAboutUsPage() {
         base.aboutUsSubsection.click();
         driver.get(aboutUsPageLink);
     }
 
+    @Test
     public void goSiteMapPage() {
         base.sitemapSubsection.click();
         driver.get(sitemapPageLink);
     }
 
+    @Test
     public void goMyOrdersPage() {
         base.myOrdersSubsection.click();
         driver.get(myOrdersPageLink);
     }
 
+    @Test
     public void goMyCreditSlipsPage() {
         base.myCreditSlipsSubsection.click();
         driver.get(myCreditSlipsPageLink);
     }
 
+    @Test
     public void goMyAddressesPage() {
         base.myAddressSubsection.click();
         driver.get(myAddressPageLink);
     }
+
+    @Test
     public void goPersonalInfoPage() {
         base.myPersonalInfoSubsection.click();
         driver.get(myPersonalInfoPageLink);
     }
+
+    @Test
     public void goSignInPage() {
         base.signOutSubsection.click();
         driver.get(signOutPageLink);
