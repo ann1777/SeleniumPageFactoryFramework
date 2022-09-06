@@ -1,6 +1,10 @@
 package objectRepository;
 
 public class MyAccountPage_OR {
+
+    public static final String MYACCOUNTPAGE_HEADER_ACCOUNTNAME_TAB = "//div[@class='header_user_info']//span";
+    public static final String MYACCOUNTPAGE_HEADER_SIGNOUT_TAB = "//div[@class='header_user_info']//a[@class='logout']";
+    public static final String MYACCOUNTPAGE_HEADER_CONTACTUS_TAB = "//div[@id='contact-link']";
     public static final String MYACCOUNTPAGE_HOMEICN = ".icon-home";
     public static final String MYACCOUNTPAGE_NAVIGATION_PIPE = ".navigation-pipe";
     public static final String MYACCOUNTPAGE_NAVIGATION_TAB = ".navigation_page";

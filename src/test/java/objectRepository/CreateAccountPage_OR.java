@@ -109,10 +109,11 @@ public class CreateAccountPage_OR {
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_SELECTOR = "//*/div[@id='uniform-id_country']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_SELECTOR = "//*/span[text()='United States']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_SELECTOR = "//*/select[@id='id_country']";
-    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "#other";
-//    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "//label[@for='other']";
+    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "//label[@for='other']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "//label[text()='Additional information']";
-//    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "//textarea[@name='other']";
+
+    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_FLD = "//textarea[@id='other']";
+    //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "//textarea[@name='other']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL = "//textarea[@class='form-control']";
     public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_INLINE_INFOS = "//p[@class='inline-infos']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_INLINE_INFOS = "//p[text()='You must register at least one phone number.']";
@@ -141,5 +142,8 @@ public class CreateAccountPage_OR {
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_PHONE_FLD = ".pull-right.required";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_PHONE_FLD = "//*/span[text()='Required field']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_PHONE_FLD = "//*/p[@class='pull-right required']";
+
+     public static final String CREATEACCOUNTPAGE_ALLERT_DANGER = "//div[@class='alert alert-danger']";
+//    public static final String CREATEACCOUNTPAGE_ALLERT_DANGER = ".alert-danger";
 
 }

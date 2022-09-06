@@ -5,192 +5,198 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class CreateAccountPageLocators extends BasePageLocators {
     WebDriver driver;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_NAVIGATION_PIPE)
-    WebElement navigationPipe;
+    public WebElement navigationPipe;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_NAVIGATION_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PAGE_TITLE)
-    WebElement createAccountPageTitle;
+    public WebElement createAccountPageTitle;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_PERSONALINFORMATION_FORM)
-    WebElement personalInformationForm;
+    public WebElement personalInformationForm;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PERSONALINFORMATION_FORM_TITLE)
-    WebElement personalInformationFormTitle;
+    public WebElement personalInformationFormTitle;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PERSONALINFORMATION_TITLE_LABEL)
-    WebElement getPersonalInformationTitleLabel;
+    public WebElement getPersonalInformationTitleLabel;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_MAILGENGER_CHECKBOX)
-    WebElement mailGenderCheckBox;
+    public WebElement mailGenderCheckBox;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_MAILGENGER_TEXT)
-    WebElement mailGenderText;
+    public WebElement mailGenderText;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_FEMAILGENDER_CHECKBOX)
-    WebElement femailGenderCheckBox;
+    public WebElement femailGenderCheckBox;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_FEMAILGENDER_TEXT)
-    WebElement femailGenderText;
+    public WebElement femailGenderText;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_FIRSTNAME_LABEL)
-    WebElement firstNameLabel;
+    public WebElement firstNameLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_FIRSTNAME_FLD)
-    WebElement firstNameFld;
+    public WebElement firstNameFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_LASTNAME_LABEL)
-    WebElement lastNameLabel;
+    public WebElement lastNameLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_LASTNAME_FLD)
-    WebElement lastNameFld;
+    public WebElement lastNameFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_EMAIL_LABEL)
-    WebElement emailLabel;
+    public WebElement emailLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_EMAIL_FLD)
-    WebElement emailFld;
+    public WebElement emailFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_PASSWORD_LABEL)
-    WebElement passwdLabel;
+    public WebElement passwdLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_PASSWORD_FLD)
-    WebElement passwdFld;
+    public WebElement passwdFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_LABEL)
-    WebElement birthDataLabel;
+    public WebElement birthDataLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_DAY_SELECTOR)
-    WebElement birthDaySelector;
+    public WebElement birthDaySelector;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_MONTH_SELECTOR)
-    WebElement birthMonthSelector;
+    public WebElement birthMonthSelector;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_YEARS_SELECTOR)
-    WebElement birthYearsSelector;
+    public WebElement birthYearsSelector;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_CHECKBOX)
-    WebElement signUpForNewsLetterCheckBox;
+    public WebElement signUpForNewsLetterCheckBox;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_LABEL)
-    WebElement signUpForNewsLetterLabel;
+    public WebElement signUpForNewsLetterLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_RECEIVE_SPECIALOFFERS_CHECKBOX)
-    WebElement receiveSpecialOffersCheckBox;
+    public WebElement receiveSpecialOffersCheckBox;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_RECEIVE_SPECIALOFFERS_LABEL)
-    WebElement receiveSpecialOffersLabel;
+    public WebElement receiveSpecialOffersLabel;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM)
-//    @FindBy(xpath = )
-    WebElement yourAddressForm;
+    public WebElement yourAddressForm;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FIRSTNAME_LABEL)
-    WebElement yourAddressFormFirstNameLabel;
+    public WebElement yourAddressFormFirstNameLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FIRSTNAME_FLD)
-    WebElement yourAddressFormFirstNameFld;
+    public WebElement yourAddressFormFirstNameFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_LASTNAME_LABEL)
-    WebElement yourAddressFormLastNameLabel;
+    public WebElement yourAddressFormLastNameLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_LASTNAME_FLD)
-    WebElement yourAddressFormLastNameFld;
+    public WebElement yourAddressFormLastNameFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COMPANY_LABEL)
-    WebElement yourAddressFormCompanyLabel;
+    public WebElement yourAddressFormCompanyLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COMPANY_FLD)
-    WebElement yourAddressFormCompanyFld;
+    public WebElement yourAddressFormCompanyFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDERESS_LABEL)
-    WebElement yourAddressFormAddressLabel;
+    public WebElement yourAddressFormAddressLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDERESS_FLD)
-    WebElement yourAddressFormAddressFld;
+    public WebElement yourAddressFormAddressFld;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_INLINEINFO_LABEL)
-    WebElement yourAddressInlineInfoLabel;
+    public WebElement yourAddressInlineInfoLabel;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDRESS2_LABEL)
-    WebElement yourAddressFormAddress2Label;
+    public WebElement yourAddressFormAddress2Label;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDRESS2_FLD)
-    WebElement yourAddressFormAddress2Fld;
+    public WebElement yourAddressFormAddress2Fld;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS2_INLINEINFO_LABEL)
-    WebElement yourAddress2InlineInfoLabel;
+    public WebElement yourAddress2InlineInfoLabel;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_CITY_LABEL)
-    WebElement yourAddressFormCityLabel;
+    public WebElement yourAddressFormCityLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_CITY_FLD)
-    WebElement yourAddressFormCityFld;
+    public WebElement yourAddressFormCityFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_LABEL)
-    WebElement yourAddressFormStateLabel;
+    public WebElement yourAddressFormStateLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR)
-    WebElement yourAddressFormStateSelector;
+    public WebElement yourAddressFormStateSelector;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA)
-    WebElement yourAddressFormStateSelectGeorgia;
+    public WebElement stateGeorgia;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL)
-    WebElement yourAddressZipCodeLabel;
+    public WebElement yourAddressZipCodeLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR)
-    WebElement yourAddressZipCodeSelector;
+    public WebElement yourAddressZipCodeSelector;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_LABEL)
-    WebElement yourAddressFormCountryLabel;
+    public WebElement yourAddressFormCountryLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_SELECTOR)
-    WebElement yourAddressFormCountrySelector;
+    public WebElement yourAddressFormCountrySelector;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_LABEL)
-    WebElement yourAddressFormAdditionalInformationLabel;
+    public WebElement yourAddressFormAdditionalInformationLabel;
+
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_FLD)
+    public WebElement yourAddressFormAdditionalIntoFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_ADDITIONAL_INFORMATION_INLINE_INFOS)
-    WebElement yourAddressFormAdditionalInformationInlineInfos;
+    public WebElement yourAddressFormAdditionalInformationInlineInfos;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_HOMEPHONE_LABEL)
-    WebElement yourAddressFormHomePhoneLabel;
+    public WebElement yourAddressFormHomePhoneLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_HOMEPHONE_FLD)
-    WebElement yourAddressFormHomePhoneFld;
+    public WebElement yourAddressFormHomePhoneFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_MOBILEPHONE_LABEL)
-    WebElement yourAddressFormMobilePhoneLabel;
+    public WebElement yourAddressFormMobilePhoneLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_MOBILEPHONE_FLD)
-    WebElement yourAddressFormMobilePhoneFld;
+    public WebElement yourAddressFormMobilePhoneFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FUTURE_REFERENCE_LABEL)
-    WebElement yourAddressFormFutureReferenceLabel;
+    public WebElement yourAddressFormFutureReferenceLabel;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_FUTURE_REFERENCE_FLD)
-    WebElement yourAddressFormFutureReferenceFld;
+    public WebElement yourAddressFormFutureReferenceFld;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_REGISTER_BTN)
-    WebElement yourAddressFormRegisterBtn;
+    public WebElement yourAddressFormRegisterBtn;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_PHONE_FLD)
+    public WebElement yourAddressHomePhoneFld;
 
-    WebElement yourAddressHomePhoneFld;
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_ALLERT_DANGER)
+    public WebElement yourAddressFormDangerAlert;
+
     public CreateAccountPageLocators(WebDriver driver) {
         super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 }
