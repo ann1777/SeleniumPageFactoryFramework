@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WebTableHelper extends HelperBase {
-//    public RegistrationFormData registrationFormData = new RegistrationFormData("John", "Snow",
-//            "foo@test.com", "25", "1000", "Accountant");
-//    public RegistrationFormData changedRegistrationFormData = new RegistrationFormData("NewJohn", "NewSnow",
-//            "newfoo@test.com", "50", "500", "Sales");
+    public RegistrationFormData registrationFormData = new RegistrationFormData(true,"John","Snow","foo@test.com","r56$UM25","10","june","1978",true,false,"CocaCola","accountant","Right way str., 15", "Victory str., 345", "Kiyv", "Podol", "785623", "Ukraine", "jonn", "74185296", "+38954123");
+    public RegistrationFormData changedRegistrationFormData = new RegistrationFormData(true, "NewJohn", "NewSnow",
+            "newfoo@test.com", "50_%mYaq", "5", "may", "2002", true, false, "Twitter", "adv", "Victory str, 22", "New History str., 17", "Kharkiv", "NewUkraine", "785612", "Ukraine", "jony", "452389", "+3874562319");
 
     public WebTableHelper(WebDriver driver) {
         super(driver);

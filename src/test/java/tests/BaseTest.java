@@ -20,12 +20,12 @@ import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
 
 public class BaseTest extends BasePageTest {
     public static WebDriver driver;
-    private final String userNamePrefix = "testUser";
-    private final String userPasswd = "testPasswd";
+    private static final String userNamePrefix = "testUser";
+    private static final String userPasswd = "testPasswd";
 
-    private String userName;
-    public String userEmail = userName.toString() + "@gmail.com";
-    private String sessionToken;
+    private static String userName;
+    public static String userEmail = userName.toString() + "@gmail.com";
+    private static String sessionToken;
 
     protected final AppManager app = new AppManager();
 
@@ -49,7 +49,7 @@ public class BaseTest extends BasePageTest {
     }
 
     @BeforeMethod
-    public void getUser() throws JSONException {
+    public static void getUser() throws JSONException {
         RestAssured.reset();
         RestAssured.baseURI = "http://automationpractice.com/index.php?/";
         RestAssured.requestSpecification = new RequestSpecBuilder()

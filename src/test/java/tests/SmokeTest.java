@@ -1,9 +1,14 @@
 package tests;
 
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class SmokeTest extends BaseTest {
+    public SmokeTest(WebDriver driver) {
+        super(driver);
+    }
+
     @Test
     public void testElementsButtonsItem() {
         app.getNavigationHelper().gotoMainPage();
