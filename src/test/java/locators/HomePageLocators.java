@@ -11,61 +11,61 @@ public class HomePageLocators extends BasePageLocators {
     public WebDriver driver;
 
     @FindBy(id = HomePage_OR.HOMEPAGE_SLIDER_ROW )
-    WebElement SliderRow;
+    public WebElement SliderRow;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_SLIDER)
-    WebElement Slider;
+    public WebElement Slider;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_SLIDER_LEFT_ARROW)
-    WebElement SliderLeftArrow;
+    public WebElement SliderLeftArrow;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_SLIDER_RIGHT_ARROW)
-    WebElement SliderRightArrow;
+    public WebElement SliderRightArrow;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_HTML_CONTENT)
-    WebElement HTMLContent;
+    public WebElement HTMLContent;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_POPULAR_BTN)
-    WebElement PopularBtn;
+    public WebElement PopularBtn;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_BESTSELLERS_BTN)
-    WebElement BestsellersBtn;
+    public WebElement BestsellersBtn;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_PRODUCTS_CONTAINER)
-    WebElement productsContainer;
+    public WebElement productsContainer;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_PRODUCT1_CONTAINER)
-    WebElement product1Container;
+    public WebElement product1Container;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_ITEM_PHOTO)
-    WebElement itemPhoto;
+    public WebElement itemPhoto;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_ITEM_PREVIEW_ICON)
-    WebElement itemPreviewIcon;
+    public WebElement itemPreviewIcon;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_ITEM_NAME)
-    WebElement itemName;
+    public WebElement itemName;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_ITEM_PRICE)
-    WebElement itemPrice;
+    public WebElement itemPrice;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_ADDTOCART_BTN)
-    WebElement addToCartBtn;
+    public WebElement addToCartBtn;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_MORE_BTN)
-    WebElement moreBtn;
+    public WebElement moreBtn;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_FOLLOWUS_ONFACCEBOOK_BLOCK)
-    WebElement followUsOnFacebookBlock;
+    public WebElement followUsOnFacebookBlock;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_INFO_BLOCK)
-    WebElement infoBlock;
+    public WebElement infoBlock;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_CUSTOM_BLOCK)
-    WebElement customBlock;
+    public WebElement customBlock;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_SITE_TITLE)
-    WebElement siteTitle;
+    public WebElement siteTitle;
 
     public HomePageLocators(WebDriver driver) {
         super();

@@ -4,7 +4,7 @@ import locators.BasePageLocators;
 import locators.CreateAccountPageLocators;
 import locators.MyAccountPageLocators;
 import model.RegistrationFormData;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +23,11 @@ public class CreateAccountPageTest extends BaseTest {
 
     public String invalidUserData = "///////////////";
     public String invalidUserEmail = "//////@g.l";
+    public String navigationPipeName = "My account";
+    public String signOutTabClassName = "logout";
+    public String contactUsTabName = "Contact us";
+    public String signOutTabName = "Sign out";
+
 
 
     public CreateAccountPageTest(WebDriver driver){
@@ -30,14 +35,6 @@ public class CreateAccountPageTest extends BaseTest {
         this.base = new BasePageLocators();
         this.registration = new CreateAccountPageLocators(driver);
         PageFactory.initElements((ElementLocatorFactory) driver, this);
-    }
-
-    @Test
-    public void ChooseTitleGender(boolean isMail) {
-        if (RegistrationFormData.getUserIsMail()) {
-            registration.mailGenderCheckBox.click();
-        }
-        registration.femailGenderCheckBox.click();
     }
 
     @Test
@@ -98,7 +95,10 @@ public class CreateAccountPageTest extends BaseTest {
         registration.yourAddressFormFutureReferenceFld.clear();
         registration.yourAddressFormFutureReferenceFld.sendKeys(RegistrationFormData.getUserMainAddress());
         registration.yourAddressFormRegisterBtn.click();
+        myaccount.navigationPipe.getText().equals(navigationPipeName);
         myaccount.accountNameTab.getText().equals(RegistrationFormData.getUserFirstName() + RegistrationFormData.getUserLastName());
+        myaccount.signOutTab.findElement(By.className(signOutTabClassName)).getText().equals(signOutTabName);
+        myaccount.contactUsTab.getText().equals(contactUsTabName);
     }
 
     public void SignUPForNewLetter(boolean isSignUp) {

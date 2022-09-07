@@ -1,7 +1,6 @@
 package objectRepository;
 
 public class SignInPage_OR {
-
     public static final String SIGNINPAGE_AUTHENTICATION_PAGEHEADER = "//*[@id='center_column']/h1";
     public static final String SIGNINPAGE_CREATEACCOUNTFORM_HEADER = "//*[@id='create-account_form']/h3";
     public static final String SIGNINPAGE_CREATEACCOUNT_EMAILFLD = "//*[@id='email_create']";

@@ -13,253 +13,253 @@ public class SearchResultsPageLocators extends BasePageLocators{
     public WaitHelper wait;
 
     @FindBy(css = SearchResultsPage_OR.HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = SearchResultsPage_OR.NAVIGATION_PIPE)
-    WebElement navigationPips;
+    public WebElement navigationPips;
 
     @FindBy(css = SearchResultsPage_OR.NAVIGATION_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
 
     @FindBy(css = SearchResultsPage_OR.SEARCH_TITLE)
-    WebElement searchTitle;
+    public WebElement searchTitle;
 
     @FindBy(css = SearchResultsPage_OR.SEARCHTITLE_LIGHTER)
-    WebElement searchTitleLighter;
+    public WebElement searchTitleLighter;
 
     @FindBy(css = SearchResultsPage_OR.SORTBY_LABEL)
-    WebElement sortByLabel;
+    public WebElement sortByLabel;
 
     @FindBy(css = SearchResultsPage_OR.SORTBY_SELECTOR)
-    WebElement sortByFld;
+    public WebElement sortByFld;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_HEADING_COUNTER)
-    WebElement resultsCounter;
+    public WebElement resultsCounter;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_VIEW_OPTIONS)
-    WebElement viewOptions;
+    public WebElement viewOptions;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_GRIDVIEW_OPTIONS)
-    WebElement gridViewOptions;
+    public WebElement gridViewOptions;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_LISTVIEW_OPTIONS)
-    WebElement listViewOptions;
+    public WebElement listViewOptions;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_SHOWING_COUNTER)
-    WebElement showingCounter;
+    public WebElement showingCounter;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_SEARCH_LIGHTER)
-    WebElement searchLighter;
+    public WebElement searchLighter;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_COMPARE_BTN)
-    WebElement compareBtn;
+    public WebElement compareBtn;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_PRODUCT_LIST_CONTAINER)
-    WebElement productContainer;
+    public WebElement productContainer;
 
     @FindBy(css = SearchResultsPage_OR.FOUNDEDRESULTS_FIRSTPRODUCT_CONTAINER)
-    WebElement firstProductContainer;
+    public WebElement firstProductContainer;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_IMG)
-    WebElement firstProductImg;
+    public WebElement firstProductImg;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_IMG_PREVIEW_ICN)
-    WebElement firstProductImgPreviewIvn;
+    public WebElement firstProductImgPreviewIvn;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_PRODUCT_NAME)
-    WebElement firstProductName;
+    public WebElement firstProductName;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_PRODUCT_PRICE)
-    WebElement firstProductPrice;
+    public WebElement firstProductPrice;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_PRODUCT_OLDPRICE)
-    WebElement firstProductOldPrice;
+    public WebElement firstProductOldPrice;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_PRODUCT_DISCOUNT)
-    WebElement firstProductDiscount;
+    public WebElement firstProductDiscount;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_ADDTOCART_BTN)
-    WebElement firstProductAddToCartBtn;
+    public WebElement firstProductAddToCartBtn;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_MORE_BTN)
-    WebElement firstProductMoreBtn;
+    public WebElement firstProductMoreBtn;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_COLORS_OPTIONS)
-    WebElement firstProductColorsOptions;
+    public WebElement firstProductColorsOptions;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_SECOND_COLORS_OPTION)
-    WebElement firstProductSecondColorOption;
+    public WebElement firstProductSecondColorOption;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_INSTOCK_BTN)
-    WebElement firstProductInStockBtn;
+    public WebElement firstProductInStockBtn;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_ADTOWISHLIST_LINK)
-    WebElement firstProductAddToWishListLink;
+    public WebElement firstProductAddToWishListLink;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_ADTOCOMPARE_LINK)
-    WebElement firstProductAddToCompareLink;
+    public WebElement firstProductAddToCompareLink;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_BOTTOM_COUNTER)
-    WebElement firstProductBottomCounter;
+    public WebElement firstProductBottomCounter;
 
     @FindBy(css = SearchResultsPage_OR.FOUNNDEDRESULTS_FIRSTPRODUCT_BOTTOM_COMPARE_BTN)
-    WebElement firstProductBottomCompareBtn;
+    public WebElement firstProductBottomCompareBtn;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_LEFT_BLOCK)
-    WebElement blockRightTopSellers;
+    public WebElement blockRightTopSellers;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_LEFT_BLOCK_TITLE)
-    WebElement blockRightTopSellersTitle;
+    public WebElement blockRightTopSellersTitle;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_LEFT_BLOCK_CONTENT)
-    WebElement blockRightTopSellersContent;
+    public WebElement blockRightTopSellersContent;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_BLOCK_CONTENT_FIRST_ITEM)
-    WebElement blockRightTopSellersFirstItem;
+    public WebElement blockRightTopSellersFirstItem;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_BLOCK_CONTENT_FIRST_ITEM_IMG)
-    WebElement blockRightTopSellersFirstItemImg;
+    public WebElement blockRightTopSellersFirstItemImg;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_BLOCK_CONTENT_FIRST_ITEM_NAME)
-    WebElement blockRightTopSellersFirstItemNama;
+    public WebElement blockRightTopSellersFirstItemNama;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_BLOCK_CONTENT_FIRST_ITEM_DESCRIPTION)
-    WebElement blockRightTopSellersFirstItemDesc;
+    public WebElement blockRightTopSellersFirstItemDesc;
 
     @FindBy(css = SearchResultsPage_OR.TOP_SELLERS_BLOCK_CONTENT_FIRST_ITEM_PRICE)
-    WebElement blockRightTopSellersFirstItemPrice;
+    public WebElement blockRightTopSellersFirstItemPrice;
 
     @FindBy(css = SearchResultsPage_OR.ALL_BEST_SELLERS_BTN)
-    WebElement allBestSellersBtn;
+    public WebElement allBestSellersBtn;
 
     @FindBy(css = SearchResultsPage_OR.ALL_BEST_SELLERS_BTN_RIGHT_ICN)
-    WebElement allBestSellersBtnIcn;
+    public WebElement allBestSellersBtnIcn;
 
     @FindBy(css = SearchResultsPage_OR.CATEGORIES_LEFT_BLOCK)
-    WebElement categories;
+    public WebElement categories;
 
     @FindBy(css = SearchResultsPage_OR.CATEGORIES_LEFT_BLOCK_TITLE)
-    WebElement categoriesLeftBlock;
+    public WebElement categoriesLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.CATEGORIES_LEFT_BLOCK_CONTENT)
-    WebElement categoriesLeftBlockContent;
+    public WebElement categoriesLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.CATEGORIES_LEFT_BLOCK_CONTENT_PLUS_BTN)
-    WebElement categoriesLeftBlockContentPlusBtn;
+    public WebElement categoriesLeftBlockContentPlusBtn;
 
     @FindBy(css = SearchResultsPage_OR.CATEGORIES_LEFT_BLOCK_CONTENT_TOP)
-    WebElement categoriesLeftBlockContentTop;
+    public WebElement categoriesLeftBlockContentTop;
 
     @FindBy(css = SearchResultsPage_OR.CATEGORIES_LEFT_BLOCK_CONTENT_TOP_PLUS_BTN)
-    WebElement categoriesLeftBlockContentTopPlusBtn;
+    public WebElement categoriesLeftBlockContentTopPlusBtn;
 
     @FindBy(css = SearchResultsPage_OR.INFORMATION_LEFT_BLOCK)
-    WebElement informationLeftBlock;
+    public WebElement informationLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.INFORMATION_LEFT_BLOCK_TITLE)
-    WebElement informationLeftBlockTitle;
+    public WebElement informationLeftBlockTitle;
 
     @FindBy(css = SearchResultsPage_OR.INFORMATION_LEFT_BLOCK_CONTENT)
-    WebElement informationLeftBlockContent;
+    public WebElement informationLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.INFORMATION_LEFT_BLOCK_CONTENT_PLUS_ABOUT_US_SUBCATEGORY)
-    WebElement informationLeftBlockContentAboutAs;
+    public WebElement informationLeftBlockContentAboutAs;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK)
-    WebElement manufacturesLeftBlock;
+    public WebElement manufacturesLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK_TITLE)
-    WebElement manufacturesLeftBlockTitle;
+    public WebElement manufacturesLeftBlockTitle;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK_CONTENT)
-    WebElement manufacturesLeftBlockContent;
+    public WebElement manufacturesLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK_FASHION)
-    WebElement manufacturesLeftBlockFashion;
+    public WebElement manufacturesLeftBlockFashion;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK_FASHION_LINK)
-    WebElement manufacturesLeftBlockFashionLink;
+    public WebElement manufacturesLeftBlockFashionLink;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK_ALL_LIST)
-    WebElement manufacturesLeftBlockAllList;
+    public WebElement manufacturesLeftBlockAllList;
 
     @FindBy(css = SearchResultsPage_OR.MANUFACTURES_LEFT_BLOCK_ALL_LIST_FASHION_OPTION)
-    WebElement manufacturesLeftBlockAllListFashionOption;
+    public WebElement manufacturesLeftBlockAllListFashionOption;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK)
-    WebElement specialsLeftBlock;
+    public WebElement specialsLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK_TITLE)
-    WebElement specialsLeftBlockTitle;
+    public WebElement specialsLeftBlockTitle;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK_CONTENT)
-    WebElement specialsLeftBlockContent;
+    public WebElement specialsLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK_PRODUCT_IMG)
-    WebElement specialsLeftBlockProductIcn;
+    public WebElement specialsLeftBlockProductIcn;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK_PRODUCT_CONTENT)
-    WebElement specialsLeftBlockProductContent;
+    public WebElement specialsLeftBlockProductContent;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK_PRODUCT_PRICE)
-    WebElement specialsLeftBlockProductPrice;
+    public WebElement specialsLeftBlockProductPrice;
 
     @FindBy(css = SearchResultsPage_OR.SPECIALS_LEFT_BLOCK_ALL_SPECIALS_BTN)
-    WebElement specialsLeftBlockAllSpecialsBtn;
+    public WebElement specialsLeftBlockAllSpecialsBtn;
 
     @FindBy(css = SearchResultsPage_OR.OUR_STORES_LEFT_BLOCK)
-    WebElement ourStoresLeftBlock;
+    public WebElement ourStoresLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.OUR_STORES_LEFT_BLOCK_TITLE)
-    WebElement ourStoresLeftBlockTitle;
+    public WebElement ourStoresLeftBlockTitle;
 
     @FindBy(css = SearchResultsPage_OR.OUR_STORES_LEFT_BLOCK_CONTENT)
-    WebElement ourStoresLeftBlockContent;
+    public WebElement ourStoresLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.OUR_STORES_LEFT_BLOCK_PRODUCT_IMG)
-    WebElement ourStoresLeftBlockProductImg;
+    public WebElement ourStoresLeftBlockProductImg;
 
     @FindBy(css = SearchResultsPage_OR.OUR_STORES_LEFT_BLOCK_PRODUCT_DISCOVER_BTN)
-    WebElement ourStoresLeftBlockProductDiscoverBtn;
+    public WebElement ourStoresLeftBlockProductDiscoverBtn;
 
     @FindBy(css = SearchResultsPage_OR.OUR_STORES_LEFT_BLOCK_PRODUCT_DISCOVER_BTN_ICN)
-    WebElement ourStoresLeftBlockProductDiscoverBtnIcn;
+    public WebElement ourStoresLeftBlockProductDiscoverBtnIcn;
 
     @FindBy(css = SearchResultsPage_OR.SUPPLIERS_LEFT_BLOCK)
-    WebElement suppliersLeftBlock;
+    public WebElement suppliersLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.SUPPLIERS_LEFT_BLOCK_TITLE)
-    WebElement suppliersLeftBlockTitle;
+    public WebElement suppliersLeftBlockTitle;
 
     @FindBy(css = SearchResultsPage_OR.SUPPLIERS_LEFT_BLOCK_CONTENT)
-    WebElement suppliersLeftBlockContent;
+    public WebElement suppliersLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.SUPPLIERS_LEFT_BLOCK_FASHION_SUPPLIER)
-    WebElement suppliersLeftBlockFashionSuppliers;
+    public WebElement suppliersLeftBlockFashionSuppliers;
 
     @FindBy(css = SearchResultsPage_OR.SUPPLIERS_LEFT_BLOCK_ALL_SUPPLIERS_DROPDOWN)
-    WebElement suppliersLeftBlockAllSuppliersDropdown;
+    public WebElement suppliersLeftBlockAllSuppliersDropdown;
 
     @FindBy(css = SearchResultsPage_OR.SUPPLIERS_LEFT_BLOCK_ALL_SUPPLIERS_OPTION)
-    WebElement suppliersLeftBlockAllSuppliersOption;
+    public WebElement suppliersLeftBlockAllSuppliersOption;
 
     @FindBy(css = SearchResultsPage_OR.VIEWED_PRODUCTS_LEFT_BLOCK)
-    WebElement viewedProductsLeftBlock;
+    public WebElement viewedProductsLeftBlock;
 
     @FindBy(css = SearchResultsPage_OR.VIEWED_PRODUCTS_LEFT_BLOCK_TITLE)
-    WebElement viewedProductsLeftBlockTitle;
+    public WebElement viewedProductsLeftBlockTitle;
 
     @FindBy(css = SearchResultsPage_OR.VIEWED_PRODUCTS_LEFT_BLOCK_CONTENT)
-    WebElement viewedProductsLeftBlockContent;
+    public WebElement viewedProductsLeftBlockContent;
 
     @FindBy(css = SearchResultsPage_OR.VIEWED_PRODUCTS_LEFT_BLOCK_LAST_VIEWED_ITEM)
-    WebElement viewedProductsLeftBlockLastViewedItem;
+    public WebElement viewedProductsLeftBlockLastViewedItem;
 
     @FindBy(css = SearchResultsPage_OR.VIEWED_PRODUCTS_LEFT_BLOCK_LAST_VIEWED_ITEM_IMG)
-    WebElement viewedProductsLeftBlockLastViewedItemImg;
+    public WebElement viewedProductsLeftBlockLastViewedItemImg;
 
     @FindBy(css = SearchResultsPage_OR.VIEWED_PRODUCTS_LEFT_BLOCK_LAST_VIEWED_ITEM_DESC)
-    WebElement viewedProductsLeftBlockLastViewedItemImgDesc;
+    public WebElement viewedProductsLeftBlockLastViewedItemImgDesc;
 
     public SearchResultsPageLocators(WebDriver driver) {
         this.driver = driver;
