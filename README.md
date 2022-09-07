@@ -1,4 +1,4 @@
-# UI testing with Selenium & Junit4 - Page Factory webWomanShop_selenium
+# UI testing with Selenium & TestNG, Cucumber & JUnit - Page Factory webWomanShop_selenium
 
 ## Overview
 This is Selenium automation framework in Java that tests online shop features 
@@ -18,17 +18,19 @@ As stated above, this project contains a Selenium Java test framework, implement
 As this is a Java project, build and dependency management is handled by Maven, so there is a `pom.xml` file defining the versions of the dependencies:
 * Java v11
 * Selenium v4.4.0
+* TestNG v7.6.1
 * JUnit v4.13.2
 * Cucumber v7.6.0
-* WebDriverManager v4.4.3
+* WebDriverManager v5.1.0
 
 ## Project Structure
 The project uses a standard structure and naming convention, incorporating the URL of the website under test
 * `features`  - this folder contains the Cucumber `.feature` files, one per website locators. By separating out the tests for each locators into separate feature files we continue the Page Factory theme of locators independence and make it easier to extend the framework in the future. 
-* `pages` - the Page Factory implementation of the individual website pages, one class file per locators. Each class is named after the corresponding locators e.g. `HomePage.java`, `CheckboxesPage.java` etc. There is also an abstract `BasePage.java` which the other pages implement.
-* `steps` - a collection of classes containing the implementation of the steps from the Cucumber feature files. As above, there is one steps class per locators and each is named after the locators under test, e.g. `FormAuthenticationPageSteps.java`. There is an additional `CommonSteps.java` class containing several steps that are, as the name suggests, used by more than one feature file. This avoids the need to duplicate code across individual steps classes.
+* `locators` - the Page Factory implementation of the individual website pages, one class file per locators. Each class is named after the corresponding locators e.g. `HomePageLocators.java`, `CreateAccountPageLocators.java` etc. There is also an abstract `BasePageLocators.java` which the other pages implement.
+* `objectRepository` - each page locators collected in String format one class files. Each class is named after the corresponding page_OR e.g. `HomePage_OR.java`, `CreateAccountPage_OR.java` etc. There is also an abstract `BasePage_OR.java` which the other pages implement.
+* `steps` - a collection of classes containing the implementation of the steps from the Cucumber feature files. As above, there is one steps class per locators and each is named after the locators under test, e.g. `CreateAccountPageSteps.java`. There is an additional `CommonSteps.java` class containing several steps that are, as the name suggests, used by more than one feature file. This avoids the need to duplicate code across individual steps classes.
 * `drivers` - set up the driver, based on the selected browser, using the [WebDriverManager](https://github.com/bonigarcia/webdrivermanager) extension.
-* `TestRunner.java` - the main JUnit test runner class, decorated with the annotation required to run Cucumber tests. The class itself is empty but the `CucumberOptions` annotation defines the location of the features and associated steps.
+* `TestRunner.java` - the main testNGCucumberRunner test runner class, decorated with the annotation required to run Cucumber tests. The class itself is empty but the `CucumberOptions` annotation defines the location of the features and associated steps.
 
 ### Page Factory Classes
 As noted above, the `pages` folder contains the relevant Page Factory classes for each tested locators. Each locators class, including the abstract `BasePage` class, follows the same pattern:
@@ -44,9 +46,9 @@ Note there are no assertions in the locators classes as assertions are a test ac
 
 ### Supported Browsers
 The `DriverManager` class uses the WebDriverManager dependency to manage the various browser drivers. The `getDriver` method returns the relevant WebDriver instance for the chosen browser, with support for:
-* Chrome headless
-* Chrome 
-* Firefox
+* Chrome
+* Firefox 
+* IExplorer
 
 The browser to be used can be passed in via a Java system property with a key of `browser`, defaulting to Chrome if no such property is specified. Note there is some fallback if the browser selection is incompatible with the operating system - specifying Edge on a Mac or Safari on Windows will result in the browser selection reverting to the default i.e. Chrome.
 
@@ -57,7 +59,7 @@ Another Java system property, `headless`, is used to determine whether the brows
 ### Running tests
 The tests are easy to run as they are bound to the Maven `test` goal so running the tests is as simple as executing `mvn test` within the directory in which the repo has been cloned. The `browser` and `headless` properties can also be specified on the command line, e.g. `mvn test -Dbrowser=firefox -Dheadless=false` will run the tests in normal/headed Firefox.
 
-Alternatively, the empty `TestRunner` class can be executed using a JUnit runner within an IDE.
+Alternatively, the empty `TestRunner` class can be executed using a JUnit runner within an IDE or by running testng.xml files.
 
 NB Each test opens up in a separate browser instance (which is closed at the end of the test) so is not the fastest way to run a test suite, but it is the right way as we should ensure that tests are wholly independent of one another, do not share state and can run in any order. Cucumber has no `BeforeAll` and `AfterAll` hooks, so we can’t open a single browser at the start of the test suite, navigate to the relevant locators in the setup for each individual test scenario and close the browser at the end of the test suite. There are ways round this by using JUnit annotations and Maven phases but nothing that works consistently when tests may be via the IDE as well as from the command line (or CI pipelines). Having a separate browser per test also allows for test parallelisation which wouldn't otherwise be possible.
 
