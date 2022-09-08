@@ -4,6 +4,7 @@ import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -11,10 +12,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
+@RunWith(Cucumber.class)
 @CucumberOptions(
         monochrome = true,
         tags = "@Candidate",
-        features = "src/test/java/cucumber/features",
+        features = {"src/test/java/resources/features"},
         glue = "cucumber.steps",
         publish = true
 )

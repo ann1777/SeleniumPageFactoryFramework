@@ -6,12 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 import org.testng.Assert;
-
-import java.util.Iterator;
 import java.util.Random;
 
 import static tests.BaseTest.driver;
@@ -32,6 +29,7 @@ public class BasePageTest{
     public MyAddressPageLocators myaddress;
     public PersonalInfoPageLocators myinfo;
     public SignInPageLocators signout;
+    public FacebookPage fbPage;
     String ValidEmailPageAlertMsg = " Newsletter : You have successfully subscribed to this newsletter.";
     String ValidEmailFooterAlertMsg = "You have successfully subscribed to this newsletter.";
     String AlreadyRegisteredPageAlertMsg = " Newsletter : This email address is already registered.";
@@ -91,16 +89,15 @@ public class BasePageTest{
     public void SearchingItems() {
         base.womenDisplayBlock.findElement(By.xpath("//h5/a"));
         Random rnd1 = new Random();
-        while (rnd1.nextInt() > 14) rnd1.nextInt() -= 14;
+        int a = Math.round(rnd1.nextInt());
+        while (a > 14) a -= 14;
         int count1 = 0;
-        while (count1 < rnd1.nextInt()) {
+        while (count1 < a) {
             base.womenDisplayBlock.sendKeys(Keys.DOWN);
             count1 = count1++;
         }
-        WebElement itemName;
-        itemName = base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
-
-        base.searchFld.sendKeys((CharSequence) itemName);
+        String itemName = base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
+        base.searchFld.sendKeys(itemName);
         base.searchBtn.click();
         base.womenDisplayBlock.findElement(By.xpath(foundItemsName));
         Assert.assertEquals(itemName, foundItemsName);
@@ -137,7 +134,7 @@ public class BasePageTest{
 
     @Test
     public void clickWomenBtn() {
-        base.womenDisplayBlockBtn.click();
+        base.womenDisplayBlockTab.click();
         base.womenDisplayBlock.findElement(By.id("category-thumbnail"));
         base.womenDisplayBlock.findElement(By.className("sf-with-ul"));
         base.womenDisplayBlock.findElement(By.className("submenu-container"));
@@ -148,10 +145,10 @@ public class BasePageTest{
 
     @Test
     public void clickDressesBtn() {
-        base.dressesDisplayBlockBtn.click();
-        base.dressesDisplayBlockBtn.findElement(By.linkText("Casual Dresses"));
-        base.dressesDisplayBlockBtn.findElement(By.linkText("Evening Dresses"));
-        base.dressesDisplayBlockBtn.findElement(By.linkText("Summer Dresses"));
+        base.dressesDisplayBlockTab.click();
+        base.dressesDisplayBlockTab.findElement(By.linkText("Casual Dresses"));
+        base.dressesDisplayBlockTab.findElement(By.linkText("Evening Dresses"));
+        base.dressesDisplayBlockTab.findElement(By.linkText("Summer Dresses"));
     }
 
     @Test
@@ -195,6 +192,7 @@ public class BasePageTest{
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
 //        Iterator<String> BasePage = s.iterator();
 //        String facebookPage = BasePage.next();
 //        if(!BasePage.equals(facebookPage)) {
@@ -202,7 +200,6 @@ public class BasePageTest{
 //        }
 //        System.out.println(driver.switchTo().window(facebookPage).getTitle());
     }
-
 
     @Test
     public TwitterPage followUsByTwitter() {
@@ -213,14 +210,6 @@ public class BasePageTest{
         } catch (Exception e1) {
             throw new RuntimeException(e1);
         }
-//        Iterator<String> BasePage = s1.iterator();
-//        String twitterPage = BasePage.next();
-//        if(!BasePage.equals(twitterPage)) {
-//            driver.switchTo().window(twitterPage);
-//        }
-//        String ActualTitle2 = driver.switchTo().window(twitterPage).getTitle();
-//        System.out.println(ActualTitle2);
-//        Assert.assertEquals(twitterPageTile, ActualTitle2);
     }
 
     @Test

@@ -80,4 +80,8 @@ public class ContactUsPageLocators extends BasePageLocators {
         driver.get("http://automationpractice.com/index.php?controller=contact");
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
+
+    public ContactUsPageLocators() {
+
+    }
 }

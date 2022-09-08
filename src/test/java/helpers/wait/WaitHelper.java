@@ -1,7 +1,7 @@
 package helpers.wait;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-import static helpers.logger.LoggerHelper.*;
+import static helpers.logger.LoggerHelper.getLogger;
 
 public class WaitHelper {
 
@@ -22,16 +22,12 @@ public class WaitHelper {
 
 	/**
 	 * This is implicit Wait Method
-	 * 
-	 * @param i
-	 * @param unit
 	 */
 	@BeforeMethod
-	public void setImplicitWait(int i, TimeUnit unit) throws Exception {
-		driver = new ChromeDriver();
-		baseUrl = "http://www.google.com";
-		log.info("setImplicitWait has been set to : " + i);
-		driver.manage().timeouts().implicitlyWait(i, TimeUnit.SECONDS);
+	public void waitForElement(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOf(element));
+
 	}
 
 	/**
@@ -150,7 +146,7 @@ public class WaitHelper {
 
 	public void pageLoadTime(long timeOut, TimeUnit unit) {
 		log.info("Waiting for page to load: " + timeOut + " seconds");
-		driver.manage().timeouts().pageLoadTimeout(timeOut, unit);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		log.info("Page is loaded");
 	}
 

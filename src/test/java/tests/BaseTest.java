@@ -4,8 +4,8 @@ import helpers.AppManager;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import locators.BasePageLocators;
+import org.asynchttpclient.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
@@ -66,13 +66,13 @@ public class BaseTest extends BasePageTest {
                 .when()
                 .post("/user").then().statusCode(200);
 
-        Response sessionResponse = RestAssured.given()
+        Response sessionResponse = (Response) RestAssured.given()
                 .queryParam("emailAddress", userEmail)
                 .queryParam("password", userPasswd)
                 .when()
                 .get("/login");
         sessionResponse.then().statusCode(200);
-        JSONObject joTokenRespone = new JSONObject(sessionResponse.asString());
+        JSONObject joTokenRespone = new JSONObject(sessionResponse.getHeaders().getAsString());
         sessionToken = joTokenRespone.getString("session_token");
         System.out.println(sessionToken);
 

@@ -1,11 +1,10 @@
 package steps;
 
-import locators.*;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import locators.*;
 import objectRepository.BasePage_OR;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
@@ -13,7 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import tests.BaseTest;
 
-public class BasePageSteps {
+public class BasePageSteps extends BaseTest {
     public BasePageLocators basePage;
     public HomePageLocators homePage;
     public BestSellersPageLocators bestSellers;
@@ -33,11 +32,10 @@ public class BasePageSteps {
     public SearchResultsPageLocators searchPage;
     public FacebookPage fbPage;
 
-    @Before
-    public void setUp() throws Exception {
-        BaseTest.setUp();
-        BaseTest.getUser();
+    public BasePageSteps(WebDriver driver) {
+        super(driver);
     }
+
     @Given ("Base page header is displayed with a searchField")
     public void searchFieldIsOnBasePage(@NotNull WebDriver driver) {
         driver.get("https://automationpractice.com/index.php");
