@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CreateAccountTestSuite">
+    <test name="CreateAccountTest">
+        <classes>
+            <class name="tests.CreateAccountPageTest">
+            </class>
+        </classes>
+    </test>
+    <test name="CreateAccountValidData">
+        <classes>
+            <class name = "tests.CreateAccountPageTest">
+                <methods>
+                    <include name="fillYourPersonalInformationWithValidData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CreateAccountInvalidData">
+        <classes>
+            <class name = "tests.CreateAccountPageTest">
+                <methods>
+                    <include name="fillYourPersonalInformationWithInvalidData"/>
+                    <include name="fillYourPersonalInformationWithEmptyEmailFldAndEmptyCityFld"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

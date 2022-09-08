@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BasePageTestSuite">
+    <test name="BasePageTest1[allTests]">
+        <classes>
+            <class name="tests.BasePageTest">
+            </class>
+        </classes>
+    </test>
+    <test name="BasePageTest2[checkButtons]">
+        <groups>
+            <run>
+                <include name="getItemName"/>
+                <include name="SearchingItem"/>
+                <include name="clickWomenBtn"/>
+                <exclude name="SearchingItems"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "tests.BasePageTest">
+                <methods>
+                    <include name="clickWomenBtn"/>
+                    <include name="clickDressesBtn"/>
+                    <include name="clickTShirtsBtn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BasePageTest3[checkFooterFeature]">
+        <groups>
+            <run>
+                <include name="fillNewsLetterFieldWithInvalidEmail"/>
+                <include name="fillNewsLetterFieldWithValidNewEmail"/>
+                <include name="fillNewsLetterFieldWithAlreadyUsedEmail"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "tests.BasePageTest">
+                <methods>
+                    <include name="followUsByFacebook"/>
+                    <include name="followUsByTwitter"/>
+                    <include name="followUsByYoutube"/>
+                    <include name="followUsByGooglePlus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BasePageTest3[checkFooterPageLinks]">
+        <groups>
+            <run>
+               <include name="goWomenPage"/>
+               <include name="goSpecialsPage"/>
+               <include name="goNewProductsPage"/>
+               <include name="goBestSellersPage"/>
+               <include name="goOurStoresPage"/>
+               <include name="goContactUsPage"/>
+               <include name="goTermsOfUsePage"/>
+               <include name="goAboutUsPage"/>
+               <include name="goSiteMapPage"/>
+               <include name="goMyOrdersPage"/>
+               <include name="goMyCreditSlipsPage"/>
+               <include name="goMyAddressesPage"/>
+               <include name="goPersonalInfoPage"/>
+               <include name="goSignInPage"/>
+            </run>
+        </groups>
+    </test>
+</suite>

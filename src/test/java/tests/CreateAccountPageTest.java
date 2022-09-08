@@ -104,6 +104,7 @@ public class CreateAccountPageTest extends BaseTest {
         myaccount.contactUsTab.getText().equals(contactUsTabName);
     }
 
+    @Test
     public void SignUPForNewLetter(boolean isSignUp) {
         if (RegistrationFormData.getIsMail()) {
             registration.mailGenderCheckBox.click();
