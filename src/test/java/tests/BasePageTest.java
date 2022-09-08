@@ -1,5 +1,4 @@
 package tests;
-
 import locators.*;
 import model.RegistrationFormData;
 import org.junit.Test;
@@ -58,6 +57,7 @@ public class BasePageTest{
     String signOutPageLink = "http://automationpractice.com/index.php?mylogout";
 
     String actualTitle = "//h2//span[text()='Selenium Framework']";
+    
     String ExpectedTitle1 = "Selenium Framework";
     String itemName;
     String foundItemsName;
