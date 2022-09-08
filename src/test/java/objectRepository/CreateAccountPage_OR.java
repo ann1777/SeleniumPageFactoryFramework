@@ -43,8 +43,15 @@ public class CreateAccountPage_OR {
 //    public static final String CREATEACCOUNTPAGE_PASSWORD_FLD = "//*/input[@name='passwd']";
     public static final String CREATEACCOUNTPAGE_BIRTHDAY_LABEL = "//*/label[text()='Date of Birth']";
     public static final String CREATEACCOUNTPAGE_BIRTHDAY_DAY_SELECTOR = "#uniform-days";
+
+    public static final String CREATEACCOUNTPAGE_14_BIRTHDAY_OPT = "//*[@id='days']/option[@value='16']";
     public static final String CREATEACCOUNTPAGE_BIRTHDAY_MONTH_SELECTOR = "#uniform-months";
+
+    public static final String CREATEACCOUNTPAGE_BIRTHDAY_MONTH_MAY_OPT = "//*[@id='months']/option[6]";
+
     public static final String CREATEACCOUNTPAGE_BIRTHDAY_YEARS_SELECTOR = "#uniform-years";
+
+     public static final String CREATEACCOUNTPAGE_BIRTHDAY_YEARS_2004_OPT = "//*[@id='years']/option[20]";
     public static final String CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_CHECKBOX = "#newsletter";
 //    public static final String CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_CHECKBOX = "//*/input[@name='newsletter']";
 //    public static final String CREATEACCOUNTPAGE_SIGNUP_FOR_NEWSLETTER_CHECKBOX = "//*/input[@id='uniform-newsletter']";
@@ -96,8 +103,9 @@ public class CreateAccountPage_OR {
     public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR = "#uniform-id_state";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR = "//*/div[@id='uniform-id_state']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR = "//*/select[@id='id_state']";
-    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA = "#id_state>option";
-//    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA = "//*[@id='id_state']/option[12]";
+    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA = "//*[@id='id_state']/option[12]";
+//    public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA = "#id_state>option";
+
     public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL = "//*/label[@for='postcode']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL = "//*/p/label[text()='Zip/Postal Code ']";
     public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR = "#postcode";

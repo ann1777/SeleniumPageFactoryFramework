@@ -73,8 +73,17 @@ public class CreateAccountPageLocators extends BasePageLocators {
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_DAY_SELECTOR)
     public WebElement birthDaySelector;
 
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_14_BIRTHDAY_OPT)
+    public WebElement birthDay14Opt;
+
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_MONTH_SELECTOR)
     public WebElement birthMonthSelector;
+
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_MONTH_MAY_OPT)
+    public WebElement birthMonthMayOpt;
+
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_YEARS_2004_OPT)
+    public WebElement birthYear2004Opt;
 
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_YEARS_SELECTOR)
     public WebElement birthYearsSelector;
@@ -142,7 +151,7 @@ public class CreateAccountPageLocators extends BasePageLocators {
     @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR)
     public WebElement yourAddressFormStateSelector;
 
-    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA)
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA)
     public WebElement stateGeorgia;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL)

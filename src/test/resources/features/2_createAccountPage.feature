@@ -5,15 +5,18 @@ Feature: CreateAccount features
     Given Create an account page is displayed
     When I choose MailCheckBox
     And  I fill up the <firstName> and <lastname> fields
-    And I click on the data of Birth selector
-    And I press down arrow key several times before it 14 has been chosen in opened dropdown menu
-    And I press return key to chose 14 number
+    And I click on the Birth data selector
+    And I click on 14 in opened dropdown menu
+    And I click on the Birth month selector
+    And I click on May in opened dropdown menu
+    And I click on the Birth year selector
+    And I click on 2004 in opened dropdown menu
     And I fill up the <Email> and <password> fields with valid data
     And I fill up the <Address> and <City> fields with valid data
-    And I on the State selector
-    And I press down arrow key several times before it Georgia has been chosen in opened dropdown menu
-    And I press return key to chose Georgia
-    And I fill up the <Zip/Postal Code>  with valid data
+    And I click on the State selector
+    And I click on Georgia has in opened dropdown menu
+    And I press return key
+    And I fill up the <Zip/Postal Code> with valid data
     And I click on the Country selector
     And I press down arrow key to get available option
     And I press return key to chose it
