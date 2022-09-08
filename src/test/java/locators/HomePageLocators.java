@@ -65,7 +65,7 @@ public class HomePageLocators extends BasePageLocators {
     public WebElement customBlock;
 
     @FindBy(xpath = HomePage_OR.HOMEPAGE_SITE_TITLE)
-    public WebElement siteTitle;
+    public WebElement pageTitle;
 
     public HomePageLocators(WebDriver driver) {
         super();

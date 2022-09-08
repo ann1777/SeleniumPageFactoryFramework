@@ -4,7 +4,7 @@ public class ContactUsPage_OR {
 
     public static final String HOME_ICN = ".icon-home";
     public static final String NAVIGATION_PIPE = ".navigation-pipe";
-    public static final String CONTACTUSPAGE_ICN = ".navigation_page";
+    public static final String CONTACTUSPAGE_TAB = ".navigation_page";
     public static final String CONTACTUSPAGE_CONTENT = "div#center_column";
     public static final String CONTACTUSPAGE_HEADER = "h1.page-heading";
     public static final String CONTACTUSPAGE_CONTENT_HEADER = "//*[text() = 'send a message']";

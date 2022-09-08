@@ -5,7 +5,7 @@ Feature: BasePage features
     Given Base page header is displayed with a searchField
     And I see <itemName> on HomePage
     When I search for <itemName>
-    Then I see <searchResult> in woman display block
+    Then I see <searchResult> in search result block
     Examples:
       | itemName             | searchResult                  |
       | "Printed Dress"      | "Printed Dress"               |
@@ -13,8 +13,7 @@ Feature: BasePage features
       | "Faded Short Sleeve" | "Faded Short Sleeve T-shorts" |
 
   Scenario Outline2: Base page header Tabs submenu containers available options
-    Given Base page header is displayed with a searchField
-    And I see <tabs> on Base page header
+    Given Base page header is displayed with <tabs> on it
     When I hover mouse on <tab> button
     Then I see submenu-container opens with available <submenu-container options>
     Examples:
@@ -41,10 +40,11 @@ Feature: BasePage features
     And I fill up the subscribe NewsLetter field with the same <valid user email>
     And I click on submitNewsletter button
     Then I see <dangerEmailPageAlertMsg> on the page
-    And I see the <dangerAlertMsg> in the footer NewsLetterInputFld
+    And I see the <dangerFooterAlertMsg> in the footer NewsLetterInputFld
     Examples:
-      | valid user email       | dangerEmailPageAlertMsg                                 | dangerAlertMsg                              |
-      | "{username}@gmail.com" | "Newsletter: This email address is already registered." | "This email address is already registered." |
+      | valid user email       | validEmailPageAlertMsg                                               | successAlertMsg                                        | dangerEmailPageAlertMsg                                 | dangerFooterAlertMsg                        |
+      | "{username}@gmail.com" | " Newsletter : You have successfully subscribed to this newsletter." | "You have successfully subscribed to this newsletter." | "Newsletter: This email address is already registered." | "This email address is already registered." |
+
 
   Scenario Outline5: Fill subscribe NewsLetter field with invalid user email
     Given Base page footer is displayed with a subscribe NewsLetter field
@@ -61,7 +61,7 @@ Feature: BasePage features
 
   Scenario Outline6: Subscribe to followUs group by social network links
     Given Base page footer Follow Us section is displayed with social network icons on it
-    And I signed in google as personal account user
+    And I signed in as site user
     When I click on an <social network icon>
     Then The <social network page> opens
     And I see the <page title> on it

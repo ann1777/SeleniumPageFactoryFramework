@@ -29,7 +29,7 @@ public class MyAccountPageLocators extends BasePageLocators {
     public WebElement navigationPage;
 
     @FindBy(css = MyAccountPage_OR.MYACCOUNTPAGE_MYACCOUNTFORM_HEADER)
-    public WebElement myAccountPageHeader;
+    public WebElement pageTitle;
 
     @FindBy(css = MyAccountPage_OR.MYACCOUNTPAGE_MYACCOUNTFORM_WELCOME_MSG)
     public WebElement myAccountFormWelcomeMsg;

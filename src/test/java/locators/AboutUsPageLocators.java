@@ -11,29 +11,40 @@ public class AboutUsPageLocators  extends BasePageLocators{
     public WebDriver driver;
 
     @FindBy(css = AboutUsPage_OR.HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
+
     @FindBy(css = AboutUsPage_OR.NAVIGATION_PIPE)
-    WebElement navigationPipe1;
+    public WebElement navigationPipe1;
+
     @FindBy(css = AboutUsPage_OR.ABOUT_US_NAVIGATION_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
+
     @FindBy(css = AboutUsPage_OR.ABOUT_US_PAGE_TITLE)
-    WebElement myAddressPageTitle;
+    public WebElement pageTitle;
+
     @FindBy(css = AboutUsPage_OR.OUR_COMPANY_BLOCK_TITLE)
-    WebElement ourCompanyBlockTitle;
+    public WebElement ourCompanyBlockTitle;
+
     @FindBy(css = AboutUsPage_OR.WE_LIVE_RULES_TITLE)
-    WebElement weLiveRulesTitle;
+    public WebElement weLiveRulesTitle;
+
     @FindBy(css = AboutUsPage_OR.WE_LIVE_RULES_TITLE_OK_ICNs)
-    WebElement weLiveRulesTitleOKIcn;
+    public WebElement weLiveRulesTitleOKIcn;
+
     @FindBy(css = AboutUsPage_OR.TOP_QUANTITY_PRODUCTS_RULE)
-    WebElement topQuantityProductsRule;
+    public WebElement topQuantityProductsRule;
+
     @FindBy(css = AboutUsPage_OR.BEST_CUSTOMER_PRODUCTS_RULE)
-    WebElement bestCustomerProductsRule;
+    public WebElement bestCustomerProductsRule;
+
     @FindBy(css = AboutUsPage_OR.BACK_GUARANTEE_PRODUCTS_RULE)
-    WebElement backGuarantyProductsRule;
+    public WebElement backGuarantyProductsRule;
+
     @FindBy(css = AboutUsPage_OR.OUR_TEAM_BLOCK_TITLE)
-    WebElement ourTeamBlockTitle;
+    public WebElement ourTeamBlockTitle;
+
     @FindBy(css = AboutUsPage_OR.TESTIMONIALS_BLOCK_TITLE)
-    WebElement testimonialBlockTitle;
+    public WebElement testimonialBlockTitle;
 
     public AboutUsPageLocators(WebDriver driver) {
         super(driver);

@@ -11,83 +11,121 @@ public class PersonalInfoPageLocators {
     public WebDriver driver;
 
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_HOMEICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NAVIGATION_PIPE1)
-    WebElement navigationPipe1;
+    public WebElement navigationPipe1;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NYACCOUNT_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NAVIGATION_PIPE2)
-    WebElement navigationPipe2;
+    public WebElement navigationPipe2;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_PERSONALINFO_TAB)
-    WebElement myAddressTab;
+    public WebElement myAddressTab;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_TITLE)
-    WebElement myAddressPageTitle;
+    public WebElement pageTitle;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_UPDATE_MSG)
-    WebElement myAddressPageUpdateMsg;
+    public WebElement myAddressPageUpdateMsg;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_REQUIRED_MARK)
-    WebElement myAddressPageRequiredMark;
+    public WebElement myAddressPageRequiredMark;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_MAILGENDERRADIO_LABEL)
-    WebElement myAddressPageMailGenderRadioLabel;
+    public WebElement myAddressPageMailGenderRadioLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_MAILGENDERRADIO_BTN)
-    WebElement myAddressPageMailGenderRadioBtn;
+    public WebElement myAddressPageMailGenderRadioBtn;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_FEMAILGENDERRADIO_LABEL)
-    WebElement myAddressPageFemailGenderRadioLabel;
+    public WebElement myAddressPageFemailGenderRadioLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_FEMAILGENDERRADIO_BTN)
-    WebElement myAddressPageFemailGenderRadioBtn;
+    public WebElement myAddressPageFemailGenderRadioBtn;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_FIRSTNAME_LABEL)
-    WebElement myAddressPageFirstNameLabel;
+    public WebElement myAddressPageFirstNameLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_FIRSTNAME_FLD)
-    WebElement myAddressPageFirstNameFld;
+    public WebElement myAddressPageFirstNameFld;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_LASTNAME_LABEL)
-    WebElement myAddressPageLastNameLabel;
+    public WebElement myAddressPageLastNameLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_LASTNAME_FLD)
-    WebElement myAddressPageLastNameFld;
+    public WebElement myAddressPageLastNameFld;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_EMAILADDRESS_LABEL)
-    WebElement myAddressPageEmailLabel;
+    public WebElement myAddressPageEmailLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_EMAILADDRESS_FLD)
-    WebElement myAddressPageEmailFld;
+    public WebElement myAddressPageEmailFld;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_LABEL)
-    WebElement myAddressPageBirthDayLabel;
+    public WebElement myAddressPageBirthDayLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_DAY_SELECTOR)
-    WebElement myAddressPageBirthDaySelector;
+    public WebElement myAddressPageBirthDaySelector;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_DAY_CHOOSER)
-    WebElement myAddressPageBirthDayChooser;
+    public WebElement myAddressPageBirthDayChooser;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_MONTH_SELECTOR)
-    WebElement myAddressPageBirthDayMonthSelector;
+    public WebElement myAddressPageBirthDayMonthSelector;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_MONTH_CHOOSER)
-    WebElement myAddressPageBirthDayMonthChooser;
+    public WebElement myAddressPageBirthDayMonthChooser;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_YEARS_SELECTOR)
-    WebElement myAddressPageBirthDayYearsSelector;
+    public WebElement myAddressPageBirthDayYearsSelector;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BIRTHDATA_YEARS_CHOOSER)
-    WebElement myAddressPageBirthDayYearsChooser;
+    public WebElement myAddressPageBirthDayYearsChooser;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_CURRENTPASSWD_LABEL)
-    WebElement myAddressPageCurrentPasswordLabel;
+    public WebElement myAddressPageCurrentPasswordLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_CURRENTPASSWD_FLD)
-    WebElement myAddressPageCurrentPasswordFld;
+    public WebElement myAddressPageCurrentPasswordFld;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NEWPASSWD_LABEL)
-    WebElement myAddressPageNewPasswordLabel;
+    public WebElement myAddressPageNewPasswordLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NEWPASSWD_FLD)
-    WebElement myAddressPageNewPasswordFld;
+    public WebElement myAddressPageNewPasswordFld;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_CONFIRMATION_LABEL)
-    WebElement myAddressPageConfirmationLabel;
+    public WebElement myAddressPageConfirmationLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_CONFIRMATION_FLD)
-    WebElement myAddressPageConfirmationFld;
+    public WebElement myAddressPageConfirmationFld;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NEWSLETTERS_LABEL)
-    WebElement myAddressPageNewsLetterLabel;
+    public WebElement myAddressPageNewsLetterLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_NEWSLETTERS_CHECKBOX)
-    WebElement myAddressPageNewsLetterCheckbox;
+    public WebElement myAddressPageNewsLetterCheckbox;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_SPECIALOFFERS_LABEL)
-    WebElement myAddressPageSpecialOffersLabel;
+    public WebElement myAddressPageSpecialOffersLabel;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_SPECIALOFFERS_CHECKBOX)
-    WebElement myAddressPageSpecialOffersCheckbox;
+    public WebElement myAddressPageSpecialOffersCheckbox;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_SAVE_BTN)
-    WebElement myAddressPageInfoPageSaveBtn;
+    public WebElement myAddressPageInfoPageSaveBtn;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_SAVE_BTN_ARROW)
-    WebElement myAddressPageInfoPageSaveBtnArrow;
+    public WebElement myAddressPageInfoPageSaveBtnArrow;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BACK_BTNS)
-    WebElement myAddressPageBackBtns;
+    public WebElement myAddressPageBackBtns;
+
     @FindBy(css = PersonalInfoPage_OR.PERSONALINFOPAGE_BACKBTNS_ARROWS)
-    WebElement myAddressPageBackBtnsArrows;
+    public WebElement myAddressPageBackBtnsArrows;
 
 
     public PersonalInfoPageLocators(WebDriver driver) {

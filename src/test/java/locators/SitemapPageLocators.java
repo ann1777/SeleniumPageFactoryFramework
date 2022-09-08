@@ -11,19 +11,19 @@ public class SitemapPageLocators extends BasePageLocators {
     public WebDriver driver;
 
     @FindBy(css = SitemapPage_OR.HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = SitemapPage_OR.NAVIGATION_PIPE)
-    WebElement navigationPipe;
+    public WebElement navigationPipe;
 
     @FindBy(css = SitemapPage_OR.NAVIGATION_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
 
     @FindBy(xpath = SitemapPage_OR.SITEMAP_PAGE_TITLE)
-    WebElement priceDropTitle;
+    public WebElement pageTitle;
 
     @FindBy(xpath = SitemapPage_OR.PAGE_RIGHT_BLOCK_TOP_SELLERS_TITLE)
-    WebElement TopSellersRightBlockTitle;
+    public WebElement TopSellersRightBlockTitle;
 
     public SitemapPageLocators(WebDriver driver) {
         super();

@@ -11,20 +11,20 @@ public class BestSellersPageLocators extends BasePageLocators{
     WebDriver driver;
 
     @FindBy(css = BestSellersPage_OR.BESTSELLERS_HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = BestSellersPage_OR.BESTSELLERS_NAVIGATION_PIPE)
-    WebElement navigationPips;
+    public WebElement navigationPips;
 
     @FindBy(css = BestSellersPage_OR.BESTSELLERS_NAVIGATION_TAB)
 //    @FindBy(xpath = BestSellersPage_OR.BESTSELLERS_NAVIGATION_TAB)
-    WebElement bestSellersTab;
+    public WebElement navigationTab;
 
     @FindBy(xpath = BestSellersPage_OR.PAGE_BESTSELLERS_TITLE)
-    WebElement bestSellersTitle;
+    public WebElement pageTitle;
 
     @FindBy(xpath = BestSellersPage_OR.PAGE_RIGHT_BLOCK_TOP_SELLERS_TITLE)
-    WebElement topSellersRightBlockTitle;
+    public WebElement topSellersRightBlockTitle;
 
 
     public BestSellersPageLocators(WebDriver driver) {

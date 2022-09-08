@@ -11,68 +11,68 @@ public class ContactUsPageLocators extends BasePageLocators {
     WebDriver driver;
 
     @FindBy(css = ContactUsPage_OR.HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = ContactUsPage_OR.NAVIGATION_PIPE)
-    WebElement navigationPipe;
+    public WebElement navigationPipe;
 
-    @FindBy(css = ContactUsPage_OR.CONTACTUSPAGE_ICN)
-    WebElement contactIcn;
+    @FindBy(css = ContactUsPage_OR.CONTACTUSPAGE_TAB)
+    public WebElement navigationTab;
 
     @FindBy(css = ContactUsPage_OR.CONTACTUSPAGE_CONTENT)
-    WebElement contactPageContent;
+    public WebElement contactPageContent;
 
     @FindBy(css = ContactUsPage_OR.CONTACTUSPAGE_HEADER)
-    WebElement contactPageHeader;
+    public WebElement pageTitle;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_CONTENT_HEADER)
-    WebElement contactPageContentHeader;
+    public WebElement contactPageContentHeader;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_SUBJECT_HEADING_LABEL)
-    WebElement contactPageSubjectHeadingLabel;
+    public WebElement contactPageSubjectHeadingLabel;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_CONTACTFORM_DROPDOWN)
-    WebElement contactFormDropdown;
+    public WebElement contactFormDropdown;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_CONTACTNAMES_FORM_DROPDOWN)
-    WebElement contactNamesFormDropdown;
+    public WebElement contactNamesFormDropdown;
 
     @FindBy(css = ContactUsPage_OR.CONTACTUSPAGE_WEBMASTER_OPTION_CONTACTFORM_DROPDOWN)
-    WebElement webmasterOptionContactFormDropdown;
+    public WebElement webmasterOptionContactFormDropdown;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_EMAILADDRESS_LABEL)
-    WebElement contactPageEmailAddressLabel;
+    public WebElement contactPageEmailAddressLabel;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_EMAILINPUT_FLD)
 //    @FindBy(css = ContactUsPage_OR.CONTACTPAGE_EMAILINPUT_FLD)
-    WebElement contactFormEmailInputFld;
+    public WebElement contactFormEmailInputFld;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_ORDER_REFERENCE_LABEL)
-    WebElement contactPageOrderReferenceLabel;
+    public WebElement contactPageOrderReferenceLabel;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_ORDER_REFERENCE_INPUT_FLD)
-    WebElement contactOrderReferenceInputFld;
+    public WebElement contactOrderReferenceInputFld;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_ATTACHFILE_LABEL)
-    WebElement contactPageAttachFileLabel;
+    public WebElement contactPageAttachFileLabel;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_CONTACTFORM_FILE_UPLOADER)
-    WebElement contactFormFileUploader;
+    public WebElement contactFormFileUploader;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_CONTACTFORM_FILE_UPLOADER_NAME_SELECTOR)
-    WebElement contactFormFileUploaderNameSelector;
+    public WebElement contactFormFileUploaderNameSelector;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_CONTACTFORM_FILE_UPLOADER_ACTION_BTN)
-    WebElement contactFormFileUploaderActionBtn;
+    public WebElement contactFormFileUploaderActionBtn;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_MESSAGEFLD_LABEL)
-    WebElement contactPageMessageFldLabel;
+    public WebElement contactPageMessageFldLabel;
 
     @FindBy(css = ContactUsPage_OR.CONTACTUSPAGE_MESSAGE_FLD)
-    WebElement contactPageMassageFld;
+    public WebElement contactPageMassageFld;
 
     @FindBy(xpath = ContactUsPage_OR.CONTACTUSPAGE_MESSAGE_SUBMIT_BTN)
-    WebElement contactPageMassageSubmitBtn;
+    public WebElement contactPageMassageSubmitBtn;
 
     public ContactUsPageLocators(WebDriver driver) {
         super(driver);

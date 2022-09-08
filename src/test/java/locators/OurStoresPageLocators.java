@@ -11,37 +11,37 @@ public class OurStoresPageLocators extends BasePageLocators{
     WebDriver driver;
 
     @FindBy(css = OurStoresPage_OR.OUR_STORES_HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = OurStoresPage_OR.OUR_STORES_NAVIGATION_PIPE)
-    WebElement navigationPips;
+    public WebElement navigationPips;
 
     @FindBy(xpath = OurStoresPage_OR.OUR_STORES_NAVIGATION_TAB)
-    WebElement authenticationTab;
+    public WebElement navigationTab;
 
     @FindBy(xpath = OurStoresPage_OR.PAGE_OUR_STORES_TITLE)
-    WebElement forgotYourPasswordTab;
+    public WebElement pageTitle;
 
     @FindBy(css = OurStoresPage_OR.OUR_STORES_GOOGLE_MAP)
-    WebElement googleMap;
+    public WebElement googleMap;
 
     @FindBy(css = OurStoresPage_OR.ENTER_LOCATION_MAP_SUBTITLE)
-    WebElement enterLocationMapSubtitle;
+    public WebElement enterLocationMapSubtitle;
 
     @FindBy(xpath = OurStoresPage_OR.YOUR_LOCATION_MAP_SUBTITLE_LABEL)
-    WebElement enterLocationMapSubtitleLab;
+    public WebElement enterLocationMapSubtitleLab;
 
     @FindBy(xpath = OurStoresPage_OR.LOCATION_MAP_SUBTITLE_INPUT_FLD)
-    WebElement locationMapSubtitleInputFld;
+    public WebElement locationMapSubtitleInputFld;
 
     @FindBy(css = OurStoresPage_OR.RADIUS_MAP_SUBTITLE_LABEL)
-    WebElement locationMapSubtitleInputLabel;
+    public WebElement locationMapSubtitleInputLabel;
 
     @FindBy(xpath = OurStoresPage_OR.MAP_SUBTITLE_RADIUS_DROPDOWN)
-    WebElement mapSubtitleRadiusDropdown;
+    public WebElement mapSubtitleRadiusDropdown;
 
     @FindBy(xpath = OurStoresPage_OR.MAP_SUBTITLE_SEARCH_BTN)
-    WebElement mapSubtitleSearchBtn;
+    public WebElement mapSubtitleSearchBtn;
 
 
     public OurStoresPageLocators(WebDriver driver) {

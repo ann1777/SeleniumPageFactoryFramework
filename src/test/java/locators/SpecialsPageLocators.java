@@ -11,19 +11,19 @@ public class SpecialsPageLocators extends BasePageLocators{
     WebDriver driver;
 
     @FindBy(css = SpecialsPage_OR.SPECIALS_HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = SpecialsPage_OR.SPECIALS_NAVIGATION_PIPE)
-    WebElement navigationPipe;
+    public WebElement navigationPipe;
 
     @FindBy(css = SpecialsPage_OR.SPECIALS_PRICE_DROP_TAB)
-    WebElement PriceDropTab;
+    public WebElement navigationTab;
 
     @FindBy(css = SpecialsPage_OR.SPECIALS_PRICE_DROP_TITLE)
-    WebElement PriceDropTitle;
+    public WebElement pageTitle;
 
     @FindBy(css = SpecialsPage_OR.SPECIALS_RIGHT_BLOCK_TOP_SELLERS_TITLE)
-    WebElement TopSellersTitle;
+    public WebElement TopSellersTitle;
 
     public SpecialsPageLocators(WebDriver driver) {
         super(driver);

@@ -11,69 +11,100 @@ public class MyAddressPageLocators extends BasePageLocators {
     public WebDriver driver;
 
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_HOMEICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_NAVIGATION_PIPE1)
-    WebElement navigationPipe1;
+    public WebElement navigationPipe1;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_NYACCOUNT_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_NAVIGATION_PIPE2)
-    WebElement navigationPipe2;
+    public WebElement navigationPipe2;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_MYADDRESS_TAB)
-    WebElement myAddressTab;
+    public WebElement myAddressTab;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_TITLE)
-    WebElement myAddressPageTitle;
+    public WebElement pageTitle;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_INFO_TITLE)
-    WebElement myAddressPageInfoTitle;
+    public WebElement myAddressPageInfoTitle;
+
     @FindBy(xpath = MyAddressPage_OR.MYADDRESSPAGE_LISTED_BELOW_MSG)
-    WebElement myAddressPageListedBelowMsg;
+    public WebElement myAddressPageListedBelowMsg;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_UPDATE_INFORMATION_MSG)
-    WebElement myAddressPageUpdateInfoMsg;
+    public WebElement myAddressPageUpdateInfoMsg;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_BLOCK_ADDRESS_ROW)
-    WebElement myAddressPageBlockAddressRow;
+    public WebElement myAddressPageBlockAddressRow;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_USER_EMAIL_TITLE)
-    WebElement myAddressPageUserEmailTitle;
+    public WebElement myAddressPageUserEmailTitle;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_USERNAME)
-    WebElement myAddressPageUserName;
+    public WebElement myAddressPageUserName;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_USERLASTNAME)
-    WebElement myAddressPageUserLastName;
+    public WebElement myAddressPageUserLastName;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPNYNAME)
-    WebElement myAddressPageCompanyName;
+    public WebElement myAddressPageCompanyName;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_ADDRESS1COMPANY)
-    WebElement myAddressPageCompanyAddress1;
+    public WebElement myAddressPageCompanyAddress1;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_ADDRESS2COMPANY)
-    WebElement myAddressPageCompanyAddress2;
+    public WebElement myAddressPageCompanyAddress2;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPANYCITY)
-    WebElement myAddressPageCompanyCity;
+    public WebElement myAddressPageCompanyCity;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPANYSTATE)
-    WebElement myAddressPageCompanyState;
+    public WebElement myAddressPageCompanyState;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPANYINDEX)
-    WebElement myAddressPageCompanyIndex;
+    public WebElement myAddressPageCompanyIndex;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPANYCOUNTRY)
-    WebElement myAddressPageCompanyCountry;
+    public WebElement myAddressPageCompanyCountry;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPANYPHONE)
-    WebElement myAddressPageCompanyPhone;
+    public WebElement myAddressPageCompanyPhone;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_COMPANYMOBILEPHONE)
-    WebElement myAddressPageCompanyMobilePhone;
+    public WebElement myAddressPageCompanyMobilePhone;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_UPDATE_BTN)
-    WebElement myAddressPageUpdateBtn;
+    public WebElement myAddressPageUpdateBtn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_UPDATE_BTN_ARROW_ICN)
-    WebElement myAddressPageUpdateBtnArrowIcn;
+    public WebElement myAddressPageUpdateBtnArrowIcn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_DELETE_BTN)
-    WebElement myAddressPageDeleteBtn;
+    public WebElement myAddressPageDeleteBtn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_DELETE_BTN_REMOVE_ICN)
-    WebElement myAddressPageDeleteBtnRemoveIcn;
+    public WebElement myAddressPageDeleteBtnRemoveIcn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_ADD_NEW_ADDRESS_BTN)
-    WebElement myAddressPageAddNewAddressBtn;
+    public WebElement myAddressPageAddNewAddressBtn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_ADD_NEW_ADDRESS_BTN_ARROW)
-    WebElement myAddressPageAddNewAddressBtnArrowIcn;
+    public WebElement myAddressPageAddNewAddressBtnArrowIcn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_BACK_TO_ACCOUNT_BTN)
-    WebElement myAddressPageBackToAccountBtn;
+    public WebElement myAddressPageBackToAccountBtn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_BACK_TO_ACCOUNT_BTN_LEFT_ARROW)
-    WebElement myAddressPageBackToAccountBtnArrowIcn;
+    public WebElement myAddressPageBackToAccountBtnArrowIcn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_BACK_TO_HOME_BTN)
-    WebElement myAddressPageBackToHomeBtn;
+    public WebElement myAddressPageBackToHomeBtn;
+
     @FindBy(css = MyAddressPage_OR.MYADDRESSPAGE_BACK_TO_HOME_BTN_LEFT_ARROW)
-    WebElement myAddressPageBackToHomeBtnArrowIcn;
+    public WebElement myAddressPageBackToHomeBtnArrowIcn;
 
     public MyAddressPageLocators(WebDriver driver) {
         super(driver);

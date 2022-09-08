@@ -33,6 +33,12 @@ public class BasePageLocators {
     @FindBy(xpath = BasePage_OR.HEADER_LOGO)
     public WebElement headerLogo;
 
+    @FindBy(xpath = BasePage_OR.HEADER_BLOCK_TOP_MENU)
+    public WebElement headerBlockTopMenu;
+
+    @FindBy(xpath = BasePage_OR.HEADER_USERNAME_INFO)
+    public WebElement headerUserNameInfo;
+
     @FindBy(xpath = BasePage_OR.SEARCH_FLD)
     public WebElement searchFld;
 
@@ -43,7 +49,7 @@ public class BasePageLocators {
     public WebElement shoppingCartIcn;
 
     @FindBy(xpath = BasePage_OR.WOMEN_BTN)
-    public WebElement womenDisplayBlockBtn;
+    public WebElement womenDisplayBlockTab;
 
     @FindBy(xpath = BasePage_OR.WOMEN_DISPLAY_BLOCK)
     public WebElement womenDisplayBlock;
@@ -78,7 +84,7 @@ public class BasePageLocators {
     @FindBy(xpath = BasePage_OR.HEADER_DRESSES_BTN)
 //    @FindBy(xpath = "//*[@id='block_top_menu']//a[text()='Dresses']")
 //    @FindBy(css = "a.sf-with-ul:nth-of-type(2)")
-    public WebElement dressesDisplayBlockBtn;
+    public WebElement dressesDisplayBlockTab;
 
     @FindBy(xpath = BasePage_OR.HEADER_DISPLAY_BLOCK_CASUAL_DRESSES_SUBTITLE)
     public WebElement dressesDisplayBlockCasualDressesSubTitle;
@@ -138,7 +144,7 @@ public class BasePageLocators {
     public WebElement footerNewsLetterInputFldSuccessAlertMsg;
 
     @FindBy(xpath = BasePage_OR.FOOTER_NEWSLETTER_INPUT_FLD_INVALID_EMAIL_ADDRESS_MSG)
-    public WebElement inputFldInvalidEmailMsg;
+    public WebElement footerNewsLetterInputFldInvalidEmailAlertMsg;
 
     @FindBy(xpath = BasePage_OR.FOOTER_NEWSLETTER_INPUT_FLD_ALREADY_REGISTERED_ADDRESS_ALERT_MSG)
     public WebElement footerInputFldAlreadyRegisteredAlertMsg;

@@ -11,29 +11,40 @@ public class CreditSlipsPageLocators extends BasePageLocators {
     public WebDriver driver;
 
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_HOMEICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_NAVIGATION_PIPE1)
-    WebElement navigationPipe1;
+    public WebElement navigationPipe1;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_NYACCOUNT_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_NAVIGATION_PIPE2)
-    WebElement navigationPipe2;
+    public WebElement navigationPipe2;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_CREDITSLIPS_TAB)
-    WebElement creditSlipsTab;
+    public WebElement creditSlipsTab;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_TITLE)
-    WebElement creditSlipsPageTitle;
+    public WebElement pageTitle;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_INFO_TITLE)
-    WebElement creditSlipsPageInfoTitle;
+    public WebElement creditSlipsPageInfoTitle;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_BLOCK_ORDER_HISTORY)
-    WebElement creditSlipsPageBlockHistory;
+    public WebElement creditSlipsPageBlockHistory;
+
     @FindBy(xpath = CreditSlipsPage_OR.CREDITSLIPSPAGE_BACK_TO_ACCOUNT_BTN)
-    WebElement creditSlipsPageBackAccountBtn;
+    public WebElement creditSlipsPageBackAccountBtn;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_BACK_TO_ACCOUNT_BTN_LEFT_ARROW)
-    WebElement creditSlipsPageBackAccountBtnLeftArrowIcn;
+    public WebElement creditSlipsPageBackAccountBtnLeftArrowIcn;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_BACK_TO_HOME_BTN)
-    WebElement creditSlipsPageBackHomeBtn;
+    public WebElement creditSlipsPageBackHomeBtn;
+
     @FindBy(css = CreditSlipsPage_OR.CREDITSLIPSPAGE_BACK_TO_HOME_BTN_LEFT_ARROW)
-    WebElement creditSlipsPageBackHomeBtnLeftArrowIcn;
+    public WebElement creditSlipsPageBackHomeBtnLeftArrowIcn;
 
     public CreditSlipsPageLocators(WebDriver driver) {
         super();

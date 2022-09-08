@@ -11,34 +11,34 @@ public class RecoveryPasswordPageLocators extends BasePageLocators {
     WebDriver driver;
 
     @FindBy(css = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_NAVIGATION_PIPS)
-    WebElement navigationPips;
+    public WebElement navigationPips;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_AUTHENTICATION_TAB)
-    WebElement authenticationTab;
+    public WebElement authenticationTab;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_FORGOTYOURPASSWORD_TAB)
-    WebElement forgotYourPasswordTab;
+    public WebElement forgotYourPasswordTab;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_HEADER)
-    WebElement recoveryPageHeader;
+    public WebElement recoveryPageHeader;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWORD_TEXT)
-    WebElement recoveryPasswordText;
+    public WebElement recoveryPasswordText;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_EMAILADDRESS_LABEL)
-    WebElement emailAddressLabel;
+    public WebElement emailAddressLabel;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_EMAILADDRESS_FLD)
-    WebElement emailAddressFld;
+    public WebElement emailAddressFld;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_EMAILADDRESS_SUBMIT_BTN)
-    WebElement submitBtn;
+    public WebElement submitBtn;
 
     @FindBy(xpath = RecoveryPasswordPage_OR.RECOVERYPASSWDPAGE_BACKTOLOGIN_BTN)
-    WebElement backToLoginBtn;
+    public WebElement backToLoginBtn;
 
     public RecoveryPasswordPageLocators(WebDriver driver) {
         super(driver);

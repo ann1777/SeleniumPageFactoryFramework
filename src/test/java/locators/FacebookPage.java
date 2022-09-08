@@ -7,12 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class FacebookPage {
+
     public WebDriver driver;
-    String faceBookLink = "https://www.facebook.com/groups/525066904174158/";
+    public String faceBookLink = "https://www.facebook.com/groups/525066904174158/";
 
 
     @FindBy(xpath = "//h1//a[text()='Selenium Framework']")
-    WebElement pageTitle;
+    public WebElement pageTitle;
 
     public FacebookPage(WebDriver driver) {
         this.driver = driver;

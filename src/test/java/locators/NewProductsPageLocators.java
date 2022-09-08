@@ -11,19 +11,19 @@ public class NewProductsPageLocators extends BasePageLocators {
     public WebDriver driver;
 
     @FindBy(css = NewProductsPage_OR.NEW_PRODUCTS_HOME_ICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = NewProductsPage_OR.NEW_PRODUCTS_NAVIGATION_PIPE)
-    WebElement navigationPipe;
+    public WebElement navigationPipe;
 
     @FindBy(css = NewProductsPage_OR.NEW_PRODUCTS_NAVIGATION_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
 
     @FindBy(xpath = NewProductsPage_OR.PAGE_NEW_PRODUCTS_TITLE)
-    WebElement priceDropTitle;
+    public WebElement pageTitle;
 
     @FindBy(xpath = NewProductsPage_OR.PAGE_RIGHT_BLOCK_TOP_SELLERS_TITLE)
-    WebElement TopSellersRightBlockTitle;
+    public WebElement TopSellersRightBlockTitle;
 
     public NewProductsPageLocators(WebDriver driver) {
         super();

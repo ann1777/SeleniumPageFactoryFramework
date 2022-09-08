@@ -10,6 +10,8 @@ public class CatalogPage_OR {
 //    public static final String CATALOGPAGE_DRESSES_TAB = "//*[@id="columns"]/div[1]/a[3]";
     public static final String CATALOGPAGE_EVENING_DRESSES_TAB = "//*[@id='columns']/div[1]/text()[last()]";
     // left sidebar elements
+
+    public static final String CATALOGPAGE_TITLE = "//h1/span[1]";
     public static final String CATALOGPAGE_NAVIGATIONMENU_COLUMN = "#left_column";
     public static final String CATALOGPAGE_LAYERSFORM_TITLE = "//*[text()='Catalog']";
     public static final String CATALOGPAGE_LAYERSFORM_MENU_BOX = "#layered_form";

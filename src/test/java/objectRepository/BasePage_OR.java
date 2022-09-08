@@ -10,6 +10,10 @@ public class BasePage_OR {
     public static final String CONTACT_AS_BTN = "contact-link";
     public static final String SIGN_IN_BTN = ".login";
     public static final String HEADER_LOGO = "//div[@id='header_logo']";
+    //*[@id="block_top_menu"]/ul
+
+    public static final String HEADER_USERNAME_INFO = "//a[@class='account']";
+    public static final String HEADER_BLOCK_TOP_MENU = "//div[@id='block_top_menu']";
     public static final String SEARCH_FLD = "//*[@placeholder='Search']";
     public static final String SEARCH_BTN = "//button [@name='submit_search']";
     public static final String SHOPPING_CART_ICN = "a[title='View my shopping cart']";
@@ -35,7 +39,7 @@ public class BasePage_OR {
     //page footer elements
     public static final String FOOTER_MENU = ".footer-container";
     public static final String FOOTER_NEWS_LETTER_BLOCK = "//*[text() = 'Newsletter']";
-    public static final String FOOTER_NEWS_LETTER_INPUT_FLD = "#newsletter-input";
+    public static final String FOOTER_NEWS_LETTER_INPUT_FLD = "//*[@id = 'newsletter-input']";
     public static final String FOOTER_EMAIL_FLD = "//*[@value='Enter your e-mail']";
     public static final String FOOTER_NEWS_LETTER_BTN = "#newsletter_block_left>div>form>div>button";
     public static final String FOOTER_SOCIAL_BLOCK = "#social_block";

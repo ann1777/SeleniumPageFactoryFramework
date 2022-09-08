@@ -11,40 +11,40 @@ public class OrderHistoryPageLocators extends BasePageLocators {
     public WebDriver driver;
 
     @FindBy(css = OrderHistoryPage_OR.ORDERHISTORYPAGE_HOMEICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_NAVIGATION_PIPE1)
-    WebElement navigationPipe1;
+    public WebElement navigationPipe1;
 
     @FindBy(css = OrderHistoryPage_OR.ORDERHISTORYPAGE_NYACCOUNT_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_NAVIGATION_PIPE2)
-    WebElement navigationPipe2;
+    public WebElement navigationPipe2;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_ORDER_HISTORY_TAB)
-    WebElement orderHistoryTab;
+    public WebElement orderHistoryTab;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_TITLE)
-    WebElement orderHistoryPageTitle;
+    public WebElement pageTitle;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_INFO_TITLE)
-    WebElement orderHistoryPageInfoTitle;
+    public WebElement orderHistoryPageInfoTitle;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_BLOCK_ORDER_HISTORY)
-    WebElement orderHistoryPageBlockHistory;
+    public WebElement orderHistoryPageBlockHistory;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_BACK_TO_ACCOUNT_BTN)
-    WebElement orderHistoryPageBackAccountBtn;
+    public WebElement orderHistoryPageBackAccountBtn;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_BACK_TO_ACCOUNT_BTN_LEFT_ARROW)
-    WebElement orderHistoryPageBackAccountBtnLeftArrowIcn;
+    public WebElement orderHistoryPageBackAccountBtnLeftArrowIcn;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_BACK_TO_HOME_BTN)
-    WebElement orderHistoryPageBackHomeBtn;
+    public WebElement orderHistoryPageBackHomeBtn;
 
     @FindBy(xpath = OrderHistoryPage_OR.ORDERHISTORYPAGE_BACK_TO_HOME_BTN_LEFT_ARROW)
-    WebElement orderHistoryPageBackHomeBtnLeftArrowIcn;
+    public WebElement orderHistoryPageBackHomeBtnLeftArrowIcn;
 
     public OrderHistoryPageLocators(WebDriver driver) {
         super(driver);

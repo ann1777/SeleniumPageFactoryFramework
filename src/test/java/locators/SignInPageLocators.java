@@ -11,38 +11,40 @@ public class SignInPageLocators extends BasePageLocators {
     WebDriver driver;
 
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_AUTHENTICATION_PAGEHEADER)
-    WebElement authenticationPageHeader;
+    public WebElement pageTitle;
 
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNTFORM_HEADER)
-    WebElement createAnAccountFormHeader;
+    public WebElement createAnAccountFormHeader;
+
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNT_EMAILFLD)
-    WebElement createAccountEmailField;
+    public WebElement createAccountEmailField;
+
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_CREATEACCOUNT_SUBMITBTN)
-    WebElement createAccountSubmitBtn;
+    public WebElement createAccountSubmitBtn;
 
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_ALREADYREGISTEREDFORM_HEADER)
-    WebElement alreadyRegisteredFormHeader;
+    public WebElement alreadyRegisteredFormHeader;
 
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_EMAILADDRESS_FLD)
-    WebElement emailAddressField;
+    public WebElement emailAddressField;
 
     @FindBy(xpath = SignInPage_OR.SIGNINPAGE_PASSWORD_FLD)
-    WebElement passwordField;
+    public WebElement passwordField;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_FORGOTPASSWORD_LINK)
-    WebElement forgotPasswordLink;
+    public WebElement forgotPasswordLink;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_SIGNIN_BTN)
-    WebElement SignInBtn;
+    public WebElement SignInBtn;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_HOMEICN)
-    WebElement homeIcn;
+    public WebElement homeIcn;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_NAVIGATION_PIPE)
-    WebElement navigationPipe;
+    public WebElement navigationPipe;
 
     @FindBy(css = SignInPage_OR.SIGNINPAGE_NAVIGATION_TAB)
-    WebElement navigationTab;
+    public WebElement navigationTab;
 
     public SignInPageLocators(WebDriver driver) {
         super(driver);
