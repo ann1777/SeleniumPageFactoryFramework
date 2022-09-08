@@ -61,6 +61,8 @@ The tests are easy to run as they are bound to the Maven `test` goal so running 
 
 Alternatively, the empty `TestRunner` class can be executed using a JUnit runner within an IDE or by running testng.xml files.
 
+Alternatively, test methods can be executed using Cucumber `.feature` files and Cucumber runner within an IDE or by running `RunCucumberTest` file.
+
 NB Each test opens up in a separate browser instance (which is closed at the end of the test) so is not the fastest way to run a test suite, but it is the right way as we should ensure that tests are wholly independent of one another, do not share state and can run in any order. Cucumber has no `BeforeAll` and `AfterAll` hooks, so we can’t open a single browser at the start of the test suite, navigate to the relevant locators in the setup for each individual test scenario and close the browser at the end of the test suite. There are ways round this by using JUnit annotations and Maven phases but nothing that works consistently when tests may be via the IDE as well as from the command line (or CI pipelines). Having a separate browser per test also allows for test parallelisation which wouldn't otherwise be possible.
 
 #### Test Reports
