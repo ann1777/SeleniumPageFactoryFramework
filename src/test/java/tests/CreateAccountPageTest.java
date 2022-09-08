@@ -46,25 +46,28 @@ public class CreateAccountPageTest extends BaseTest {
         registration.passwdFld.sendKeys(RegistrationFormData.getUserPassword());
         registration.birthDaySelector.click();
         Random rnd = new Random();
-        while (rnd.nextInt() > 31) rnd.nextInt() -= 31;
+        int n = Math.round(rnd.nextInt());
+        while (n > 31) n -= 31;
         int count = 0;
-        while (count < rnd.nextInt()) {
+        while (count < n) {
             registration.birthDaySelector.sendKeys(Keys.DOWN);
             count = count++;
         }
         registration.birthDaySelector.sendKeys(Keys.RETURN);
         registration.birthMonthSelector.click();
         Random rnd1 = new Random();
-        while (rnd1.nextInt() > 12) rnd1.nextInt() -= 12;
+        int n1 = Math.round(rnd1.nextInt());
+        while (n1 > 12) n1 -= 12;
         int count1 = 0;
-        while (count1 < rnd1.nextInt()) {
+        while (count1 < n1) {
             registration.birthMonthSelector.sendKeys(Keys.DOWN);
             count1 = count++;
         }
         registration.birthMonthSelector.sendKeys(Keys.RETURN);
         registration.birthYearsSelector.click();
         Random rnd2 = new Random();
-        while (rnd2.nextInt() > 80) rnd2.nextInt() -= 80;
+        int n2 = Math.round(rnd2.nextInt());
+        while (n2 > 80) n2 -= 80;
         int count2 = 0;
         while (count2 < rnd2.nextInt()) {
             registration.birthYearsSelector.sendKeys(Keys.DOWN);
@@ -161,3 +164,4 @@ public class CreateAccountPageTest extends BaseTest {
         Assert.assertTrue(registration.yourAddressFormDangerAlert.getText().endsWith("errors"));
     }
 }
+
