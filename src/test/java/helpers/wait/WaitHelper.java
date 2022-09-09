@@ -1,23 +1,23 @@
 package helpers.wait;
 
-import org.apache.log4j.Logger;
+import helpers.logger.LoggerHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
+import org.testng.log4testng.Logger;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-import static helpers.logger.LoggerHelper.getLogger;
 
 public class WaitHelper {
 
 	private WebDriver driver;
-	private Logger log = getLogger();
+	private Logger log = (Logger) LoggerHelper.getLogger();
 	private String baseUrl = "http://www.google.com";
 
 	/**

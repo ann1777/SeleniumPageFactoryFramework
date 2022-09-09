@@ -3,7 +3,7 @@ package helpers.assertion;
 import helpers.logger.LoggerHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 public class VerificationHelper {
 

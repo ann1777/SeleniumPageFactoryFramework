@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class ButtonsHelper extends HelperBase {
 
     public ButtonsHelper(WebDriver driver) {
-        super(driver);
+        super();
     }
 
     public void clickToClickMeButton() {

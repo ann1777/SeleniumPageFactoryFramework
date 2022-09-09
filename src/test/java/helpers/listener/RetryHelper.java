@@ -3,7 +3,7 @@ package helpers.listener;
 import helpers.logger.LoggerHelper;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 public class RetryHelper implements IRetryAnalyzer {
 

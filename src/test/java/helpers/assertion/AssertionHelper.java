@@ -2,7 +2,7 @@ package helpers.assertion;
 
 import helpers.logger.LoggerHelper;
 import org.testng.Assert;
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 public class AssertionHelper {
 

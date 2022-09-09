@@ -7,7 +7,7 @@ public class NavigationHelper extends HelperBase {
 
     WebDriver driver;
     public NavigationHelper(WebDriver driver) {
-        super(driver);
+        super();
     }
 
     public void gotoMainPage() { click(By.xpath("//*[@class='icon-home']"));

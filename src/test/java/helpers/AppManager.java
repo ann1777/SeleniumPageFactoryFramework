@@ -11,7 +11,7 @@ public class AppManager {
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private ButtonsHelper buttonsHelper;
-    private WebTableHelper webTableHelper;
+    private UserJsonDataHelper userJsonDataHelper;
 
     private final StringBuffer verificationErrors = new StringBuffer();
 
@@ -19,11 +19,11 @@ public class AppManager {
         System.clearProperty("webdriver.chrome.driver");
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
         driver = new ChromeDriver();
-        webTableHelper = new WebTableHelper(driver);
+        userJsonDataHelper = new UserJsonDataHelper();
         buttonsHelper = new ButtonsHelper(driver);
         navigationHelper = new NavigationHelper(driver);
         sessionHelper = new SessionHelper(driver);
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         sessionHelper.login();
     }
 
@@ -35,8 +35,8 @@ public class AppManager {
         }
     }
 
-    public WebTableHelper getWebTableHelper() {
-        return webTableHelper;
+    public UserJsonDataHelper getUserJsonHelper() {
+        return userJsonDataHelper;
     }
 
     public ButtonsHelper getButtonsHelper() {

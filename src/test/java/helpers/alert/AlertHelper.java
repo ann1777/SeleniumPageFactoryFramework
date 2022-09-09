@@ -1,19 +1,17 @@
 package helpers.alert;
 
-//import helpers.logger.LoggerHelper;
-
 import helpers.logger.LoggerHelper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class AlertHelper {
 	
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger();
+	private Logger log = (Logger) LoggerHelper.getLogger();
 	
-	public AlertHelper(WebDriver driver) {
+	public AlertHelper(WebDriver driver) throws ClassNotFoundException {
 		this.driver=driver;	
 		log.info("Alert object is initialized");
 		log.debug("AlertHelper : " + this.driver.hashCode());

@@ -4,7 +4,7 @@ import helpers.logger.LoggerHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -6,7 +6,6 @@ import locators.SignInPageLocators;
 import model.RegistrationFormData;
 import objectRepository.CreateAccountPage_OR;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import java.util.Objects;
@@ -28,8 +27,8 @@ public class UserJsonDataHelper extends HelperBase {
     public RegistrationFormData changedRegistrationFormData = new RegistrationFormData(true, "NewJohn", "NewSnow",
             "newuser"+randomAlphanumeric(5)+"@test.com", "50_%mYaq", "5", "may", "2002", true, false, "Twitter", "adv", "Victory str, 22", "New History str., 17", "Kharkiv", "NewUkraine", "785612", "Ukraine", "jony", "452389", "+3874562319", "newJon");
 
-    public UserJsonDataHelper(WebDriver driver) {
-        super(driver);
+    public UserJsonDataHelper() {
+        super();
     }
 
     public void createAccount(RegistrationFormData registerFormData) {
@@ -63,8 +62,7 @@ public class UserJsonDataHelper extends HelperBase {
         if(isMyAccountPage) myAccountPage.pageTitle.getText().equals(myAccountPageTitle);
     }
 
-
-   public void createAlreadyUsedEmailAccount(RegistrationFormData registerFormData) {
+    public void createAlreadyUsedEmailAccount(RegistrationFormData registerFormData) {
         createAccount(registerFormData);
         createAccount(registerFormData);
         Assert.assertTrue(newAccountPage.yourAddressFormAlreadyRegisteredAlert.getText().equals("An account using this email address has already been registered."));

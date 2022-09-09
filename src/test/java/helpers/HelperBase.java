@@ -8,7 +8,7 @@ public class HelperBase {
     private boolean acceptNextAlert = true;
     protected final WebDriver driver;
 
-    public HelperBase(WebDriver driver) {
+    public HelperBase() {
         this.driver = driver;
     }
 

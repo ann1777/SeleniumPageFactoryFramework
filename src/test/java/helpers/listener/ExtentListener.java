@@ -7,7 +7,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 public class ExtentListener implements ITestListener {
 
