@@ -108,7 +108,7 @@ public class CreateAccountPage_OR {
 
     public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL = "//*/label[@for='postcode']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL = "//*/p/label[text()='Zip/Postal Code ']";
-    public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR = "#postcode";
+    public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_FLD = "#postcode";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR = "//*/input[@id='postcode']";
 //    public static final String CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR = "//*/input[@name='postcode']";
     public static final String CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_LABEL = "//*/label[@for='id_country']";
@@ -153,5 +153,9 @@ public class CreateAccountPage_OR {
 
      public static final String CREATEACCOUNTPAGE_ALLERT_DANGER = "//div[@class='alert alert-danger']";
 //    public static final String CREATEACCOUNTPAGE_ALLERT_DANGER = ".alert-danger";
+
+    public static final String CREATEACCOUNTPAGE_ALLERT_ALREADYREGISTERED = "//ol/li[text()='An account using this email address has already been registered.']";
+
+
 
 }

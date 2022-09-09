@@ -157,8 +157,8 @@ public class CreateAccountPageLocators extends BasePageLocators {
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_LABEL)
     public WebElement yourAddressZipCodeLabel;
 
-    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_SELECTOR)
-    public WebElement yourAddressZipCodeSelector;
+    @FindBy(css = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_ZIPCODE_FLD)
+    public WebElement yourAddressZipCodeFld;
 
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_COUNTRY_LABEL)
     public WebElement yourAddressFormCountryLabel;
@@ -202,7 +202,10 @@ public class CreateAccountPageLocators extends BasePageLocators {
     @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_ALLERT_DANGER)
     public WebElement yourAddressFormDangerAlert;
 
-    public CreateAccountPageLocators(WebDriver driver) {
+    @FindBy(xpath = CreateAccountPage_OR.CREATEACCOUNTPAGE_ALLERT_ALREADYREGISTERED)
+    public WebElement yourAddressFormAlreadyRegisteredAlert;
+
+    public CreateAccountPageLocators() {
         super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");

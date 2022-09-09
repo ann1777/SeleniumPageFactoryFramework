@@ -73,7 +73,7 @@ public class MyAccountPageLocators extends BasePageLocators {
     @FindBy(css = MyAccountPage_OR.MYACCOUNTPAGE_BACKTOHOMEBTN_LEFT_ICN)
     public WebElement myAccountFormBackToHomeBtnLeftIcn;
 
-    public MyAccountPageLocators(WebDriver driver) {
+    public MyAccountPageLocators() {
         super();
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=my-account");
