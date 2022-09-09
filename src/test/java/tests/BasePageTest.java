@@ -1,4 +1,5 @@
 package tests;
+
 import locators.*;
 import model.RegistrationFormData;
 import org.junit.Test;
@@ -7,7 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
-import org.testng.Assert;
+
 import java.util.Random;
 
 import static tests.BaseTest.driver;
@@ -96,11 +97,11 @@ public class BasePageTest{
             base.womenDisplayBlock.sendKeys(Keys.DOWN);
             count1 = count1++;
         }
-        String itemName = base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
-        base.searchFld.sendKeys(itemName);
-        base.searchBtn.click();
-        base.womenDisplayBlock.findElement(By.xpath(foundItemsName));
-        Assert.assertEquals(itemName, foundItemsName);
+//        String itemName = base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
+//        base.searchFld.sendKeys(itemName);
+//        base.searchBtn.click();
+//        base.womenDisplayBlock.findElement(By.xpath(foundItemsName));
+//        Assert.assertEquals(itemName, foundItemsName);
 
     }
 
@@ -202,11 +203,11 @@ public class BasePageTest{
     }
 
     @Test
-    public TwitterPage followUsByTwitter() {
+    public TwitterPageLocators followUsByTwitter() {
         base.twitterIcn.click();
         try{
             driver.get(twitterPageLink);
-            return new TwitterPage(driver);
+            return new TwitterPageLocators(driver);
         } catch (Exception e1) {
             throw new RuntimeException(e1);
         }

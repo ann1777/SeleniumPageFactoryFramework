@@ -1,30 +1,27 @@
 package tests;
 
 import helpers.AppManager;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
+import helpers.UserJsonDataHelper;
 import locators.BasePageLocators;
-import org.asynchttpclient.Response;
+import locators.CreateAccountPageLocators;
+import locators.MyAccountPageLocators;
+import model.RegistrationFormData;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
-import org.testng.annotations.*;
-
-import java.util.concurrent.TimeUnit;
-
-import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends BasePageTest {
     public static WebDriver driver;
-    private static final String userNamePrefix = "testUser";
-    private static final String userPasswd = "testPasswd";
-
-    private static String userName;
-    public static String userEmail = userName.toString() + "@gmail.com";
+    public CreateAccountPageLocators newAccountPage;
+    public MyAccountPageLocators myAccountPage;
+    public UserJsonDataHelper userJsonDataHelper;
+    public RegistrationFormData registrationFormData = new RegistrationFormData();
     private static String sessionToken;
 
     protected final AppManager app = new AppManager();
@@ -32,6 +29,9 @@ public class BaseTest extends BasePageTest {
     public BaseTest(WebDriver driver) {
         super(driver);
         this.base = new BasePageLocators();
+        this.myAccountPage = new MyAccountPageLocators();
+        this.newAccountPage = new CreateAccountPageLocators();
+        this.userJsonDataHelper = new UserJsonDataHelper();
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 
@@ -43,44 +43,12 @@ public class BaseTest extends BasePageTest {
     @BeforeClass
     public static void setUp() throws Exception {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://automationpractice.com/index.php/");
     }
 
     @BeforeMethod
-    public static void getUser() throws JSONException {
-        RestAssured.reset();
-        RestAssured.baseURI = "http://automationpractice.com/index.php?/";
-        RestAssured.requestSpecification = new RequestSpecBuilder()
-                .setContentType(ContentType.JSON)
-                .setAccept(ContentType.JSON)
-                .build();
-        userName = userNamePrefix + randomAlphanumeric(5);
-        JSONObject jo = new JSONObject();
-        jo.put("emailAddress", userEmail);
-        jo.put("password", userPasswd);
-
-        RestAssured.given()
-                .body(jo.toString())
-                .when()
-                .post("/user").then().statusCode(200);
-
-        Response sessionResponse = (Response) RestAssured.given()
-                .queryParam("emailAddress", userEmail)
-                .queryParam("password", userPasswd)
-                .when()
-                .get("/login");
-        sessionResponse.then().statusCode(200);
-        JSONObject joTokenRespone = new JSONObject(sessionResponse.getHeaders().getAsString());
-        sessionToken = joTokenRespone.getString("session_token");
-        System.out.println(sessionToken);
-
-        RestAssured.requestSpecification = new RequestSpecBuilder()
-                .setContentType(ContentType.JSON)
-                .setAccept(ContentType.JSON)
-                .addHeader("userToken", sessionToken)
-                .build();
+    public void getUser() throws JSONException {
+        userJsonDataHelper.createAccount(registrationFormData);
     }
     @AfterClass
     public static void tearDown() throws Exception {

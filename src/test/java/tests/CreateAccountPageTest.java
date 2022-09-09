@@ -33,7 +33,7 @@ public class CreateAccountPageTest extends BaseTest {
     public CreateAccountPageTest(WebDriver driver){
         super(driver);
         this.base = new BasePageLocators();
-        this.registration = new CreateAccountPageLocators(driver);
+        this.registration = new CreateAccountPageLocators();
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 
@@ -86,10 +86,10 @@ public class CreateAccountPageTest extends BaseTest {
         registration.yourAddressFormCityFld.sendKeys(RegistrationFormData.getUserCity());
         registration.yourAddressFormStateSelector.click();
         registration.stateGeorgia.click();
-        registration.yourAddressZipCodeSelector.click();
-        registration.yourAddressZipCodeSelector.sendKeys(Keys.DOWN);
-        registration.yourAddressZipCodeSelector.sendKeys(Keys.DOWN);
-        registration.yourAddressZipCodeSelector.sendKeys(Keys.RETURN);
+        registration.yourAddressZipCodeFld.click();
+        registration.yourAddressZipCodeFld.sendKeys(Keys.DOWN);
+        registration.yourAddressZipCodeFld.sendKeys(Keys.DOWN);
+        registration.yourAddressZipCodeFld.sendKeys(Keys.RETURN);
         registration.yourAddressFormCountrySelector.click();
         registration.yourAddressFormCountrySelector.sendKeys(Keys.DOWN);
         registration.yourAddressFormCountrySelector.sendKeys(Keys.RETURN);
@@ -130,7 +130,7 @@ public class CreateAccountPageTest extends BaseTest {
         registration.yourAddressFormAddress2Fld.sendKeys(RegistrationFormData.getUserAddress2());
         registration.yourAddressFormStateSelector.click();
         registration.stateGeorgia.click();
-        registration.yourAddressZipCodeSelector.sendKeys(RegistrationFormData.getUserZipCode());
+        registration.yourAddressZipCodeFld.sendKeys(RegistrationFormData.getUserZipCode());
         registration.yourAddressFormCountrySelector.click();
         registration.yourAddressFormCountrySelector.sendKeys(Keys.DOWN);
         registration.yourAddressFormCountrySelector.sendKeys(Keys.RETURN);
@@ -153,7 +153,7 @@ public class CreateAccountPageTest extends BaseTest {
         registration.yourAddressFormCompanyFld.sendKeys(invalidUserData);
         registration.yourAddressFormAddressFld.sendKeys(invalidUserData);
         registration.yourAddressFormCityFld.sendKeys(invalidUserData);
-        registration.yourAddressZipCodeSelector.sendKeys(invalidUserData);
+        registration.yourAddressZipCodeFld.sendKeys(invalidUserData);
         registration.yourAddressFormCountrySelector.click();
         registration.yourAddressFormCountrySelector.sendKeys(Keys.UP);
         registration.yourAddressFormCountrySelector.sendKeys(Keys.RETURN);
