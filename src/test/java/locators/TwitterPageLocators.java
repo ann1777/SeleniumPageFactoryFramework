@@ -11,6 +11,6 @@ public class TwitterPageLocators {
     public TwitterPageLocators(@NotNull WebDriver driver) {
         this.driver = driver;
         driver.get("https://twitter.com/seleniumfrmwrk");
-        Assert.assertNotNull(driver.findElement(By.xpath("//*[@aria-label='Twitter']"));
+        Assert.assertNotNull(driver.findElement(By.xpath("//*[@aria-label='Twitter']")));
     }
 }
