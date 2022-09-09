@@ -29,7 +29,6 @@ public class CreateAccountPageSteps extends BaseTest {
     @Before
     public static void setUp() throws Exception {
         BaseTest.setUp();
-        BaseTest.getUser();
     }
     @Given("Create an account page is displayed")
     public void searchFieldIsOnBasePage(@NotNull WebDriver driver) {
@@ -46,9 +45,7 @@ public class CreateAccountPageSteps extends BaseTest {
     @And  ("I fill up the <firstName> and <lastname> fields")
     public void FillUpFirstNameAndLastNameFlds() {
         newAccountPage.firstNameFld.sendKeys(RegistrationFormData.getUserFirstName());
-        newAccountPage.firstNameFld.sendKeys(Keys.RETURN);
         newAccountPage.lastNameFld.sendKeys(RegistrationFormData.getUserLastName());
-        newAccountPage.firstNameFld.sendKeys(Keys.RETURN);
     }
 
     @And ("I click on the Birth data selector")
@@ -109,7 +106,7 @@ public class CreateAccountPageSteps extends BaseTest {
 
     @And ("I fill up the <Zip/Postal Code>  with valid data")
     public void fillUpZipCodeWithValidData() {
-        newAccountPage.yourAddressZipCodeSelector.sendKeys(RegistrationFormData.getUserZipCode());
+        newAccountPage.yourAddressZipCodeFld.sendKeys(RegistrationFormData.getUserZipCode());
     }
 
     @And ("I click on the Country selector")
