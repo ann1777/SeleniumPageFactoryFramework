@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -21,7 +20,7 @@ public class BaseTest extends BasePageTest {
     public CreateAccountPageLocators newAccountPage;
     public MyAccountPageLocators myAccountPage;
     public UserJsonDataHelper userJsonDataHelper;
-    public RegistrationFormData registrationFormData = new RegistrationFormData();
+    public RegistrationFormData registrationFormData;
     private static String sessionToken;
 
     protected final AppManager app = new AppManager();
