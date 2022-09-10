@@ -31,7 +31,7 @@ public class StepDefinitions extends BaseTest {
     public SignInPageLocators signInPage;
     public CatalogPageLocators womanPage;
     public SearchResultsPageLocators searchPage;
-    public FacebookPage fbPage;
+    public FacebookPageLocators fbPage;
 
     public StepDefinitions(WebDriver driver) {
         super(driver);

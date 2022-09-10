@@ -2,12 +2,14 @@ package tests;
 
 import locators.*;
 import model.RegistrationFormData;
+import objectRepository.BasePage_OR;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
+import org.testng.Assert;
 
 import java.util.Random;
 
@@ -29,6 +31,8 @@ public class BasePageTest{
     public MyAddressPageLocators myaddress;
     public PersonalInfoPageLocators myinfo;
     public SignInPageLocators signout;
+    public SearchResultsPageLocators search;
+
     public FacebookPage fbPage;
     String ValidEmailPageAlertMsg = " Newsletter : You have successfully subscribed to this newsletter.";
     String ValidEmailFooterAlertMsg = "You have successfully subscribed to this newsletter.";
@@ -60,7 +64,10 @@ public class BasePageTest{
     String actualTitle = "//h2//span[text()='Selenium Framework']";
     
     String ExpectedTitle1 = "Selenium Framework";
-    String itemName;
+
+    String fbPageTitle = "Selenium Framework";
+    String itemName = "Blouse";
+
     String foundItemsName;
 
     public BasePageTest(WebDriver driver){
@@ -79,6 +86,8 @@ public class BasePageTest{
         this.myaddress = new MyAddressPageLocators();
         this.myinfo = new PersonalInfoPageLocators();
         this.signout = new SignInPageLocators();
+        this.search = new SearchResultsPageLocators();
+        this.fbPage = new FacebookPage();
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 
@@ -88,7 +97,7 @@ public class BasePageTest{
 
     @Test
     public void SearchingItems() {
-        base.womenDisplayBlock.findElement(By.xpath("//h5/a"));
+        String itemName = String.valueOf(base.womenDisplayBlock.findElement(By.xpath(BasePage_OR.ITEM_NAME)));
         Random rnd1 = new Random();
         int a = Math.round(rnd1.nextInt());
         while (a > 14) a -= 14;
@@ -97,11 +106,10 @@ public class BasePageTest{
             base.womenDisplayBlock.sendKeys(Keys.DOWN);
             count1 = count1++;
         }
-//        String itemName = base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
-//        base.searchFld.sendKeys(itemName);
-//        base.searchBtn.click();
-//        base.womenDisplayBlock.findElement(By.xpath(foundItemsName));
-//        Assert.assertEquals(itemName, foundItemsName);
+        base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
+        base.searchFld.sendKeys(itemName);
+        base.searchBtn.click();
+        search.searchTitle.getText().equals(itemName);
 
     }
 
@@ -193,13 +201,6 @@ public class BasePageTest{
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-//        Iterator<String> BasePage = s.iterator();
-//        String facebookPage = BasePage.next();
-//        if(!BasePage.equals(facebookPage)) {
-//            driver.switchTo().window(facebookPage);
-//        }
-//        System.out.println(driver.switchTo().window(facebookPage).getTitle());
     }
 
     @Test
