@@ -14,6 +14,8 @@ public class ExtentListener implements ITestListener {
 	private Logger log = LoggerHelper.getLogger();
 	public static ExtentReports extent;
 	public static ExtentTest test;
+	public ExtentListener() throws ClassNotFoundException {
+	}
 
 	public void onFinish(ITestContext arg0) {
 

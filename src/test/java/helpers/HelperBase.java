@@ -1,15 +1,18 @@
 package helpers;
+
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 
 public class HelperBase {
     private boolean acceptNextAlert = true;
-    protected final WebDriver driver;
+    protected final WebDriver driver = new ChromeDriver();
 
     public HelperBase() {
-        this.driver = driver;
     }
 
     protected void type(By locator, String text) {
@@ -19,7 +22,8 @@ public class HelperBase {
     }
 
     protected void click(By locator) {
-        driver.manage().wait(Duration.ofSeconds(5, TimeUnit.SECONDS));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable((locator)));
         driver.findElement(locator).click();
     }
 
@@ -55,5 +59,14 @@ public class HelperBase {
             acceptNextAlert = true;
         }
     }
+
+    private void waitFor(int seconds) {
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

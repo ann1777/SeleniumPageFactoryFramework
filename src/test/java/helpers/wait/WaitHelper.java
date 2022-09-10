@@ -20,6 +20,9 @@ public class WaitHelper {
 	private Logger log = (Logger) LoggerHelper.getLogger();
 	private String baseUrl = "http://www.google.com";
 
+	public WaitHelper() throws ClassNotFoundException {
+	}
+
 	/**
 	 * This is implicit Wait Method
 	 */

@@ -1,12 +1,15 @@
 package helpers.assertion;
 
 import helpers.logger.LoggerHelper;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
-import org.testng.log4testng.Logger;
 
 public class AssertionHelper {
 
-	private static Logger log = LoggerHelper.getLogger();
+	private Logger log = (Logger) LoggerHelper.getLogger();
+
+	public AssertionHelper() throws ClassNotFoundException {
+	}
 
 	/**
 	 * This method will be used to match actual text vs expected text

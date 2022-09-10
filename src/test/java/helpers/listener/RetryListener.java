@@ -13,6 +13,9 @@ public class RetryListener implements IAnnotationTransformer {
 
 	private Logger log = (Logger) LoggerHelper.getLogger();
 
+	public RetryListener() throws ClassNotFoundException {
+	}
+
 
 	public void transform(ITestAnnotation arg0, @SuppressWarnings("rawtypes") Class arg1,
 			@SuppressWarnings("rawtypes") Constructor arg2, Method arg3) {

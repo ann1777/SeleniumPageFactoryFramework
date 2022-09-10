@@ -1,16 +1,16 @@
 package helpers.assertion;
 
 import helpers.logger.LoggerHelper;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.log4testng.Logger;
 
 public class VerificationHelper {
 
 	private WebDriver driver;
-	private static final Logger log = LoggerHelper.getLogger();
+	private Logger log = (Logger) LoggerHelper.getLogger();
 
-	public VerificationHelper(WebDriver driver) {
+	public VerificationHelper(WebDriver driver) throws ClassNotFoundException {
 		this.driver = driver;
 	}
 

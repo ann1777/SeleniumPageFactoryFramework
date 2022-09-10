@@ -9,7 +9,10 @@ public class RetryHelper implements IRetryAnalyzer {
 
 	private int retryCount = 0;
 	private int maxRetryCount = 1;
-	private Logger log = LoggerHelper.getLogger();
+	private Logger log = (Logger) LoggerHelper.getLogger();
+
+	public RetryHelper() throws ClassNotFoundException {
+	}
 
 	/**
 	 * This method is used for retrying failed test case

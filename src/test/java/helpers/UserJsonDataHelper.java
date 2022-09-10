@@ -8,20 +8,13 @@ import objectRepository.CreateAccountPage_OR;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import java.util.Objects;
-
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
 
 public class UserJsonDataHelper extends HelperBase {
     public SignInPageLocators signInPage;
     public CreateAccountPageLocators newAccountPage;
     public MyAccountPageLocators myAccountPage;
-    public boolean isMyAccountPage;
 
-    {
-        assert myAccountPage != null;
-        isMyAccountPage = driver.get(Objects.equals(String.valueOf(myAccountPage.navigationPage.getText()), "My account");
-    }
     public String myAccountPageTitle = "My account";
     public RegistrationFormData registrationFormData = new RegistrationFormData(true,"John","Snow","user"+randomAlphanumeric(5)+"@test.com","r56$UM25","10","june","1978",true,false,"CocaCola","accountant","Right way str., 15", "Victory str., 345", "Kiyv", "Podol", "785623", "Ukraine", "jonn", "74185296", "+38954123", "Jon");
     public RegistrationFormData changedRegistrationFormData = new RegistrationFormData(true, "NewJohn", "NewSnow",
@@ -29,6 +22,13 @@ public class UserJsonDataHelper extends HelperBase {
 
     public UserJsonDataHelper() {
         super();
+    }
+
+    public boolean isMyAccountPage() {
+        if((myAccountPage.homeIcnTab.getText()) == "My account") {
+            return true;
+        }
+        return false;
     }
 
     public void createAccount(RegistrationFormData registerFormData) {
@@ -59,7 +59,7 @@ public class UserJsonDataHelper extends HelperBase {
         newAccountPage.yourAddressFormMobilePhoneFld.sendKeys(registerFormData.getUserMobilePhone());
         newAccountPage.yourAddressFormFutureReferenceFld.sendKeys(registerFormData.getUserAlias());
         newAccountPage.yourAddressFormRegisterBtn.click();
-        if(isMyAccountPage) myAccountPage.pageTitle.getText().equals(myAccountPageTitle);
+        if(isMyAccountPage()) myAccountPage.pageTitle.getText().equals(myAccountPageTitle);
     }
 
     public void createAlreadyUsedEmailAccount(RegistrationFormData registerFormData) {
