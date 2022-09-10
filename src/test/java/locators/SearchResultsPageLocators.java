@@ -21,7 +21,7 @@ public class SearchResultsPageLocators extends BasePageLocators{
     @FindBy(css = SearchResultsPage_OR.NAVIGATION_TAB)
     public WebElement navigationTab;
 
-    @FindBy(css = SearchResultsPage_OR.SEARCH_TITLE)
+    @FindBy(xpath = SearchResultsPage_OR.SEARCH_TITLE)
     public WebElement searchTitle;
 
     @FindBy(css = SearchResultsPage_OR.SEARCHTITLE_LIGHTER)

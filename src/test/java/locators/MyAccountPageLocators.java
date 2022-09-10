@@ -26,7 +26,7 @@ public class MyAccountPageLocators extends BasePageLocators {
     public WebElement navigationPipe;
 
     @FindBy(css = MyAccountPage_OR.MYACCOUNTPAGE_NAVIGATION_TAB)
-    public WebElement navigationPage;
+    public WebElement homeIcnTab;
 
     @FindBy(css = MyAccountPage_OR.MYACCOUNTPAGE_MYACCOUNTFORM_HEADER)
     public WebElement pageTitle;

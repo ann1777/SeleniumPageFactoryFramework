@@ -107,6 +107,9 @@ public class BasePageLocators {
     @FindBy(xpath = BasePage_OR.HEADER_TSHIRTS_DISPLAY_BLOCK)
     public WebElement tShirtsDisplayBlock;
 
+    @FindBy(xpath = BasePage_OR.ITEM_NAME)
+    public WebElement itemName;
+
     @FindBy(xpath = BasePage_OR.PAGE_SUCCESS_EMAIL_ADDRESS_ALERT)
     public WebElement newsLetterSuccessAlert;
 

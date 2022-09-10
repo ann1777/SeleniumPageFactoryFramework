@@ -206,7 +206,6 @@ public class CreateAccountPageLocators extends BasePageLocators {
     public WebElement yourAddressFormAlreadyRegisteredAlert;
 
     public CreateAccountPageLocators() {
-        super(driver);
         this.driver = driver;
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
         PageFactory.initElements((ElementLocatorFactory) driver, this);
