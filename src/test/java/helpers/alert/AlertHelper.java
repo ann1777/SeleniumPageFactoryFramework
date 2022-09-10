@@ -5,6 +5,12 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class AlertHelper {
 	
@@ -22,36 +28,41 @@ public class AlertHelper {
 	 * @return
 	 */
 	public Alert getAlert() {
-		log.info("Switching to Alert " +driver.switchTo().alert().getText());
-		log.debug("");
-		return driver.switchTo().alert();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		String alertText = alert.getText();
+		log.info("Switching to Alert " + alertText);
+		return alert;
 	}
 	
 	public void acceptAlert() {
-		getAlert().accept();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		alert.accept();
 		log.info("Accept alert is done");
 	}
 	
 	public void dismissAlert() {
-		getAlert().dismiss();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		alert.dimiss();
 		log.info("Dismiss alert is done");
 	}
 	
 	public String getAlertText() {
-		String text = getAlert().getText();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		String text = alert.getText();
 		log.info("Getting alert text: "+text);
 		return text;
 	}
 	
 	public boolean isAlertPresent() {
-		try {
-			driver.switchTo().alert();
-			log.info("Alert is present");
-			return true;
-		}catch(NoAlertPresentException e) {
-			log.info(String.valueOf(e.getCause()));
-			return false;
-		}
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert();
+		log.info("Alert is present");
+		return true;
 	}
 	
 	public void acceptAlertIfPresent() {
