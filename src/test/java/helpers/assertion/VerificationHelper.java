@@ -8,7 +8,15 @@ import org.openqa.selenium.WebElement;
 public class VerificationHelper {
 
 	private WebDriver driver;
-	private Logger log = (Logger) LoggerHelper.getLogger();
+	private static Logger log;
+
+	static {
+		try {
+			log = (Logger) LoggerHelper.getLogger();
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 	public VerificationHelper(WebDriver driver) throws ClassNotFoundException {
 		this.driver = driver;
@@ -23,13 +31,12 @@ public class VerificationHelper {
 	public static synchronized boolean isDisplayed( WebElement element) {
 		boolean isDispalyed = false;
 		try {
-			 isDispalyed= element.isDisplayed();
+			 isDispalyed = element.isDisplayed();
 			 log.info(element.getText()+" is dispalyed");
 		}
 		catch(Exception ex) {
 			log.error("Element not found " + ex.getCause());
 		}
-
 		return isDispalyed;
 	}
 

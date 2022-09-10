@@ -6,7 +6,15 @@ import org.testng.Assert;
 
 public class AssertionHelper {
 
-	private Logger log = (Logger) LoggerHelper.getLogger();
+	private static Logger log;
+
+	static {
+		try {
+			log = (Logger) LoggerHelper.getLogger();
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 	public AssertionHelper() throws ClassNotFoundException {
 	}
