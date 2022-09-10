@@ -27,19 +27,19 @@ public class FirefoxBrowser {
 
 	}
 
-	public WebDriver getFirefoxDriver(FirefoxOptions cap) {
+	public static WebDriver getFirefoxDriver() {
 		if (System.getProperty("os.name").contains("mac")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver"));
-			return new FirefoxDriver(cap);
+			return new FirefoxDriver();
 		} else if (System.getProperty("os.name").contains("Window")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver.exe"));
-			return new FirefoxDriver(cap);
+			return new FirefoxDriver();
 		} else if (System.getProperty("os.name").contains("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver.exe"));
-			return new FirefoxDriver(cap);
+			return new FirefoxDriver();
 		}
 		return null;
 	}

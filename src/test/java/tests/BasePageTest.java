@@ -9,7 +9,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
-import org.testng.Assert;
 
 import java.util.Random;
 
@@ -106,7 +105,8 @@ public class BasePageTest{
             base.womenDisplayBlock.sendKeys(Keys.DOWN);
             count1 = count1++;
         }
-        base.womenDisplayBlock.sendKeys(Keys.RETURN).getText();
+        base.womenDisplayBlock.sendKeys(Keys.RETURN);
+        base.womenDisplayBlock.getText();
         base.searchFld.sendKeys(itemName);
         base.searchBtn.click();
         search.searchTitle.getText().equals(itemName);

@@ -23,19 +23,19 @@ public class ChromeBrowser {
 		return option;
 	}
 
-	public WebDriver getChromeDriver(ChromeOptions cap) {
+	public static WebDriver getChromeDriver() {
 		if (System.getProperty("os.name").contains("mac")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/chromedriver"));
-			return new ChromeDriver(cap);
+			return new ChromeDriver();
 		} else if (System.getProperty("os.name").contains("Window")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/chromedriver"));
-			return new ChromeDriver(cap);
+			return new ChromeDriver();
 		} else if (System.getProperty("os.name").contains("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/chromedriver"));
-			return new ChromeDriver(cap);
+			return new ChromeDriver();
 		}
 		return null;
 	}

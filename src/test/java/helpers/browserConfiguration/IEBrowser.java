@@ -20,10 +20,10 @@ public class IEBrowser {
 		return internetExplorerOptions;
 	}
 
-	public WebDriver getExplorerDriver(InternetExplorerOptions cap) {
+	public static WebDriver getExplorerDriver() {
 		System.setProperty("webdriver.ie.driver",
 				ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver"));
-		return new InternetExplorerDriver(cap);
+		return new InternetExplorerDriver();
 	}
 
 }
