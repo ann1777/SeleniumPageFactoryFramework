@@ -13,5 +13,4 @@ public class SessionHelper {
     public void login() {
         driver.navigate().to("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     }
-
 }
