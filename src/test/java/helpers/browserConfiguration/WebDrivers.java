@@ -27,11 +27,11 @@ public class WebDrivers {
         appManager.initApp();
         String browserName = String.valueOf(propertyReader.getBrowserType());
         if (browserName.equalsIgnoreCase("Chrome")) {
-            driver.set(ChromeBrowser.getChromeDriver());
+            driver.set(chromeBrowser.getChromeDriver());
         } else if (browserName.equalsIgnoreCase("Firefox")) {
-            driver.set(FirefoxBrowser.getFirefoxDriver());
+            driver.set(firefoxBrowser.getFirefoxDriver());
         } else {
-            driver.set(IEBrowser.getExplorerDriver());
+            driver.set(ieBrowser.getExplorerDriver());
         }
         return (WebDrivers) driver.get();
     }

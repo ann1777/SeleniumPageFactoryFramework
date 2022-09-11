@@ -5,10 +5,8 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.fail;
 import static tests.BaseTest.driver;
 
@@ -48,7 +46,7 @@ public class AppManager {
         sessionHelper.login();
     }
 
-    public void stop() {
+    public void stopApp() {
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {

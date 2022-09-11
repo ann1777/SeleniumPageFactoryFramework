@@ -1,5 +1,6 @@
 package tests;
 
+import helpers.AppManager;
 import helpers.UserJsonDataHelper;
 import helpers.wait.WaitHelper;
 import locators.BasePageLocators;
@@ -24,6 +25,7 @@ public class BaseTest extends BasePageTest {
     public UserJsonDataHelper userJsonDataHelper;
     public RegistrationFormData registrationFormData;
     public static BasePageLocators base;
+    public static AppManager appManager;
     private static String sessionToken;
 
 
@@ -43,6 +45,7 @@ public class BaseTest extends BasePageTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
+        appManager.initApp();
         driver = new ChromeDriver();
         driver.get("https://automationpractice.com/index.php/");
         WaitHelper wait = new WaitHelper(driver);
@@ -55,6 +58,7 @@ public class BaseTest extends BasePageTest {
     }
     @AfterClass
     public static void tearDown() throws Exception {
+        appManager.stopApp();
         driver.quit();
     }
 }
