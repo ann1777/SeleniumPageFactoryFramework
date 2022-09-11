@@ -2,11 +2,12 @@ package helpers.assertion;
 
 import helpers.logger.LoggerHelper;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class VerificationHelper {
-
 	private WebDriver driver;
 	private static Logger log;
 
@@ -27,16 +28,18 @@ public class VerificationHelper {
 	 * @param element
 	 * @return
 	 */
-	public static boolean verifyIsPresent(WebElement element) {
-		boolean isDispalyed = true;
+	public static boolean isDispalyed(WebElement element) {
+		WebDriver driver = new ChromeDriver();
+		String xpathExpression = "//xxxx";
 		try {
-			isDispalyed = element.isDisplayed();
+			driver.findElement(By.xpath(xpathExpression));
 			log.info(element.getText() + " is dispalyed");
+			return true;
 			}
 			catch(Exception ex){
 				log.error("Element not found " + ex.getCause());
 			}
-			return isDispalyed;
+			return false;
 	}
 
 	/**
@@ -45,17 +48,17 @@ public class VerificationHelper {
 	 * @param element
 	 * @return
 	 */
-	public boolean verifyIsNotPresent(WebElement element) {
-		boolean isDispalyed = false;
+	public boolean isNotDisplayed(WebElement element) {
+		String xpathExpression = "//xxxx";
 		try {
-			element.isDisplayed();
-			log.info(element.getText() + " is not dispalyed");
-			}
-		catch(Exception ex){
-				log.error("Element not found " + ex.getCause());
-				isDispalyed = false;
-			}
-			return isDispalyed;
+			driver.findElement(By.xpath(xpathExpression));
+			log.info(element.getText() + " is not present");
+			return false;
+		}
+		catch(Exception ex) {
+			log.error("Element not found " + ex.getCause());
+			return true;
+		}
 	}
 
 	/**

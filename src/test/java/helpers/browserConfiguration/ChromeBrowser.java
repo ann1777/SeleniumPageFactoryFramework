@@ -1,6 +1,7 @@
 package helpers.browserConfiguration;
 
 import helpers.resource.ResourceHelper;
+import org.jetbrains.annotations.Nullable;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +14,6 @@ public class ChromeBrowser {
 		option.addArguments("--test-type");
 		option.addArguments("--disable-popup-blocking");
 		DesiredCapabilities chrome = new DesiredCapabilities();
-		chrome.setJavascriptEnabled(true);
 		option.setCapability(ChromeOptions.CAPABILITY, option);
 
 		// for linux Machine
@@ -23,6 +23,7 @@ public class ChromeBrowser {
 		return option;
 	}
 
+	@Nullable
 	public static WebDriver getChromeDriver() {
 		if (System.getProperty("os.name").contains("mac")) {
 			System.setProperty("webdriver.chrome.driver",

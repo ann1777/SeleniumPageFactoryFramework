@@ -1,6 +1,9 @@
 package helpers;
 
-import org.openqa.selenium.*;
+import helpers.alert.AlertHelper;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,36 +30,23 @@ public class HelperBase {
         driver.findElement(locator).click();
     }
 
-    public boolean isElementPresent(By by) {
+    public boolean isElementPresent() {
         try {
-            driver.findElement(by);
-            return true;
+            driver.findElement(By.xpath(""));
         } catch (NoSuchElementException e) {
             return false;
         }
+        return true;
     }
 
     public boolean isAlertPresent() {
         try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
-    public String closeAlertAndGetItsText() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            if (acceptNextAlert) {
-                alert.accept();
-            } else {
-                alert.dismiss();
+            if (AlertHelper.getAlert() != null) {
+                return true;
             }
-            return alertText;
-        } finally {
-            acceptNextAlert = true;
+            return false;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -67,6 +57,5 @@ public class HelperBase {
             e.printStackTrace();
         }
     }
-
 
 }

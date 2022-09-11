@@ -6,8 +6,6 @@ import static org.junit.Assert.fail;
 
 public class AppManager {
     private ChromeDriver driver;
-
-
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private ButtonsHelper buttonsHelper;

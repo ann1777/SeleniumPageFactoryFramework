@@ -1,22 +1,28 @@
 package helpers.alert;
 
 import helpers.logger.LoggerHelper;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class AlertHelper {
 	
 	private WebDriver driver;
-	private Logger log = (Logger) LoggerHelper.getLogger();
-	
+	private static Logger log;
+
+	static {
+		try {
+			log = (Logger) LoggerHelper.getLogger();
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public AlertHelper(WebDriver driver) throws ClassNotFoundException {
 		this.driver=driver;	
 		log.info("Alert object is initialized");
@@ -27,7 +33,8 @@ public class AlertHelper {
 	 * This method will allow switching to Alert
 	 * @return
 	 */
-	public Alert getAlert() {
+	public static Alert getAlert() {
+		WebDriver driver = new ChromeDriver();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		String alertText = alert.getText();
@@ -60,9 +67,8 @@ public class AlertHelper {
 	public boolean isAlertPresent() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 		wait.until(ExpectedConditions.alertIsPresent());
-		driver.switchTo().alert();
 		log.info("Alert is present");
-		return true;
+		return false;
 	}
 	
 	public void acceptAlertIfPresent() {

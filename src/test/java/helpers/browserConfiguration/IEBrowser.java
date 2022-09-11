@@ -1,6 +1,8 @@
 package helpers.browserConfiguration;
 
 import helpers.resource.ResourceHelper;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.ElementScrollBehavior;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -15,11 +17,12 @@ public class IEBrowser {
 		cap.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
 		cap.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		cap.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
-		cap.setJavascriptEnabled(true);
 		InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions(cap);
 		return internetExplorerOptions;
 	}
 
+	@NotNull
+	@Contract(" -> new")
 	public static WebDriver getExplorerDriver() {
 		System.setProperty("webdriver.ie.driver",
 				ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver"));
