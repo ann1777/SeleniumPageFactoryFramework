@@ -15,7 +15,7 @@ public class WindowHelper {
 	 * This is a constructor
 	 * @param driver
 	 */
-	public WindowHelper(WebDriver driver) {
+	public WindowHelper(WebDriver driver) throws ClassNotFoundException {
 		this.driver = driver;
 	}
 

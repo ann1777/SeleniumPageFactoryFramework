@@ -1,6 +1,5 @@
 package tests;
 
-import helpers.AppManager;
 import helpers.UserJsonDataHelper;
 import helpers.wait.WaitHelper;
 import locators.BasePageLocators;
@@ -27,7 +26,6 @@ public class BaseTest extends BasePageTest {
     public static BasePageLocators base;
     private static String sessionToken;
 
-    protected final AppManager app = new AppManager();
 
     public BaseTest(WebDriver driver) {
         super(driver);

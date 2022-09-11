@@ -1,19 +1,42 @@
 package helpers;
 
+import helpers.browserConfiguration.WebDrivers;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
+import static tests.BaseTest.driver;
 
 public class AppManager {
-    private ChromeDriver driver;
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private ButtonsHelper buttonsHelper;
     private UserJsonDataHelper userJsonDataHelper;
+    WebDrivers webDrivers;
 
     private final StringBuffer verificationErrors = new StringBuffer();
 
-    public void init() {
+
+
+    public AppManager() throws IOException {
+        webDrivers = new WebDrivers();
+
+        if(driver == null) {
+            driver = (WebDriver) webDrivers.createAndGetDriver();
+            PageFactory.initElements((SearchContext) driver, this);
+            driver.manage().window().maximize();
+            driver.manage().deleteAllCookies();
+            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        }
+    }
+
+
+    public void initApp() {
         System.clearProperty("webdriver.chrome.driver");
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
         driver = new ChromeDriver();
@@ -44,4 +67,5 @@ public class AppManager {
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }
+
 }

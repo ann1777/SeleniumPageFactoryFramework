@@ -15,7 +15,7 @@ public class DropDownHelper {
 	private WebDriver driver;
 	private Logger log = LoggerHelper.getLogger();
 
-	public DropDownHelper(WebDriver driver) {
+	public DropDownHelper(WebDriver driver) throws ClassNotFoundException {
 		this.driver = driver;
 		log.info("DropDown object is initialized");
 	}

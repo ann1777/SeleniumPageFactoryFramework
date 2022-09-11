@@ -34,9 +34,7 @@ public class PropertyReader implements ConfigReader {
 		return Integer.parseInt(OR.getProperty("PAGELOADTIMEOUT"));
 	}
 
-	public BrowserType getBrowserType() {
-		return BrowserType.valueOf(OR.getProperty("BROWSERTYPE"));
-	}
+	public BrowserType getBrowserType() { return BrowserType.valueOf(OR.getProperty("BROWSERTYPE")); }
 
 	public String getUrl() {
 		return OR.getProperty("applicationURL");
