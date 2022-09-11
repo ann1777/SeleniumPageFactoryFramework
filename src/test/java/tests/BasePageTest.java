@@ -114,9 +114,8 @@ public class BasePageTest{
     }
 
     @Test
-    public String getItemName() {
+    public void getItemName() {
         base.womenDisplayBlock.findElement(By.xpath("//h5/a")).getText();
-        return this.foundItemsName;
     }
 
     @Test
@@ -193,22 +192,20 @@ public class BasePageTest{
     }
 
     @Test
-    public FacebookPage followUsByFacebook() {
+    public void followUsByFacebook() {
         base.facebookIcn.click();
         try {
             driver.get(facebookPageLink);
-            return new FacebookPage(driver);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     @Test
-    public TwitterPageLocators followUsByTwitter() {
+    public void followUsByTwitter() {
         base.twitterIcn.click();
         try{
             driver.get(twitterPageLink);
-            return new TwitterPageLocators(driver);
         } catch (Exception e1) {
             throw new RuntimeException(e1);
         }

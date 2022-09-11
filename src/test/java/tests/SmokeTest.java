@@ -2,13 +2,19 @@ package tests;
 
 import helpers.AppManager;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
 import java.io.IOException;
 
 public class SmokeTest extends BaseTest {
-    public SmokeTest(WebDriver driver) throws IOException {
+//    public SmokeTest(WebDriver driver, AppManager app) throws IOException {
+//        super(driver);
+//        this.app = app;
+//    }
+
+    public SmokeTest() throws IOException {
         super(driver);
+        this.app = app;
     }
     AppManager app = new AppManager();
     @Test

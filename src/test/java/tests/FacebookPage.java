@@ -11,6 +11,7 @@ class FacebookPage extends BaseTest {
     FacebookPage() {
         super(driver);
         driver.get(faceBookLink);
+        return;
     }
 
     @FindBy(xpath = "//h1//a[text()='Selenium Framework']")
