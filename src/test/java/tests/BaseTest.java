@@ -2,6 +2,7 @@ package tests;
 
 import helpers.AppManager;
 import helpers.UserJsonDataHelper;
+import helpers.wait.WaitHelper;
 import locators.BasePageLocators;
 import locators.CreateAccountPageLocators;
 import locators.MyAccountPageLocators;
@@ -15,12 +16,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTest extends BasePageTest {
     public static WebDriver driver;
     public CreateAccountPageLocators newAccountPage;
     public MyAccountPageLocators myAccountPage;
     public UserJsonDataHelper userJsonDataHelper;
     public RegistrationFormData registrationFormData;
+    public static BasePageLocators base;
     private static String sessionToken;
 
     protected final AppManager app = new AppManager();
@@ -43,6 +47,8 @@ public class BaseTest extends BasePageTest {
     public static void setUp() throws Exception {
         driver = new ChromeDriver();
         driver.get("https://automationpractice.com/index.php/");
+        WaitHelper wait = new WaitHelper(driver);
+        wait.setImplicitWait(5, TimeUnit.SECONDS);
     }
 
     @BeforeMethod

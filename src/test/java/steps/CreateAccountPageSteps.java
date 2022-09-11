@@ -137,7 +137,7 @@ public class CreateAccountPageSteps extends BaseTest {
     @Then ("My account page opens with My account title and My account navigation tab next to the Home icon on it")
     public void isMyAccountTitleAndNavigationTabPresent() {
         Assert.assertNotNull(myAccountPage.pageTitle);
-        Assert.assertNotNull(myAccountPage.navigationPage);
+        Assert.assertNotNull(myAccountPage.homeIcnTab);
     }
 
     @And ("I see the User info button appears on the page header with the user <fullName> on it")

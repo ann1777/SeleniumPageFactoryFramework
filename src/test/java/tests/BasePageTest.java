@@ -95,7 +95,7 @@ public class BasePageTest{
 
 
     @Test
-    public void SearchingItems() {
+    public void searchingItem() {
         String itemName = String.valueOf(base.womenDisplayBlock.findElement(By.xpath(BasePage_OR.ITEM_NAME)));
         Random rnd1 = new Random();
         int a = Math.round(rnd1.nextInt());
