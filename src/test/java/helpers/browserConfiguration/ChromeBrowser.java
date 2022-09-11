@@ -36,9 +36,20 @@ public class ChromeBrowser {
 		} else if (System.getProperty("os.name").contains("Linux")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/chromedriver"));
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--start-maximized");
+            options.addArguments("--test-type");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--disable-popup-blocking");
+            options.addArguments("--allow-running-insecure-content");
+            options.addArguments("--disable-translate");
+            options.addArguments("--always-authorize-plugins");
+            options.addArguments("--disable-infobars");
+            options.addArguments("--enable-automation");
+			options.setExperimentalOption("useAutomationExtension", false);
 			return new ChromeDriver();
 		}
 		return null;
 	}
-
 }
