@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class HelperBase {
     private boolean acceptNextAlert = true;
-    protected final WebDriver driver = new ChromeDriver();
+    protected WebDriver driver = new ChromeDriver();
 
     public HelperBase() {
     }

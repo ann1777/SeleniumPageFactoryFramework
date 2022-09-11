@@ -25,7 +25,7 @@ public class BaseTest extends BasePageTest {
     public UserJsonDataHelper userJsonDataHelper;
     public RegistrationFormData registrationFormData;
     public static BasePageLocators base;
-    public static AppManager appManager;
+    public AppManager appManager;
     private static String sessionToken;
 
 
@@ -44,7 +44,7 @@ public class BaseTest extends BasePageTest {
     }
 
     @BeforeClass
-    public static void setUp() throws Exception {
+    public void setUp() throws Exception {
         appManager.initApp();
         driver = new ChromeDriver();
         driver.get("https://automationpractice.com/index.php/");
@@ -57,7 +57,7 @@ public class BaseTest extends BasePageTest {
         userJsonDataHelper.createAccount(registrationFormData);
     }
     @AfterClass
-    public static void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         appManager.stopApp();
         driver.quit();
     }

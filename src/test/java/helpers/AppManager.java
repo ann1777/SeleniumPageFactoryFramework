@@ -10,13 +10,12 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.fail;
 import static tests.BaseTest.driver;
 
-public class AppManager {
+public class AppManager extends HelperBase {
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private ButtonsHelper buttonsHelper;
     private UserJsonDataHelper userJsonDataHelper;
     WebDrivers webDrivers;
-
     private final StringBuffer verificationErrors = new StringBuffer();
 
 
@@ -32,8 +31,6 @@ public class AppManager {
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         }
     }
-
-
     public void initApp() {
         System.clearProperty("webdriver.chrome.driver");
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");

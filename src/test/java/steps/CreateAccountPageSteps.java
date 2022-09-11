@@ -1,6 +1,5 @@
 package steps;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,6 +14,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import tests.BaseTest;
 
 public class CreateAccountPageSteps extends BaseTest {
@@ -26,10 +27,16 @@ public class CreateAccountPageSteps extends BaseTest {
         super(driver);
     }
 
-    @Before
-    public static void setUp() throws Exception {
-        BaseTest.setUp();
+    @BeforeMethod
+    public void setUp() throws RuntimeException {
+        appManager.initApp();
     }
+
+    @AfterMethod
+    public void tearDown() throws RuntimeException {
+        appManager.stopApp();
+    }
+
     @Given("Create an account page is displayed")
     public void searchFieldIsOnBasePage(@NotNull WebDriver driver) {
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
