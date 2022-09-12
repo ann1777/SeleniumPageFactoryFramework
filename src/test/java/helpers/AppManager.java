@@ -1,14 +1,10 @@
 package helpers;
 
 import helpers.browserConfiguration.WebDrivers;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import static org.junit.Assert.fail;
-import static tests.BaseTest.driver;
 
 public class AppManager extends HelperBase {
     private SessionHelper sessionHelper;
@@ -18,22 +14,14 @@ public class AppManager extends HelperBase {
     WebDrivers webDrivers;
     private final StringBuffer verificationErrors = new StringBuffer();
 
-
-
-    public AppManager() throws IOException {
-        webDrivers = new WebDrivers();
-
-        if(driver == null) {
-            driver = (WebDriver) webDrivers.createAndGetDriver();
-            PageFactory.initElements((SearchContext) driver, this);
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        }
+    public AppManager() {
+        super();
     }
     public void initApp() {
         System.clearProperty("webdriver.chrome.driver");
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver();
         userJsonDataHelper = new UserJsonDataHelper();
         buttonsHelper = new ButtonsHelper(driver);
@@ -50,7 +38,6 @@ public class AppManager extends HelperBase {
             fail(verificationErrorString);
         }
     }
-
     public UserJsonDataHelper getUserJsonHelper() {
         return userJsonDataHelper;
     }
@@ -62,5 +49,4 @@ public class AppManager extends HelperBase {
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }
-
 }

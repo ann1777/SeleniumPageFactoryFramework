@@ -13,10 +13,9 @@ import java.time.Duration;
 
 public class HelperBase {
     private boolean acceptNextAlert = true;
-    protected WebDriver driver = new ChromeDriver();
+    protected WebDriver driver;
 
-    public HelperBase() {
-    }
+    public HelperBase() { this.driver = new ChromeDriver(); }
 
     protected void type(By locator, String text) {
         click(locator);
@@ -30,13 +29,15 @@ public class HelperBase {
         driver.findElement(locator).click();
     }
 
-    public boolean isElementPresent() {
+    public boolean isElementPresent(By locator) throws InterruptedException {
         try {
-            driver.findElement(By.xpath(""));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            wait.until(ExpectedConditions.presenceOfElementLocated((locator)));
+            driver.findElement(locator);
+            return true;
         } catch (NoSuchElementException e) {
             return false;
         }
-        return true;
     }
 
     public boolean isAlertPresent() {
