@@ -5,12 +5,13 @@ import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
+import java.io.IOException;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -23,8 +24,8 @@ import tests.BaseTest;
 public class TestRunner extends BaseTest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
-    public TestRunner(WebDriver driver) {
-        super(driver);
+    public TestRunner() throws IOException {
+        super();
     }
 
     @BeforeClass(alwaysRun = true)
