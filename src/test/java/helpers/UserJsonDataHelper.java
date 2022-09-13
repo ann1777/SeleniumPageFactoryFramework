@@ -5,6 +5,7 @@ import locators.MyAccountPageLocators;
 import locators.SignInPageLocators;
 import model.RegistrationFormData;
 import objectRepository.CreateAccountPage_OR;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -14,8 +15,8 @@ public class UserJsonDataHelper extends HelperBase {
     public SignInPageLocators signInPage;
     public CreateAccountPageLocators newAccountPage;
     public MyAccountPageLocators myAccountPage;
-
     public String myAccountPageTitle = "My account";
+    public String myAccountPageHomeIcnTitle = "My account";
     public RegistrationFormData registrationFormData = new RegistrationFormData(true,"John","Snow","user"+randomAlphanumeric(5)+"@test.com","r56$UM25","10","june","1978",true,false,"CocaCola","accountant","Right way str., 15", "Victory str., 345", "Kiyv", "Podol", "785623", "Ukraine", "jonn", "74185296", "+38954123", "Jon");
     public RegistrationFormData changedRegistrationFormData = new RegistrationFormData(true, "NewJohn", "NewSnow",
             "newuser"+randomAlphanumeric(5)+"@test.com", "50_%mYaq", "5", "may", "2002", true, false, "Twitter", "adv", "Victory str, 22", "New History str., 17", "Kharkiv", "NewUkraine", "785612", "Ukraine", "jony", "452389", "+3874562319", "newJon");
@@ -25,13 +26,13 @@ public class UserJsonDataHelper extends HelperBase {
     }
 
     public boolean isMyAccountPage() {
-        if((myAccountPage.homeIcnTab.getText()) == "My account") {
+        if((myAccountPage.homeIcnTab.getText()) == myAccountPageHomeIcnTitle) {
             return true;
         }
         return false;
     }
 
-    public void createAccount(RegistrationFormData registerFormData) {
+    public void createAccount(@NotNull RegistrationFormData registerFormData) {
         signInPage.createAccountEmailField.sendKeys(registerFormData.getUserEmailAddress());
         signInPage.createAccountSubmitBtn.click();
         newAccountPage.mailGenderCheckBox.click();

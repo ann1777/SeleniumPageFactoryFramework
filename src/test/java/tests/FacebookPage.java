@@ -6,23 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
-class FacebookPage extends BaseTest {
+class FacebookPage {
 
-    FacebookPage fbPage = new FacebookPage();
     String faceBookLink = "https://www.facebook.com/groups/525066904174158/";
-    FacebookPage() {
-        super(driver);
-        driver.get(faceBookLink);
-//        return;
-    }
 
+    FacebookPage(WebDriver driver)throws RuntimeException {
+        driver.get(faceBookLink);
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
+    }
 
     @FindBy(xpath = "//h1//a[text()='Selenium Framework']")
     WebElement pageTitle;
-    String fbPageTitle = fbPage.pageTitle.getText();
-
-    public FacebookPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements((ElementLocatorFactory) driver, this);
-    }
 }

@@ -11,12 +11,17 @@ public class BasePage_OR {
     public static final String SIGN_IN_BTN = ".login";
     public static final String HEADER_LOGO = "//div[@id='header_logo']";
     //*[@id="block_top_menu"]/ul
-
     public static final String HEADER_USERNAME_INFO = "//a[@class='account']";
     public static final String HEADER_BLOCK_TOP_MENU = "//div[@id='block_top_menu']";
     public static final String SEARCH_FLD = "//*[@placeholder='Search']";
     public static final String SEARCH_BTN = "//button [@name='submit_search']";
     public static final String SHOPPING_CART_ICN = "a[title='View my shopping cart']";
+    public static final String CATEGORY_BTNS_BLOCK = "//li[@id='category-thumbnail']";
+    public static final String CATEGORY_BTNS_WITH_CONTAINER = "//div/ul/li/a[@class='sf-with-ul']";
+    public static final String CATEGORY_BTNS_CONTAINERS = "//ul[@class='submenu-container clearfix first-in-line-xs']";
+    public static final String CATEGORY_WOMAN_CONTAINER_BLOUSES_SUBCATEGORY = "//a[text()='Blouses']";
+    public static final String CATEGORY_WOMAN_CONTAINER_DRESSES_CATEGORY = "//*[@class='sfHoverForce']//li/a[text()='Dresses']";
+    public static final String CATEGORY_WOMAN_CONTAINER_CASUAL_DRESSES_SUBCATEGORY = "//a[text()='Casual Dresses']";
     public static final String WOMEN_BTN = "//li/a[@title='Women']";
     public static final String WOMEN_DISPLAY_BLOCK = "//*[@id='block_top_menu']/ul//a[text() = 'Women']";
     public static final String HEADER_DISPLAY_BLOCK_CONTAINER = ".submenu-container clearfix first-in-line-xs";

@@ -1,9 +1,12 @@
 package tests;
 
+import helpers.UserJsonDataHelper;
 import locators.BasePageLocators;
 import locators.CreateAccountPageLocators;
 import locators.MyAccountPageLocators;
+import locators.SignInPageLocators;
 import model.RegistrationFormData;
+import objectRepository.CreateAccountPage_OR;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,7 +14,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 import org.testng.Assert;
+import org.testng.internal.objects.InstanceCreator;
 
+import java.io.IOException;
 import java.util.Random;
 
 
@@ -20,25 +25,32 @@ public class CreateAccountPageTest extends BaseTest {
     public BasePageLocators base;
     public CreateAccountPageLocators registration;
     public MyAccountPageLocators myaccount;
+    public SignInPageLocators signout;
+    public CreateAccountPageLocators newaccount;
+    public UserJsonDataHelper userdata;
 
     public String invalidUserData = "///////////////";
     public String invalidUserEmail = "//////@g.l";
     public String navigationPipeName = "My account";
+    public String navigationTabName = "My account";
     public String signOutTabClassName = "logout";
     public String contactUsTabName = "Contact us";
     public String signOutTabName = "Sign out";
+    public String yourAddressFormDangerAlertMsg = "There are 2 errors";
+    public String yourAddressFormAlreadyRegisteredAlertMsg = "An account using this email address has already been registered.";
 
-
-
-    public CreateAccountPageTest(WebDriver driver){
-        super(driver);
+        public CreateAccountPageTest() throws IOException {
+        super();
         this.base = new BasePageLocators();
         this.registration = new CreateAccountPageLocators();
+        this.myaccount = new MyAccountPageLocators();
         PageFactory.initElements((ElementLocatorFactory) driver, this);
+        InstanceCreator.newInstance(String.valueOf(new CreateAccountPageLocators()), driver);
     }
 
     @Test
     public void fillYourPersonalInformationWithValidData() {
+        registration.wait.waitForElement(registration.femailGenderCheckBox);
         registration.femailGenderCheckBox.click();
         registration.firstNameFld.sendKeys(RegistrationFormData.getUserFirstName());
         registration.lastNameFld.sendKeys(RegistrationFormData.getUserLastName());
@@ -106,6 +118,7 @@ public class CreateAccountPageTest extends BaseTest {
 
     @Test
     public void SignUPForNewLetter(boolean isSignUp) {
+        registration.wait.waitForElement(registration.mailGenderCheckBox);
         if (RegistrationFormData.getIsMail()) {
             registration.mailGenderCheckBox.click();
         }
@@ -114,6 +127,7 @@ public class CreateAccountPageTest extends BaseTest {
 
     @Test
     public void fillYourPersonalInformationWithEmptyEmailFldAndEmptyCityFld() {
+        registration.wait.waitForElement(registration.mailGenderCheckBox);
         registration.mailGenderCheckBox.click();
         registration.firstNameFld.sendKeys(RegistrationFormData.getUserFirstName());
         registration.lastNameFld.sendKeys(RegistrationFormData.getUserLastName());
@@ -140,11 +154,12 @@ public class CreateAccountPageTest extends BaseTest {
         registration.yourAddressFormFutureReferenceFld.clear();
         registration.yourAddressFormFutureReferenceFld.sendKeys(RegistrationFormData.getUserMainAddress());
         registration.yourAddressFormRegisterBtn.click();
-        Assert.assertTrue(registration.yourAddressFormDangerAlert.getText().equals("There are 2 errors"));
+        Assert.assertTrue(registration.yourAddressFormDangerAlert.getText().equals(yourAddressFormDangerAlertMsg));
     }
 
     @Test
     public void fillYourPersonalInformationWithInvalidData() {
+        registration.wait.waitForElement(registration.mailGenderCheckBox);
         registration.mailGenderCheckBox.click();
         registration.firstNameFld.sendKeys(invalidUserData);
         registration.lastNameFld.sendKeys(invalidUserData);
@@ -164,5 +179,53 @@ public class CreateAccountPageTest extends BaseTest {
         registration.yourAddressFormRegisterBtn.click();
         Assert.assertTrue(registration.yourAddressFormDangerAlert.getText().endsWith("errors"));
     }
+
+    @Test
+    public void createAccount(RegistrationFormData registerFormData) {
+        signout.wait.waitForElement(signout.createAccountEmailField);
+        signout.createAccountEmailField.sendKeys(registerFormData.getUserEmailAddress());
+        signout.createAccountSubmitBtn.click();
+        newaccount.mailGenderCheckBox.click();
+        newaccount.firstNameFld.sendKeys(registerFormData.getUserFirstName());
+        newaccount.lastNameFld.sendKeys(registerFormData.getUserLastName());
+        newaccount.emailFld.sendKeys(registerFormData.getUserEmailAddress());
+        newaccount.passwdFld.sendKeys(registerFormData.getUserPassword());
+        newaccount.birthDaySelector.click();
+        newaccount.birthDaySelector.findElement(By.xpath(CreateAccountPage_OR.CREATEACCOUNTPAGE_14_BIRTHDAY_OPT)).click();
+        newaccount.birthMonthSelector.findElement(By.xpath(CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_MONTH_MAY_OPT)).click();
+        newaccount.birthYearsSelector.findElement(By.xpath(CreateAccountPage_OR.CREATEACCOUNTPAGE_BIRTHDAY_YEARS_2004_OPT)).click();;
+        if(registerFormData.isSignUpForNewsLetter()) newaccount.signUpForNewsLetterCheckBox.click();
+        if(registerFormData.isReceiveSpecialOffers()) newaccount.receiveSpecialOffersCheckBox.click();
+        newaccount.yourAddressFormCompanyFld.sendKeys(registerFormData.getUserCompany());
+        newaccount.yourAddressFormAddressFld.sendKeys(registerFormData.getUserMainAddress());
+        newaccount.yourAddressFormAddress2Fld.sendKeys(registerFormData.getUserAddress2());
+        newaccount.yourAddressFormCityFld.sendKeys(registerFormData.getUserCity());
+        newaccount.yourAddressFormStateSelector.click();
+        newaccount.yourAddressFormStateSelector.findElement(By.xpath(CreateAccountPage_OR.CREATEACCOUNTPAGE_YOURADDRESS_FORM_STATE_SELECTOR_GEORGIA)).click();
+        newaccount.yourAddressZipCodeFld.sendKeys(registerFormData.getUserZipCode());
+        newaccount.yourAddressFormCountrySelector.click();
+        newaccount.yourAddressFormCountrySelector.sendKeys(registerFormData.getUserCountry());
+        newaccount.yourAddressFormAdditionalIntoFld.sendKeys(registerFormData.getUserAdditionalData());
+        newaccount.yourAddressFormHomePhoneFld.sendKeys(registerFormData.getUserHomePhone());
+        newaccount.yourAddressFormMobilePhoneFld.sendKeys(registerFormData.getUserMobilePhone());
+        newaccount.yourAddressFormFutureReferenceFld.sendKeys(registerFormData.getUserAlias());
+        newaccount.yourAddressFormRegisterBtn.click();
+        if(isMyAccountPage()) myaccount.pageTitle.getText().equals(userdata.myAccountPageTitle);
+    }
+
+    public boolean isMyAccountPage() {
+        newaccount.wait.waitForElement(newaccount.navigationTab);
+        if((newaccount.navigationTab.getText()) == navigationTabName) {
+            newaccount.wait.waitForElement(newaccount.navigationTab);
+            return true;
+        }
+        return false;
+    }
+
+    public void createAlreadyUsedEmailAccount(RegistrationFormData registerFormData) {
+        createAccount(registerFormData);
+        createAccount(registerFormData);
+        Assert.assertTrue(newaccount.yourAddressFormAlreadyRegisteredAlert.getText().equals(yourAddressFormAlreadyRegisteredAlertMsg));
+   }
 }
 

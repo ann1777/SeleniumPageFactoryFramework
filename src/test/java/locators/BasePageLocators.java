@@ -48,6 +48,24 @@ public class BasePageLocators {
     @FindBy(xpath = BasePage_OR.SHOPPING_CART_ICN)
     public WebElement shoppingCartIcn;
 
+    @FindBy(xpath = BasePage_OR.CATEGORY_BTNS_BLOCK)
+    public WebElement categoryBtnsBlock;
+
+    @FindBy(xpath = BasePage_OR.CATEGORY_BTNS_WITH_CONTAINER)
+    public WebElement categoryBtnsWithContainer;
+
+    @FindBy(xpath = BasePage_OR.CATEGORY_BTNS_CONTAINERS)
+    public WebElement categoryBtnsContainers;
+
+    @FindBy(xpath = BasePage_OR.CATEGORY_WOMAN_CONTAINER_BLOUSES_SUBCATEGORY)
+    public WebElement categoryWomanContainerBlousesSubcategory;
+
+    @FindBy(xpath = BasePage_OR.CATEGORY_WOMAN_CONTAINER_DRESSES_CATEGORY)
+    public WebElement categoryWomanContainerDressesSubcategory;
+
+    @FindBy(xpath = BasePage_OR.CATEGORY_WOMAN_CONTAINER_CASUAL_DRESSES_SUBCATEGORY)
+    public WebElement categoryWomanContainerBlouseSubcategory;
+
     @FindBy(xpath = BasePage_OR.WOMEN_BTN)
     public WebElement womenDisplayBlockTab;
 
