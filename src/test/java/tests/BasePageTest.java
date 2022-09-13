@@ -1,5 +1,6 @@
 package tests;
 
+import helpers.AppManager;
 import locators.*;
 import model.RegistrationFormData;
 import objectRepository.BasePage_OR;
@@ -9,12 +10,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
+import org.testng.Assert;
 
+import java.io.IOException;
 import java.util.Random;
 
-import static tests.BaseTest.driver;
 
-public class BasePageTest{
+public class BasePageTest extends BaseTest{
     public BasePageLocators base;
     public CatalogPageLocators women;
     public SpecialsPageLocators specials;
@@ -31,7 +33,6 @@ public class BasePageTest{
     public PersonalInfoPageLocators myinfo;
     public SignInPageLocators signout;
     public SearchResultsPageLocators search;
-
     public FacebookPage fbPage;
     String ValidEmailPageAlertMsg = " Newsletter : You have successfully subscribed to this newsletter.";
     String ValidEmailFooterAlertMsg = "You have successfully subscribed to this newsletter.";
@@ -68,8 +69,9 @@ public class BasePageTest{
     String itemName = "Blouse";
 
     String foundItemsName;
+    AppManager app = new AppManager();
 
-    public BasePageTest(WebDriver driver){
+    public BasePageTest(WebDriver driver) throws IOException {
         this.base = new BasePageLocators();
         this.women = new CatalogPageLocators();
         this.specials = new SpecialsPageLocators();
@@ -86,16 +88,18 @@ public class BasePageTest{
         this.myinfo = new PersonalInfoPageLocators();
         this.signout = new SignInPageLocators();
         this.search = new SearchResultsPageLocators();
-        this.fbPage = new FacebookPage();
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 
     @Test
-     public void siteHeaderAdvClick() { base.headerAdv.click(); }
+     public void siteHeaderAdvClick() {
+        base.wait.waitForElement(base.headerAdv);
+        base.headerAdv.click(); }
 
 
     @Test
     public void searchingItem() {
+        base.wait.waitForElement(base.womenDisplayBlock);
         String itemName = String.valueOf(base.womenDisplayBlock.findElement(By.xpath(BasePage_OR.ITEM_NAME)));
         Random rnd1 = new Random();
         int a = Math.round(rnd1.nextInt());
@@ -115,36 +119,42 @@ public class BasePageTest{
 
     @Test
     public void getItemName() {
-        base.womenDisplayBlock.findElement(By.xpath("//h5/a")).getText();
+        base.wait.waitForElement(base.womenDisplayBlock);
+        base.womenDisplayBlock.findElement(By.xpath(BasePage_OR.ITEM_NAME)).getText();
     }
 
     @Test
     public void SearchingItem() {
-        itemName = base.womenDisplayBlock.findElement(By.xpath("//h5/a")).getText();
+        base.wait.waitForElement(base.womenDisplayBlock);
+        itemName = base.womenDisplayBlock.findElement(By.xpath(BasePage_OR.ITEM_NAME)).getText();
         base.searchFld.sendKeys(itemName);
         base.searchBtn.click();
     }
 
     @Test
     public void clickContactUsBtn() {
+        base.wait.waitForElement(base.contactUsBtn);
         base.contactUsBtn.click();
     }
 
     @Test
     public void clickSignBtn() {
+        base.wait.waitForElement(base.signInBtn);
         base.signInBtn.click();
     }
 
     @Test
     public void clickShoppingCartIcn() {
+        base.wait.waitForElement(base.shoppingCartIcn);
         base.shoppingCartIcn.click();
     }
 
     @Test
     public void clickWomenBtn() {
+        base.wait.waitForElement(base.womenDisplayBlockTab);
         base.womenDisplayBlockTab.click();
         base.womenDisplayBlock.findElement(By.id("category-thumbnail"));
-        base.womenDisplayBlock.findElement(By.className("sf-with-ul"));
+        base.womenDisplayBlock.findElements(By.className("sf-with-ul"));
         base.womenDisplayBlock.findElement(By.className("submenu-container"));
         base.womenDisplayBlock.findElement(By.linkText("Blouses"));
         base.womenDisplayBlock.findElement(By.linkText("Dresses"));
@@ -153,6 +163,7 @@ public class BasePageTest{
 
     @Test
     public void clickDressesBtn() {
+        base.wait.waitForElement(base.dressesDisplayBlockTab);
         base.dressesDisplayBlockTab.click();
         base.dressesDisplayBlockTab.findElement(By.linkText("Casual Dresses"));
         base.dressesDisplayBlockTab.findElement(By.linkText("Evening Dresses"));
@@ -161,11 +172,13 @@ public class BasePageTest{
 
     @Test
     public void clickTShirtsBtn() {
+        base.wait.waitForElement(base.tShirtsDisplayBlockTab);
         base.tShirtsDisplayBlockTab.click();
     }
 
     @Test
     public void fillNewsLetterFieldWithInvalidEmail() {
+        base.wait.waitForElement(base.NewsletterInputFld);
         base.NewsletterInputFld.sendKeys(RegistrationFormData.getUserEmailAddress().toString()+"*");
         base.submitNewsletterBtn.click();
         base.newsLetterInvalidAlertMsg.getValue().equals(InvalidEmailPageAlertMsg);
@@ -174,6 +187,7 @@ public class BasePageTest{
 
     @Test
     public void fillNewsLetterFieldWithValidNewEmail() {
+        base.wait.waitForElement(base.NewsletterInputFld);
         base.NewsletterInputFld.click();
         base.NewsletterInputFld.sendKeys(RegistrationFormData.getUserEmailAddress());
         base.submitNewsletterBtn.click();
@@ -183,6 +197,7 @@ public class BasePageTest{
 
     @Test
     public void fillNewsLetterFieldWithAlreadyUsedEmail() {
+        base.wait.waitForElement(base.NewsletterInputFld);
         base.NewsletterInputFld.click();
         base.NewsletterInputFld.sendKeys(Keys.DOWN);
         base.NewsletterInputFld.sendKeys(Keys.RETURN);
@@ -193,117 +208,133 @@ public class BasePageTest{
 
     @Test
     public void followUsByFacebook() {
+        base.wait.waitForElement(base.facebookIcn);
         base.facebookIcn.click();
+        app.getNavigationHelper().goToFbPage();
         try {
-            driver.get(facebookPageLink);
+            fbPage.pageTitle.getText();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        Assert.assertTrue(fbPage.pageTitle.getText().equals("Selenium Framework"));
     }
 
     @Test
     public void followUsByTwitter() {
+        base.wait.waitForElement(base.twitterIcn);
         base.twitterIcn.click();
-        try{
-            driver.get(twitterPageLink);
-        } catch (Exception e1) {
-            throw new RuntimeException(e1);
-        }
+        app.getNavigationHelper().goToTwitterPage();
     }
 
     @Test
     public void followUsByYoutube() {
+        base.wait.waitForElement(base.youtubeIcn);
         base.youtubeIcn.click();
-        driver.get(youtubePageLink);
+        app.getNavigationHelper().goToYoutubePage();
     }
 
     @Test
     public void followUsByGooglePlus() {
+        base.wait.waitForElement(base.googlePlusIcn);
         base.googlePlusIcn.click();
-        driver.get(googlePlusPageLink);
+        app.getNavigationHelper().goToGooglePlusPage();
     }
 
     @Test
     public void goWomenPage() {
+        base.wait.waitForElement(base.womenSubsection);
         base.womenSubsection.click();
-        driver.get(womenPageLink);
+        app.getNavigationHelper().goToWomenPage();
     }
 
     @Test
     public void goSpecialsPage() {
+        base.wait.waitForElement(base.specialsSubsection);
         base.specialsSubsection.click();
-        driver.get(specialsPageLink);
+        app.getNavigationHelper().goToSpecialsPage();
     }
 
     @Test
     public void goNewProductsPage() {
+        base.wait.waitForElement(base.newProductsSubsection);
         base.newProductsSubsection.click();
-        driver.get(newProductsPageLink);
+        app.getNavigationHelper().goToNewProductsPage();
     }
 
     @Test
     public void goBestSellersPage() {
+        base.wait.waitForElement(base.bestSellersSubsection);
         base.bestSellersSubsection.click();
-        driver.get(bestSellersPageLink);
+        app.getNavigationHelper().goToBestSellersPage();
     }
 
     @Test
     public void goOurStoresPage() {
+        base.wait.waitForElement(base.ourStoresSubsection);
         base.ourStoresSubsection.click();
-        driver.get(ourStoresPageLink);
+        app.getNavigationHelper().goToOurStoresPage();
     }
 
     @Test
     public void goContactUsPage() {
+        base.wait.waitForElement(base.contactUsSubsection);
         base.contactUsSubsection.click();
-        driver.get(contactUsPageLink);
+        app.getNavigationHelper().goToContactUsPage();
     }
 
     @Test
     public void goTermsOfUsePage() {
+        base.wait.waitForElement(base.termsOfUseSubsection);
         base.termsOfUseSubsection.click();
-        driver.get(termsOfUsePageLink);
+        app.getNavigationHelper().goToTermsOfUsePage();
     }
 
     @Test
     public void goAboutUsPage() {
+        base.wait.waitForElement(base.aboutUsSubsection);
         base.aboutUsSubsection.click();
-        driver.get(aboutUsPageLink);
+        app.getNavigationHelper().goToAboutUsPage();
     }
 
     @Test
     public void goSiteMapPage() {
+        base.wait.waitForElement(base.sitemapSubsection);
         base.sitemapSubsection.click();
-        driver.get(sitemapPageLink);
+        app.getNavigationHelper().goToSitemapPage();
     }
 
     @Test
     public void goMyOrdersPage() {
+        base.wait.waitForElement(base.myOrdersSubsection);
         base.myOrdersSubsection.click();
-        driver.get(myOrdersPageLink);
+        app.getNavigationHelper().goToMyOrdersPage();
     }
 
     @Test
     public void goMyCreditSlipsPage() {
+        base.wait.waitForElement(base.myCreditSlipsSubsection);
         base.myCreditSlipsSubsection.click();
-        driver.get(myCreditSlipsPageLink);
+        app.getNavigationHelper().goToMyCreditSlipsPage();
     }
 
     @Test
     public void goMyAddressesPage() {
+        base.wait.waitForElement(base.myAddressSubsection);
         base.myAddressSubsection.click();
-        driver.get(myAddressPageLink);
+        app.getNavigationHelper().goToMyAddressPagePage();
     }
 
     @Test
     public void goPersonalInfoPage() {
+        base.wait.waitForElement(base.myPersonalInfoSubsection);
         base.myPersonalInfoSubsection.click();
-        driver.get(myPersonalInfoPageLink);
+        app.getNavigationHelper().goToMyPersonalInfoPage();
     }
 
     @Test
     public void goSignInPage() {
+        base.wait.waitForElement(base.signOutSubsection);
         base.signOutSubsection.click();
-        driver.get(signOutPageLink);
+        app.getNavigationHelper().goToSignOutPage();
     }
 }
