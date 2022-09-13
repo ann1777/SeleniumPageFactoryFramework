@@ -1,11 +1,12 @@
 package steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import locators.CreateAccountPageLocators;
-import locators.MyAccountPageLocators;
+import locators.*;
 import model.RegistrationFormData;
 import objectRepository.BasePage_OR;
 import objectRepository.CreateAccountPage_OR;
@@ -14,25 +15,30 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 import tests.BaseTest;
+
+import java.io.IOException;
 
 public class CreateAccountPageSteps extends BaseTest {
 
     public CreateAccountPageLocators newAccountPage;
     public MyAccountPageLocators myAccountPage;
 
-    public CreateAccountPageSteps(WebDriver driver) {
-        super(driver);
+    public CreateAccountPageSteps() throws IOException {
+        super();
+        this.newAccountPage = new CreateAccountPageLocators();
+        this.myAccountPage = new MyAccountPageLocators();
+        PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 
-    @BeforeMethod
+    @Before
     public void setUp() throws RuntimeException {
         appManager.initApp();
     }
 
-    @AfterMethod
+    @After
     public void tearDown() throws RuntimeException {
         appManager.stopApp();
     }

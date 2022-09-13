@@ -12,6 +12,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import tests.BaseTest;
 
+import java.io.IOException;
+
 public class BasePageSteps extends BaseTest {
     public BasePageLocators basePage;
     public HomePageLocators homePage;
@@ -32,8 +34,8 @@ public class BasePageSteps extends BaseTest {
     public SearchResultsPageLocators searchPage;
     public FacebookPageLocators fbPage;
 
-    public BasePageSteps(WebDriver driver) {
-        super(driver);
+    public BasePageSteps() throws IOException {
+        super();
     }
 
     @Given ("Base page header is displayed with a searchField")
