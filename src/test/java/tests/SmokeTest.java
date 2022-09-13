@@ -1,22 +1,20 @@
 package tests;
 
 import helpers.AppManager;
+import model.RegistrationFormData;
 import org.junit.Test;
 import org.testng.Assert;
 
 import java.io.IOException;
 
 public class SmokeTest extends BaseTest {
-//    public SmokeTest(WebDriver driver, AppManager app) throws IOException {
-//        super(driver);
-//        this.app = app;
-//    }
+    AppManager app = new AppManager();
+    public RegistrationFormData registrationFormData;
 
     public SmokeTest() throws IOException {
-        super(driver);
+        super();
         this.app = app;
     }
-    AppManager app = new AppManager();
     @Test
     public void testElementsButtonsItem() {
         app.getNavigationHelper().gotoMainPage();

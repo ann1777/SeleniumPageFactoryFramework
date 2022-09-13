@@ -24,8 +24,6 @@ public class RegistrationFormData {
     private static String userMobilePhone;
     private static String userAlias;
 
-
-
     public RegistrationFormData(boolean isMail, String firstName, String lastName, String emailAddress, String password, String birthDay, String birthMonth, String birthYears, boolean isSignUpForNewsLetter, boolean isReceiveSpecialOffers, String company, String department, String address1, String address2, String city, String state, String zipCode, String country, String addInform, String homePhone, String mobilePhone, String userAlias) {
         this.isMail = isMail;
         this.userFirstName = firstName;
@@ -62,24 +60,17 @@ public class RegistrationFormData {
         return userEmailAddress;
     }
     public static String getUserPassword() { return userPassword; }
-//    public static String getUserBirthDay() { return userBirthDay; }
-//    public static String getUserBirthMonth() { return userBirthMonth; }
-//    public static String getUserBirthYears() { return userBirthYears; }
     public static boolean isSignUpForNewsLetter() { return isSignUpForNewsLetter; }
     public static boolean isReceiveSpecialOffers() { return isReceiveSpecialOffers; }
     public static String getUserCompany() { return userCompany; }
-//    public static String getUserDepartment() { return userDepartment; }
     public static String getUserMainAddress() { return userMainAddress; }
     public static String getUserAddress2() { return userAddress2; }
     public static String getUserCity() { return userCity; }
-//    public static String getUserState() { return userState; }
     public static String getUserZipCode() { return userZipCode; }
     public static String getUserCountry() { return userCountry; }
     public static String getUserAdditionalData() { return userAdditionalData; }
     public static String getUserHomePhone() { return userHomePhone; }
     public static String getUserMobilePhone() { return userMobilePhone; }
     public static String getUserAlias() { return userAlias; }
-    public static boolean getIsSignUpForNewsLetter() { return isSignUpForNewsLetter; }
-    public static boolean getIsReceiveSpecialOffers() { return isReceiveSpecialOffers; }
 
 }

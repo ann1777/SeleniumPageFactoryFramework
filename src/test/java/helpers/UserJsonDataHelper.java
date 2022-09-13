@@ -17,6 +17,8 @@ public class UserJsonDataHelper extends HelperBase {
     public MyAccountPageLocators myAccountPage;
     public String myAccountPageTitle = "My account";
     public String myAccountPageHomeIcnTitle = "My account";
+    public String yourAddressFormAlreadyRegisteredAlertMsg = "An account using this email address has already been registered.";
+
     public RegistrationFormData registrationFormData = new RegistrationFormData(true,"John","Snow","user"+randomAlphanumeric(5)+"@test.com","r56$UM25","10","june","1978",true,false,"CocaCola","accountant","Right way str., 15", "Victory str., 345", "Kiyv", "Podol", "785623", "Ukraine", "jonn", "74185296", "+38954123", "Jon");
     public RegistrationFormData changedRegistrationFormData = new RegistrationFormData(true, "NewJohn", "NewSnow",
             "newuser"+randomAlphanumeric(5)+"@test.com", "50_%mYaq", "5", "may", "2002", true, false, "Twitter", "adv", "Victory str, 22", "New History str., 17", "Kharkiv", "NewUkraine", "785612", "Ukraine", "jony", "452389", "+3874562319", "newJon");
@@ -33,8 +35,10 @@ public class UserJsonDataHelper extends HelperBase {
     }
 
     public void createAccount(@NotNull RegistrationFormData registerFormData) {
+        signInPage.wait.waitForElement(signInPage.createAccountEmailField);
         signInPage.createAccountEmailField.sendKeys(registerFormData.getUserEmailAddress());
         signInPage.createAccountSubmitBtn.click();
+        newAccountPage.wait.waitForElement(newAccountPage.mailGenderCheckBox);
         newAccountPage.mailGenderCheckBox.click();
         newAccountPage.firstNameFld.sendKeys(registerFormData.getUserFirstName());
         newAccountPage.lastNameFld.sendKeys(registerFormData.getUserLastName());
@@ -66,6 +70,6 @@ public class UserJsonDataHelper extends HelperBase {
     public void createAlreadyUsedEmailAccount(RegistrationFormData registerFormData) {
         createAccount(registerFormData);
         createAccount(registerFormData);
-        Assert.assertTrue(newAccountPage.yourAddressFormAlreadyRegisteredAlert.getText().equals("An account using this email address has already been registered."));
+        Assert.assertTrue(newAccountPage.yourAddressFormAlreadyRegisteredAlert.getText().equals(yourAddressFormAlreadyRegisteredAlertMsg));
    }
 }
