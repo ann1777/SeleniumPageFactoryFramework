@@ -12,9 +12,9 @@ public class ResourceHelper {
 		return basePath + "/" + path;
 	}
 	/**
-	 * This method return cucumber reportConfigPath
-	 * @param reportConfigPath
-	 * @return
+	 * This method returned cucumber reportConfigPath
+	 * @param
+	 * @return reportConfigPath
 	 */
 	public String getReportConfigPath() {
 		String reportConfigPath = System.getProperty("reportConfigPath");

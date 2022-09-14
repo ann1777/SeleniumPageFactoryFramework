@@ -2,6 +2,8 @@ package helpers.browserConfiguration;
 
 import helpers.AppManager;
 import helpers.browserConfig.PropertyReader;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.Nullable;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
@@ -13,7 +15,13 @@ public class WebDrivers {
     FirefoxBrowser firefoxBrowser = new FirefoxBrowser();
     IEBrowser ieBrowser = new IEBrowser();
     AppManager appManager = new AppManager();
-    PropertyReader propertyReader = new PropertyReader();
+    PropertyReader propertyReader = new PropertyReader() {
+        @Contract(pure = true)
+        @Override
+        public @Nullable Object reader(Object param) {
+            return null;
+        }
+    };
 
     public WebDrivers() throws IOException {
     }

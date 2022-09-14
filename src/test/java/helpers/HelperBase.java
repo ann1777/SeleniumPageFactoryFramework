@@ -15,7 +15,9 @@ public class HelperBase {
     private boolean acceptNextAlert = true;
     protected WebDriver driver;
 
-    public HelperBase() { this.driver = new ChromeDriver(); }
+    public HelperBase() {
+
+        this.driver = new ChromeDriver(); }
 
     protected void type(By locator, String text) {
         click(locator);
