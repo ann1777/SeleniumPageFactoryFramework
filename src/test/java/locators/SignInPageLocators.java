@@ -56,8 +56,4 @@ public class SignInPageLocators extends BasePageLocators {
     public SignInPageLocators() {
 
     }
-//        public void createUserAccount(){
-//            createAccountEmailField.sendKeys(new RegistrationFormData(RegistrationFormData.getUserFirstName(), RegistrationFormData.getUserLastName(), RegistrationFormData.getUserEmailAddress(), RegistrationFormData.getUserPassword(), ));
-//            createAccountSubmitBtn.click();
-//        }
 }

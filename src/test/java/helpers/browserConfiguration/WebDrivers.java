@@ -1,12 +1,10 @@
 package helpers.browserConfiguration;
-
 import helpers.AppManager;
 import helpers.browserConfig.PropertyReader;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.Nullable;
 import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class WebDrivers {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
@@ -16,11 +14,8 @@ public class WebDrivers {
     IEBrowser ieBrowser = new IEBrowser();
     AppManager appManager = new AppManager();
     PropertyReader propertyReader = new PropertyReader() {
-        @Contract(pure = true)
         @Override
-        public @Nullable Object reader(Object param) {
-            return null;
-        }
+        public Object reader() { return new FileInputStream<Map<String, List<String>>; }
     };
 
     public WebDrivers() throws IOException {
@@ -31,7 +26,6 @@ public class WebDrivers {
         if (driver.get() != null) {
             return (WebDrivers) driver.get();
         }
-
         appManager.initApp();
         String browserName = String.valueOf(propertyReader.getBrowserType());
         if (browserName.equalsIgnoreCase("Chrome")) {

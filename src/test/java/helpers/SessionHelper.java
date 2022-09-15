@@ -1,5 +1,6 @@
 package helpers;
 
+import helpers.browserConfig.PropertyReader;
 import org.openqa.selenium.WebDriver;
 
 
@@ -11,6 +12,6 @@ public class SessionHelper {
     }
 
     public void login() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+        driver.navigate().to(PropertyReader.config.getProperty("website_host")+"controller=authentication&back=my-account");
     }
 }

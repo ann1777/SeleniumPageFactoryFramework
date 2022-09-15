@@ -1,5 +1,6 @@
 package helpers;
-import org.openqa.selenium.By;
+
+import helpers.browserConfig.URLGetter;
 import org.openqa.selenium.WebDriver;
 
 
@@ -9,71 +10,58 @@ public class NavigationHelper extends HelperBase {
     public NavigationHelper(WebDriver driver) {
         super();
     }
-
-    public void gotoMainPage() { click(By.xpath("//*[@class='icon-home']"));
-    }
-
-    public void gotoSignInPage() {
-        click(By.xpath("//*[@class='login']"));
-    }
-
-    public void gotoContactPage() {
-        click(By.xpath("//*[@id='contact-link']"));
-    }
-
+    public void gotoHomePage() {
+        driver.navigate().to(URLGetter.BASE_URL); }
+    public void goToSignInPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("signInPage")); }
+    public void goToContactPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("contactUsPage")); }
     public void goToFbPage() {
-        driver.navigate().to("https://www.facebook.com/groups/525066904174158/");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("fbPage")); }
     public void goToTwitterPage() {
-        driver.navigate().to("https://twitter.com/seleniumfrmwrk");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("twitterPage")); }
     public void goToYoutubePage() {
-        driver.navigate().to("https://www.youtube.com/channel/UCHl59sI3SRjQ-qPcTrgt0tA");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("youtubePage")); }
     public void goToGooglePlusPage() {
-        driver.navigate().to("https://plus.google.com/111979135243110831526/posts");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("googlePlusPage")); }
     public void goToWomenPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?id_category=3&controller=category");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("catalogPage")); }
     public void goToSpecialsPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=prices-drop");
-    }
-
+        driver.navigate().to(URLGetter.PAGE_URLS.get("specialsPage")); }
     public void goToNewProductsPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=new-products");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("newProductsPage")); }
     public void goToBestSellersPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=new-products");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("bestSellersPage")); }
     public void goToOurStoresPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=stores");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("ourStoresPage")); }
     public void goToContactUsPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=contact");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("contactUsPage")); }
     public void goToTermsOfUsePage() {
-        driver.navigate().to("http://automationpractice.com/index.php?id_cms=3&controller=cms");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("termsOfUsePage")); }
     public void goToAboutUsPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=stores");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("aboutUsPage")); }
     public void goToSitemapPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=stores");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("sitemapPage")); }
     public void goToMyOrdersPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=history");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("orderHistoryPage")); }
     public void goToMyCreditSlipsPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=order-slip");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("creditSlipsPage")); }
     public void goToMyAddressPagePage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=addresses");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("myAddressPage")); }
     public void goToMyPersonalInfoPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=identity");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("personalInfoPage")); }
     public void goToSignOutPage() {
-        driver.navigate().to("http://automationpractice.com/index.php?mylogout");
-    }
+        driver.navigate().to(URLGetter.PAGE_URLS.get("signInPage")); }
+    public void goToCreateAccountPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("createAccountPage")); }
+    public void goToMyAccountPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("myAccountPage")); }
+    public void goToRecoveryPasswdPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("recoveryPasswdPage")); }
+    public void goToSearchResultsPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("searchResultsPage")); }
+    public void goToShoppingCartPage() {
+        driver.navigate().to(URLGetter.PAGE_URLS.get("shoppingCartPage")); }
 }
+
+

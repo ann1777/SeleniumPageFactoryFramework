@@ -1,6 +1,5 @@
 package helpers.browserConfig;
 
-import helpers.resource.ResourceHelper;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,11 +10,18 @@ import java.util.*;
 public abstract class PropertyReader implements ConfigReader {
 
 	private static FileInputStream file;
-	public static Properties OR;
+	public static Properties config;
 
-	public String PropertyReader() throws IOException {
+	public List<String> PropertyReader() throws IOException {
 
-		Map<String, String> properties = Map.of(
+		PropertyReader instance = new PropertyReader() {
+			@Contract(pure = true)
+			@Override
+			public @Nullable Object reader() {
+				return file;
+			}
+		};
+		Map<String, String> OR1 = Map.of(
 				"chrome_binary", "src/test/resources/drivers/chromedriver.exe",
 				"load_timeout_sec", "50",
 				"id", "qa",
@@ -27,41 +33,33 @@ public abstract class PropertyReader implements ConfigReader {
 				"explicit_wait", "visibilityOfElementLocated"
 		);
 
-		PropertyReader instance = new PropertyReader() {
-			@Contract(pure = true)
-			@Override
-			public @Nullable Object reader(Object param) {
-				return null;
-			}
-		};
-
-		file = new FileInputStream(
-				new Map<String, String> OR = (Properties) instance.reader(ResourceHelper.getResourcePath("src/test/resources/configfiles/driver-config.properties")) {
-			public String getImplicitWait() {
-				List<String> implicitWait = List.of(OR.getProperty("implicit_wait"));
-				return String.valueOf(implicitWait); }
-			public String getExplicitWait() {
-				List<String> explicitWait = List.of(OR.getProperty("explicit_wait"));
-				return String.valueOf(explicitWait); }
-			public String getPageLoadTimeOut() {
-				List<String> loadTimeOut = List.of(OR.getProperty("load_timeout_sec"));
-				return String.valueOf(loadTimeOut); }
-			public String getBrowserType() {
-				List<String> browserType = List.of(OR.getProperty("browser_type"));
-				return String.valueOf(browserType); }
-			public String getBaseUrl() {
-				List<String> baseUrl = List.of(OR.getProperty("website_host"));
-				return String.valueOf(baseUrl); }
-			public String getName() {
-				List<String> userName = List.of(OR.getProperty("user_name"));
-				return String.valueOf(userName); }
-			public String getEmail() {
-				List<String> userEmail = List.of(OR.getProperty("user_email"));
-				return String.valueOf(userEmail); }
-			public String getBrowserBinary() {
-				List<String> chromeExe = List.of(OR.getProperty("chrome_binary"));
-				return String.valueOf(chromeExe); }
-
-		};
+		file = new FileInputStream<Map<String, List<String>> config = (Properties) instance.reader();
 	}
-}
+
+	public List<String> getBrowserType() {
+		final List<String> browserType = Collections.singletonList(config.getProperty("browser_type"));
+		return browserType; }
+
+	public List<String> getBaseUrl() {
+		final List<String> baseUrl = Collections.singletonList(config.getProperty("website_host"));
+		return baseUrl; }
+	public List<String> getName() {
+		final List<String> userNamePref = Collections.singletonList(config.getProperty("user_name_pref"));
+		return userNamePref; }
+	public List<String> getEmail() {
+		final List<String> userEmailSuf = Collections.singletonList(config.getProperty("email_suf"));
+		return userEmailSuf; }
+	public List<String> getBrowserBinary() {
+		final List<String> chromeExe = Collections.singletonList(config.getProperty("chrome_binary"));
+		return chromeExe; }
+	public List<String> getImplicitWait() {
+		final List<String> implicitWait = Collections.singletonList(config.getProperty("implicit_wait"));
+		return implicitWait; }
+	public List<String> getExplicitWait() {
+		final List<String> explicitWait = Collections.singletonList(config.getProperty("explicit_wait"));
+		return explicitWait; }
+	public List<String> getPageLoadTimeOut() {
+		final List<String> loadTimeOut = Collections.singletonList(config.getProperty("load_timeout_sec"));
+		return loadTimeOut; }
+	}
+
