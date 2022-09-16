@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class IEBrowser {
 
-	public InternetExplorerOptions getInternetExplorerCapabilities() {
+	public static InternetExplorerOptions getInternetExplorerCapabilities() {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(InternetExplorerDriver.ELEMENT_SCROLL_BEHAVIOR, ElementScrollBehavior.BOTTOM);
 		cap.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);

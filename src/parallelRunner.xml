@@ -1,0 +1,34 @@
+<suite name="ParallelRunner -SmokeTest - Cross Browser" parallel="tests" verbose="1"
+       configfailurepolicy="continue" thread-count="5">
+    <listeners>
+        <listener class-name="helpers.listener.WebdriverTestListener"/>
+    </listeners>
+
+    <parameter name="system.info" value="runner.MySystemInfo"/>
+    <parameter name="report.config" value="src/test/resources/configfiles/extent-config.xml"/>
+
+    <test name="SmokeTest - Linux Chrome Browser">
+        <parameter name="browserName" value="ChromeDriver"/>
+        <parameter name="browserVersion" value="ANY"/>
+        <parameter name="platform" value="linuxMint"/>
+        <classes>
+            <class name="tests.SmokeTest"/>
+        </classes>
+    </test>
+    <test name="SmokeTest - Linux Firefox Browser">
+        <parameter name="browserName" value="FirefoxBrowser"/>
+        <parameter name="browserVersion" value="ANY"/>
+        <parameter name="platform" value="linuxMint"/>
+        <classes>
+            <class name="tests.SmokeTest"/>
+        </classes>
+    </test>
+    <test name="SmokeTest - Linux InternetExplorer Browser">
+        <parameter name="browserName" value="IEBrowser"/>
+        <parameter name="browserVersion" value="ANY"/>
+        <parameter name="platform" value="linuxMint"/>
+        <classes>
+            <class name="tests.SmokeTest"/>
+        </classes>
+    </test>
+</suite>

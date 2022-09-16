@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class ChromeBrowser {
 
-	public ChromeOptions getChromeOptions() {
+	public static ChromeOptions getChromeOptions() {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--test-type");
 		option.addArguments("--disable-popup-blocking");

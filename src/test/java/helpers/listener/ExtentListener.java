@@ -20,17 +20,21 @@ public class ExtentListener implements ITestListener {
 	public void onFinish(ITestContext arg0) {
 
 		Reporter.log(arg0.getName() + " this test finished");
-		log.info(arg0.getName() + " this test finished");
+		long endTime = System.currentTimeMillis();
+		log.info(arg0.getName() + " this test finished"+ endTime);
 	}
 
 	public void onStart(ITestContext arg0) {
 
 		Reporter.log(arg0.getCurrentXmlTest().getName() + " this test started");
-		log.info(arg0.getCurrentXmlTest().getName() + " this test started");
+		long startTime = System.currentTimeMillis();
+		log.info(arg0.getCurrentXmlTest().getName() + " this test started"+ startTime);
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
 
+		Reporter.log(arg0.getMethod().getMethodName() + " this test started");
+		System.out.println("Test failed but it is in defined success ratio " + arg0.getMethod().getMethodName());
 	}
 
 	public void onTestFailure(ITestResult arg0) {

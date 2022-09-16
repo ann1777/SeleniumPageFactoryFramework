@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class FirefoxBrowser {
 
-	public FirefoxOptions getFirefoxOptions() {
+	public static FirefoxOptions getFirefoxOptions() {
 
 		DesiredCapabilities firefox = new DesiredCapabilities();
 		FirefoxProfile profile = new FirefoxProfile();
@@ -29,15 +29,15 @@ public class FirefoxBrowser {
 
 	public static WebDriver getFirefoxDriver() {
 		if (System.getProperty("os.name").contains("mac")) {
-			System.setProperty("webdriver.chrome.driver",
+			System.setProperty("webdriver.gecko.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver"));
 			return new FirefoxDriver();
 		} else if (System.getProperty("os.name").contains("Window")) {
-			System.setProperty("webdriver.chrome.driver",
+			System.setProperty("webdriver.gecko.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver.exe"));
 			return new FirefoxDriver();
 		} else if (System.getProperty("os.name").contains("Linux")) {
-			System.setProperty("webdriver.chrome.driver",
+			System.setProperty("webdriver.gecko.driver",
 					ResourceHelper.getResourcePath("src/test/resources/drivers/geckodriver.exe"));
 			return new FirefoxDriver();
 		}
