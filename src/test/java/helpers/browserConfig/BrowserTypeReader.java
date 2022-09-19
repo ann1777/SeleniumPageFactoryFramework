@@ -1,12 +1,17 @@
 package helpers.browserConfig;
 
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class BrowserTypeReader extends PropertyReader {
 
     @Override
-    public Object reader() {
-        Collection<Object> explicit_wait = Collections.singleton(PropertyReader.config.getProperty("browser_type", "Chrome"));
-        return String.valueOf("browser_type"); }
+    public List<String> reader(List<String> value) throws NoSuchFieldException {
+        String browser_type = PropertyReader.getPropValues("browser_type");
+        return Collections.singletonList(browser_type); }
+
+    @Override
+    public List<String> reader() {
+        return null;
+    }
 }

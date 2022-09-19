@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class NavigationHelper extends HelperBase {
 
     WebDriver driver;
-    public NavigationHelper(WebDriver driver) {
+    public NavigationHelper() {
         super();
     }
     public void gotoHomePage() {

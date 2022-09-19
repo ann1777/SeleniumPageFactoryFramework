@@ -1,61 +1,58 @@
 package helpers.browserConfig;
 
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.Nullable;
-
-import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
-public abstract class PropertyReader implements ConfigReader {
+public class PropertyReader implements ConfigReader{
+    String browserConfig = "";
+    InputStream inputStream;
+    
+    PropertyReader reader = new PropertyReader();
 
-	private static FileInputStream file;
-	public static Properties config;
+    public static String getPropValues(String baseUrl) {
+        return baseUrl;
+    }
 
-	public Properties PropertyReader() throws IOException {
+    public String getPropValues() throws IOException {
 
-		PropertyReader instance = new PropertyReader() {
-			@Contract(pure = true)
-			@Override
-			public @Nullable Object reader() {
-				return file;
-			}
-		};
+        Properties prop;
+        String driverConfig = "driver-config.properties";
+        try {
+            prop = new Properties();
+            inputStream = getClass().getClassLoader().getResourceAsStream(driverConfig);
+            if (inputStream != null) {
+                prop.load(inputStream);
+            } else {
+                throw new FileNotFoundException("property file '" + driverConfig + "' not found in the classpath");
+            }
+            Date time = new Date(System.currentTimeMillis());
+            String browserType = prop.getProperty("browserType");
+            String baseUrl = prop.getProperty("baseUrl");
+            String userNamePref = prop.getProperty("userNamePref");
+            String userEmailSuf = prop.getProperty("userEmailSuf");
+            String chromeExe = prop.getProperty("chromeExe");
+            String implicitWait = prop.getProperty("implicitWait");
+            String explicitWait = prop.getProperty("explicitWait");
+            String loadTimeOut = prop.getProperty("loadTimeOut");
 
-		file = new FileInputStream<Map<String, List<String>> config = (Properties) instance.reader();
-		return config;
-	}
+            browserConfig = "BrowserType = " + browserType + ", BaseURL = " + baseUrl + ", UsernamePref = " + userNamePref + ",\nuserEmailSuf = " + userEmailSuf + ", chromeBinry = " + chromeExe + ", implicitWait = " + implicitWait + ", explicitWait = " + explicitWait + ", loadTimeOut = " + loadTimeOut;
+            System.out.println(browserConfig + "\nProgram run on " + time);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        } finally {
+            inputStream.close();
+        }
+        return browserConfig;
+    }
 
-	public List<String> getBrowserType() {
-		final List<String> browserType = Collections.singletonList(config.getProperty("browser_type"));
-		return browserType; }
+    public List<String> reader() {
+        return new ArrayList<>();
+    }
 
-	public List<String> getBaseUrl() {
-		final List<String> baseUrl = Collections.singletonList(config.getProperty("website_host"));
-		return baseUrl; }
-
-	public List<String> getName() {
-		final List<String> userNamePref = Collections.singletonList(config.getProperty("user_name_pref"));
-		return userNamePref; }
-
-	public List<String> getEmail() {
-		final List<String> userEmailSuf = Collections.singletonList(config.getProperty("email_suf"));
-		return userEmailSuf; }
-
-	public List<String> getBrowserBinary() {
-		final List<String> chromeExe = Collections.singletonList(config.getProperty("chrome_binary"));
-		return chromeExe; }
-
-	public List<String> getImplicitWait() {
-		final List<String> implicitWait = Collections.singletonList(config.getProperty("implicit_wait"));
-		return implicitWait; }
-
-	public List<String> getExplicitWait() {
-		final List<String> explicitWait = Collections.singletonList(config.getProperty("explicit_wait"));
-		return explicitWait; }
-
-	public List<String> getPageLoadTimeOut() {
-		final List<String> loadTimeOut = Collections.singletonList(config.getProperty("load_timeout_sec"));
-		return loadTimeOut; }
-	}
-
+    @Override
+    public List<String> reader(List<String> value) throws NoSuchFieldException {
+        return Collections.singletonList(browserConfig);
+    }
+}

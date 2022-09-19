@@ -1,12 +1,17 @@
 package helpers.browserConfig;
 
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class LoadTimeoutGetter extends PropertyReader {
 
     @Override
-    public Object reader() {
-        Collection<Object> load_timeout_sec = Collections.singleton(PropertyReader.config.getProperty("load_timeout_sec", "50"));
-        return String.valueOf("load_timeout_sec"); }
+    public List<String> reader(List<String> value) throws NoSuchFieldException {
+        String load_timeout_sec = PropertyReader.getPropValues("load_timeout_sec");
+        return Collections.singletonList(load_timeout_sec); }
+
+    @Override
+    public List<String> reader() {
+        return null;
+    }
 }

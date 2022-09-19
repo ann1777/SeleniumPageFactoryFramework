@@ -18,8 +18,8 @@ public class WebdriverTestListener  extends TestListenerAdapter {
     @Override
     public void onStart(ITestContext testContext) {
         super.onStart(testContext);
-        final String browser_type = PropertyReader.config.getProperty("browser_type");
-        String capabilities = (PropertyReader.config.getProperty("browser_type"));
+        final String browser_type = PropertyReader.getPropValues("browser_type");
+        String capabilities = (PropertyReader.getPropValues("browser_type"));
         WebDriver driver = null;
         String URL;
         if(capabilities == String.valueOf(Chrome)) {

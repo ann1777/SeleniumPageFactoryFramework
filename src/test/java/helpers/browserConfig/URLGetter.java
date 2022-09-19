@@ -1,15 +1,10 @@
 package helpers.browserConfig;
 
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public class URLGetter extends PropertyReader {
-
-    @Override
-    public Object reader() {
-        Collection<Object> BASE_URL = Collections.singleton(PropertyReader.config.getProperty("website_host", "https://automationpractice.com/index.php"));
-        return String.valueOf("website_host"); }
 
     public static final String BASE_URL = "http://automationpractice.com/index.php";
 
@@ -39,4 +34,15 @@ public class URLGetter extends PropertyReader {
             Map.entry("googlePlusPage", "https://plus.google.com/111979135243110831526/posts"),
             Map.entry("youtubePage", "https://www.youtube.com/channel/UCHl59sI3SRjQ-qPcTrgt0tA")
     );
+
+    @Override
+    public List<String> reader() {
+        return null;
+    }
+
+    @Override
+    public List<String> reader(List<String> value) throws NoSuchFieldException {
+        String BASE_URL = PropertyReader.getPropValues("baesUrl");
+        return Collections.singletonList(BASE_URL);
+    }
 }

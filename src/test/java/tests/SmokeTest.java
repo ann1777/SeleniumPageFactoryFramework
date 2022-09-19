@@ -22,7 +22,7 @@ public class SmokeTest extends BaseTest {
         app.getButtonsHelper().clickToClickMeButton();
         Assert.assertEquals(app.getButtonsHelper().getTextClickMeButton(),"You have done a dynamic click");
         System.out.println("After clicking on 'Click Me' button follow test appears: " + app.getButtonsHelper().getTextClickMeButton());
-        app.getNavigationHelper().gotoHomePage();
+        app.getNavigationHelper().goToSignInPage();
         app.getUserJsonHelper().createAccount(registrationFormData);
     }
 }

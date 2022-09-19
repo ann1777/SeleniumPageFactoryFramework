@@ -1,6 +1,5 @@
 package helpers;
 
-import helpers.browserConfiguration.WebDrivers;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -11,7 +10,6 @@ public class AppManager extends HelperBase {
     private NavigationHelper navigationHelper;
     private ButtonsHelper buttonsHelper;
     private UserJsonDataHelper userJsonDataHelper;
-    WebDrivers webDrivers;
     private final StringBuffer verificationErrors = new StringBuffer();
 
     public AppManager() {
@@ -25,7 +23,7 @@ public class AppManager extends HelperBase {
         driver = new ChromeDriver();
         userJsonDataHelper = new UserJsonDataHelper();
         buttonsHelper = new ButtonsHelper(driver);
-        navigationHelper = new NavigationHelper(driver);
+        navigationHelper = new NavigationHelper();
         sessionHelper = new SessionHelper(driver);
 //        driver.manage().window().maximize();
         sessionHelper.login();
