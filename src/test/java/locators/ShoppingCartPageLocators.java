@@ -23,7 +23,7 @@ public class ShoppingCartPageLocators extends BasePageLocators {
 
     @FindBy(css = ShoppingCartPage_OR.SHOPPINGCARTPAGE_SHOPPINGCART_TITLE)
     //*[@id="cart_title"][contains(text(), 'Shopping-cart summary')]
-    public WebElement shoppingCartTitle;
+    public WebElement pageTitle;
 
     @FindBy(xpath = ShoppingCartPage_OR.SHOPPINGCARTPAGE_CARTHEADING_COUNTER)
     public WebElement cartHeadingCounter;

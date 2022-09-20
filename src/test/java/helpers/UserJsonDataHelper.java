@@ -1,12 +1,11 @@
 package helpers;
 
-import locators.CreateAccountPageLocators;
-import locators.MyAccountPageLocators;
-import locators.SignInPageLocators;
+import locators.*;
 import model.RegistrationFormData;
 import objectRepository.CreateAccountPage_OR;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
@@ -15,20 +14,49 @@ public class UserJsonDataHelper extends HelperBase {
     public SignInPageLocators signInPage;
     public CreateAccountPageLocators newAccountPage;
     public MyAccountPageLocators myAccountPage;
+    public HomePageLocators homePage;
+
+    public ShoppingCartPageLocators shoppingCartPage;
+    public CatalogPageLocators womenPage;
     public String myAccountPageTitle = "My account";
+    public String womenPageTitle = "Women";
+
+    public String shoppingCartPageTitle = "Shopping-cart summary";
     public String myAccountPageHomeIcnTitle = "My account";
+    public String homePageCenterTabText = "Popular";
     public String yourAddressFormAlreadyRegisteredAlertMsg = "An account using this email address has already been registered.";
 
     public RegistrationFormData registrationFormData = new RegistrationFormData(true,"John","Snow","user"+randomAlphanumeric(5)+"@test.com","r56$UM25","10","june","1978",true,false,"CocaCola","accountant","Right way str., 15", "Victory str., 345", "Kiyv", "Podol", "785623", "Ukraine", "jonn", "74185296", "+38954123", "Jon");
     public RegistrationFormData changedRegistrationFormData = new RegistrationFormData(true, "NewJohn", "NewSnow",
             "newuser"+randomAlphanumeric(5)+"@test.com", "50_%mYaq", "5", "may", "2002", true, false, "Twitter", "adv", "Victory str, 22", "New History str., 17", "Kharkiv", "NewUkraine", "785612", "Ukraine", "jony", "452389", "+3874562319", "newJon");
 
-    public UserJsonDataHelper() {
+    public UserJsonDataHelper(WebDriver driver) {
         super();
+    }
+
+    public boolean isWomenPage() {
+        if((womenPage.navigationTab.getText()) == womenPageTitle) {
+            return true;
+        }
+        return false;
+    }
+
+     public boolean isHomePage() {
+        if((homePage.popularBtn.getText()) == homePageCenterTabText) {
+            return true;
+        }
+        return false;
     }
 
     public boolean isMyAccountPage() {
         if((myAccountPage.homeIcnTab.getText()) == myAccountPageHomeIcnTitle) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isShoppingCartPage() {
+        if((shoppingCartPage.pageTitle.getText()) == shoppingCartPageTitle) {
             return true;
         }
         return false;

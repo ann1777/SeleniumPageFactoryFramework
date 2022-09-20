@@ -36,7 +36,7 @@ public class BaseTest {
         this.base = new BasePageLocators();
         this.myAccountPage = new MyAccountPageLocators();
         this.newAccountPage = new CreateAccountPageLocators();
-        this.userJsonDataHelper = new UserJsonDataHelper();
+        this.userJsonDataHelper = new UserJsonDataHelper(driver);
         PageFactory.initElements((ElementLocatorFactory) driver, this);
     }
 

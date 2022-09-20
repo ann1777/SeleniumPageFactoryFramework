@@ -79,6 +79,8 @@ public class CatalogPage_OR {
     public static final String CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSCOUNTER = ".heading-counter";
     public static final String CATALOGPAGE_MAINPAGECOLUMN_FILTER_LABEL = "//*[@class='select selector1']/label";
     public static final String CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSELECTOR_FLD = "#uniform-selectProductSort";
+
+    public static final String CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSELECTOR_INSTOCK_OPT = "//span [text()='In stock']";
     public static final String CATALOGPAGE_MAINPAGECOLUMN_DISPLAYVIEWED_TITLE = "//*[text()='View']";
     public static final String CATALOGPAGE_MAINPAGECOLUMN_GRID_ICON = "#grid";
     public static final String CATALOGPAGE_MAINPAGECOLUMN_GRID_TITLE = "//*[text() = 'Grid']";

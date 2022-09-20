@@ -225,6 +225,9 @@ public class CatalogPageLocators extends BasePageLocators {
     @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSELECTOR_FLD)
     public WebElement productsSelectorFld;
 
+    @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_PRODUCTSELECTOR_INSTOCK_OPT)
+    public WebElement inStockSelector;
+
     @FindBy(xpath = CatalogPage_OR.CATALOGPAGE_MAINPAGECOLUMN_DISPLAYVIEWED_TITLE)
     public WebElement displayViewTitle;
 

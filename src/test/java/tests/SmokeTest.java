@@ -19,10 +19,16 @@ public class SmokeTest extends BaseTest {
     public void testElementsButtonsItem() {
         app.getNavigationHelper().gotoHomePage();
         app.getButtonsHelper().gotoButtonsItemElementsMenu();
-        app.getButtonsHelper().clickToClickMeButton();
-        Assert.assertEquals(app.getButtonsHelper().getTextClickMeButton(),"You have done a dynamic click");
-        System.out.println("After clicking on 'Click Me' button follow test appears: " + app.getButtonsHelper().getTextClickMeButton());
+        app.getButtonsHelper().clickToWomenBtn();
+        Assert.assertTrue(app.getUserJsonHelper().isWomenPage());
+        app.getButtonsHelper().clickHomeIcn();
+        Assert.assertTrue(app.getUserJsonHelper().isHomePage());
         app.getNavigationHelper().goToSignInPage();
         app.getUserJsonHelper().createAccount(registrationFormData);
+        app.getUserJsonHelper().createAlreadyUsedEmailAccount(registrationFormData);
+        app.getNavigationHelper().goToShoppingCartPage();
+        app.getUserJsonHelper().isShoppingCartPage();
+        app.getSessionHelper().login();
+        Assert.assertNotNull(app.getSessionHelper().getCurrentUserName());
     }
 }

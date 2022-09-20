@@ -67,6 +67,7 @@ public class BasePageTest extends BaseTest{
 
     String fbPageTitle = "Selenium Framework";
     String itemName = "Blouse";
+    String filterLabelText = "Sort by";
 
     String foundItemsName;
     AppManager app = new AppManager();
@@ -95,6 +96,25 @@ public class BasePageTest extends BaseTest{
      public void siteHeaderAdvClick() {
         base.wait.waitForElement(base.headerAdv);
         base.headerAdv.click(); }
+
+     @Test
+    public void testButtonsItemElementsMenu() throws InterruptedException {
+        app.getNavigationHelper().gotoHomePage();
+        app.getButtonsHelper().gotoButtonsItemElementsMenu();
+        app.getButtonsHelper().clickToWomenBtn();
+        Assert.assertTrue(women.navigationTab.getText().equals(women.womenDisplayBlockTab.getText()));
+        app.getNavigationHelper().goToWomenPage();
+        app.getButtonsHelper().clickToDressesBtn();
+        app.getButtonsHelper().clickToEveningDressesSubTitle();
+        Assert.assertTrue(women.eveningDressesTab.getText().equals(women.pageTitle.getText()));
+        app.getNavigationHelper().goToWomenPage();
+        app.getButtonsHelper().clickToTShirtsBtn();
+        Assert.assertEquals(women.tShirtsDisplayBlockTab.getText(), women.pageTitle.getText());
+        app.getButtonsHelper().clickSortBySelector();
+        Assert.assertEquals(women.filterLabel.getText(), filterLabelText);
+        Assert.assertNotNull(women.inStockSelector);
+        app.getButtonsHelper().clickHomeIcn();
+        Assert.assertNull(women.homeIcn); }
 
 
     @Test

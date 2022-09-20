@@ -9,7 +9,6 @@ import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
 public class HomePageLocators extends BasePageLocators {
     public WebDriver driver;
-
     @FindBy(id = HomePage_OR.HOMEPAGE_SLIDER_ROW )
     public WebElement SliderRow;
 
@@ -26,7 +25,7 @@ public class HomePageLocators extends BasePageLocators {
     public WebElement HTMLContent;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_POPULAR_BTN)
-    public WebElement PopularBtn;
+    public WebElement popularBtn;
 
     @FindBy(css = HomePage_OR.HOMEPAGE_BESTSELLERS_BTN)
     public WebElement BestsellersBtn;

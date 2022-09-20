@@ -47,8 +47,23 @@ public class HelperBase {
                 return true;
             }
             return false;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+     public String closeAlertAndGetItsText() {
+        try {
+            Alert alert = (Alert) driver.switchTo().activeElement();
+            String alertText = alert.getText();
+            if (acceptNextAlert) {
+                alert.accept();
+            } else {
+                alert.dimiss();
+            }
+            return alertText;
+        } finally {
+            acceptNextAlert = true;
         }
     }
 

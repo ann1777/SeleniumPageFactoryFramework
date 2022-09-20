@@ -11,7 +11,7 @@ public class SessionHelper extends NavigationHelper{
     AppManager app = new AppManager();
 
     SessionHelper(WebDriver driver) {
-        super();
+        super(driver);
         this.driver = driver;
     }
 
@@ -45,7 +45,7 @@ public class SessionHelper extends NavigationHelper{
     }
 
 
-    public static String getCurrentUserName(RegistrationFormData registerFormData) {
+    public static String getCurrentUserName() {
         return getCurrentSession().registrationFormData.getUserFirstName();
     }
 }

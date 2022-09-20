@@ -21,9 +21,9 @@ public class AppManager extends HelperBase {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver();
-        userJsonDataHelper = new UserJsonDataHelper();
+        userJsonDataHelper = new UserJsonDataHelper(driver);
         buttonsHelper = new ButtonsHelper(driver);
-        navigationHelper = new NavigationHelper();
+        navigationHelper = new NavigationHelper(driver);
         sessionHelper = new SessionHelper(driver);
 //        driver.manage().window().maximize();
         sessionHelper.login();
@@ -47,4 +47,6 @@ public class AppManager extends HelperBase {
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }
+
+    public SessionHelper getSessionHelper() { return sessionHelper; }
 }
